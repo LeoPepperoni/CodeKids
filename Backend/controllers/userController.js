@@ -56,7 +56,7 @@ const deleteUser = async (req, res) => {
     res.status(200).json(user);
 };
 
-// Controller function to update a user in the database
+// Controller function to update a user in the databasee
 const updateUser = async (req, res) => {
     const { id } = req.params;
 
