@@ -8,6 +8,12 @@ return (
         <Link to="/">
             <h1>Code Kids</h1>
         </Link>
+            <nav>
+                <div>
+                    <Link to="/login">Login</Link>
+                    <Link to="/signup">Signup</Link>
+                </div>
+            </nav>
         </div>
     </header>
     )

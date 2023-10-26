@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import {useState} from 'react'
 
-const Login = () => {
+const Signup = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -11,7 +11,7 @@ const Login = () => {
     }
 
     return (
-        <form classname="login" onSubmit={handleSubmit}>
+        <form classname="signup" onSubmit={handleSubmit}>
             <h3>
                 Signup
             </h3>
@@ -31,9 +31,9 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 value={password}
             />
-            <button>Login</button>
+            <button>Sign up</button>
         </form>
     )
 }
 
-export default Login
+export default Signup
