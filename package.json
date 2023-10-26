@@ -1,6 +1,9 @@
 {
     "name": "codekidz",
     "version": "1.0.0",
+    "engines": {
+        "node": "18.18.2"
+    },
     "description": "App for COP4331",
     "main": "server.js",
     "type": "module",
