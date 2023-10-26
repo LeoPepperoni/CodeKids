@@ -3,7 +3,6 @@ require('dotenv').config()
 // require packages
 const express = require('express')
 const mongoose = require('mongoose')
-const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
 const cors = require('cors')
 const bodyParser = require('body-parser');
