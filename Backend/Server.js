@@ -11,13 +11,6 @@ const path = require('path');
 // express app
 const app = express()
 
-// require swagger api
-const swaggerUi = require('swagger-ui-express');
-const YAML = require('yamljs');
-const swaggerDocument = YAML.load(path.join(__dirname, './api-docs/openapi.yaml'));
-
-// Serve Swagger UI at a specific route, e.g., '/api-docs'
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use(cors());
 app.use(bodyParser.json());
