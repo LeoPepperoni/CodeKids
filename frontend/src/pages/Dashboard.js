@@ -1,8 +1,5 @@
 import React from 'react';
 
-{/* module-list, module-data, module-btns need to be set up to be 1/3 of the page horizontally so
-    each module has its own "module-data" and all 3 buttons (learn, practice, test) */}
-
 const Dashboard = () => {
     return (
         <div>
