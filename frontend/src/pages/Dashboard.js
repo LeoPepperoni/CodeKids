@@ -1,64 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Dashboard = () => {
-    return (
-        <div>
-            <div>
-                <h2 className="module-title">print("Welcome User")</h2>
-            </div>
+  // Sample data for modules (you can replace it with data from your database)
+  const modules = [
+    { id: 1, name: "Variables & Data Types", completed: 8 },
+    { id: 2, name: "Loops", completed: 5 },
+    { id: 3, name: "Conditionals", completed: 7 },
+    { id: 4, name: "Functions & Procedures", completed: 10 },
+    { id: 5, name: "Input & Output", completed: 3 },
+  ];
 
-            <div className="module-list">
-                <ul>
-                    <li>Module 1: Variables & Data Types</li>
-                    <li>Module 2: Loops</li>
-                    <li>Module 3: Conditionals</li>
-                    <li>Module 4: Functions & Procedures</li>
-                    <li>Module 5: Input & Output</li>
-                </ul>
-            </div>
+  // Function to calculate completion fraction
+  const calculateFraction = (completed) => `${completed}/10`;
 
-            {/* Need to get data from database for these list elements */}
-            <div className="module-data">
-                <ul>
-                    <li>10/10</li>
-                    <li>10/10</li>
-                    <li>10/10</li>
-                    <li>10/10</li>
-                    <li>10/10</li>
-                </ul>
-            </div>
-
-            <div className="module-btns">
-                <ul>
-                    <li>
-                        <button className="learn-btn" id="mod1-learn-btn">Learn</button>
-                        <button className="practice-btn" id="mod1-practice-btn">Practice</button>
-                        <button className="test-btn" id="mod1-test-btn">Test</button>
-                    </li>
-                    <li>
-                        <button className="learn-btn" id="mod2-learn-btn">Learn</button>
-                        <button className="practice-btn" id="mod2-practice-btn">Practice</button>
-                        <button className="test-btn" id="mod2-test-btn">Test</button>
-                    </li>
-                    <li>
-                        <button className="learn-btn" id="mod3-learn-btn">Learn</button>
-                        <button className="practice-btn" id="mod3-practice-btn">Practice</button>
-                        <button className="test-btn" id="mod3-test-btn">Test</button>
-                    </li>
-                    <li>
-                        <button className="learn-btn" id="mod4-learn-btn">Learn</button>
-                        <button className="practice-btn" id="mod4-practice-btn">Practice</button>
-                        <button className="test-btn" id="mod4-test-btn">Test</button>
-                    </li>
-                    <li>
-                        <button className="learn-btn" id="mod5-learn-btn">Learn</button>
-                        <button className="practice-btn" id="mod5-practice-btn">Practice</button>
-                        <button className="test-btn" id="mod5-test-btn">Test</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    );
+  return (
+    <div>
+      <h2 className="module-title">Welcome User</h2>
+      <div className="module-list">
+        <ul>
+          {modules.map((module) => (
+            <li key={module.id}>
+              <h3 className="module-title">Module {module.id}: {module.name}</h3>
+              <div id="module-fraction">{calculateFraction(module.completed)}</div>
+              <div className="module-buttons">
+                <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
+                <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
+                <button className="test-btn" id={`mod${module.id}-test-btn`}>Test</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;
