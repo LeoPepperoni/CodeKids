@@ -1,0 +1,36 @@
+@import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
+
+body {
+    background-color: #3A0CA3;
+    position: relative;
+}
+
+.module-title1{
+    color: white;
+    font-family: JetBrains Mono;
+
+}
+
+.module-component {
+    background-color: white;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin-right: auto; 
+    margin-top: 30px;
+    border-radius: 30px;
+    font-family: JetBrains Mono;
+    margin-left: auto;
+
+}
+
+.module-component button{
+    font-family: JetBrains Mono;
+    width: 100px;
+    margin-bottom: 20px; 
+    border-radius: 30px;
+    font-family: JetBrains Mono;
+    margin-right: 10px;
+    margin-top: 10px;
+}
