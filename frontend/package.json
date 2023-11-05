@@ -1,7 +1,10 @@
 {
-  "proxy": "http://localhost:4000",
+  "proxy": "https://git.heroku.com/codekidz.git",
   "name": "frontend",
   "version": "0.1.0",
+  "engines": {
+    "node": "18.18.2"
+  },
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

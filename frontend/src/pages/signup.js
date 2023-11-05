@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useSignup } from "../hook/useSignup"
+import { Link } from 'react-router-dom'; 
 
 const Signup = () => {
     const [email, setEmail] = useState('')
@@ -31,6 +32,9 @@ const Signup = () => {
 
             <button disabled={isLoading}>Sign up</button>
             {error && <div className="error">{error}</div>}
+
+            <label className="message">Already have an account?</label>
+            <Link to="/login">Login Here</Link>
         </form>
     )
 }
