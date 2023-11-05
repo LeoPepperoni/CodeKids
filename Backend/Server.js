@@ -1,55 +1,56 @@
-require('dotenv').config()
-
-// require packages
-const express = require('express')
-const mongoose = require('mongoose')
-const userRoutes = require('./routes/user')
-const cors = require('cors')
+// Configuration and package imports
+require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-// express app
-const app = express()
+// Route imports
+const userRoutes = require('./routes/user');
+const questionRoutes = require('./routes/question');
 
+// Initialize express app
+const app = express();
 
-app.use(cors());
-app.use(bodyParser.json());
+// Middleware
+app.use(cors()); // Enable Cross-Origin Resource Sharing (CORS)
+app.use(bodyParser.json()); // Parse JSON bodies
+app.use(express.json()); // Parse JSON bodies (as a built-in middleware)
 
-// middleware
-app.use(express.json())
-
+// Logger middleware for requests
 app.use((req, res, next) => {
-    console.log(req.path, req.method)
-    next()
-})
+    console.log(`${req.method} Request to ${req.path}`);
+    next();
+});
 
-// routes
-app.use('/api/user', userRoutes)
+// API routes
+app.use('/api/user', userRoutes);
+app.use('/api/question', questionRoutes);
 
-// deployment
-__dirname = path.resolve()
+// Serve static files in production
+__dirname = path.resolve();
 if (process.env.NODE_ENV === 'production') {
-    // Serve static files from the frontend build folder
     app.use(express.static(path.join(__dirname, '/frontend/build')));
-    // Catch-all route to serve the frontend's index.html file
+
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
     });
-}
-else {
+} else {
+    // Development mode - Simple API response to indicate that the server is running
     app.get('/', (req, res) => {
-        res.send('API is running...')
-    })
+        res.send('API is running...');
+    });
 }
 
-// connect to db
+// Database connection and server startup
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-        // listen for requests
+        // Start the server on successful database connection
         app.listen(process.env.PORT, () => {
-            console.log('Connected to MongoDB & listening on port', process.env.PORT)
-        })
+            console.log(`Connected to MongoDB & listening on port ${process.env.PORT}`);
+        });
     })
     .catch((error) => {
-        console.log(error)
-    })
+        console.error('Database connection failed:', error);
+    });
