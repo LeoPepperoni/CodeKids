@@ -3,11 +3,11 @@ const Question = require('../models/questionModel'); // Correctly require the Qu
 // Function to create a new question in the database
 const createQuestion = async (req, res) => {
     // Destructuring question, answer, and difficulty from the request body
-    const { question, answer, type, difficulty } = req.body;
+    const { question, answer, type, module, completed, moduleQuestionsCompleted } = req.body;
 
     // Trying to add the new question to the database
     try {
-        const newQuestion = await Question.create({ question, answer, type, difficulty });
+        const newQuestion = await Question.create({ question, answer, type, module, completed, moduleQuestionsCompleted });
         // Sending the created question as a response with status code 200 (OK)
         res.status(200).json(newQuestion);
     } catch (error) {

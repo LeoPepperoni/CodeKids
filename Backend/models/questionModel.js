@@ -13,13 +13,20 @@ const questionSchema = new Schema({
         required: true
     },
     type: {
+        type: Number, // 1 for fill in the blank, 2 for multiple choice
+        required: true,
+    },
+    module: {
         type: Number,
         required: true,
     },
-    difficulty: {
-        type: String,
-        required: true,
-        enum: ['easy', 'medium', 'hard']
+    completed: {
+        type: Boolean,
+        default: false // Default value is false (question not completed)
+    },
+    moduleQuestionsCompleted: {
+        type: Number,
+        default: 0 // Default value is 0 (no questions completed in the module)
     }
 })
 
