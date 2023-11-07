@@ -1,37 +1,63 @@
+@import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
+
 header {
-    background: #fff;
-  }
-  
-  header .container {
+    background: #3A0CA3;
+}
+
+.container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between;    
+    font-family: JetBrains Mono;
+    color: white;
   }
   
-  header a {
+  .container a {
     color: #333;
     text-decoration: none;
+    color: white;
+
   }
 
-  nav {
+  .container {
     display: flex;
     align-items: center;
+    font-family: JetBrains Mono;
   }
   
-  nav a {
+  .container a {
     margin-left: 10px;
   }
-  
-  nav button {
-    background: #fff;
+
+  .container button{
+    background: #3A0CA3;
     color: var(--primary);
     border: 2px solid var(--primary);
     padding: 6px 10px;
     border-radius: 4px;
-    font-family: "Poppins";
+    font-family: JetBrains Mono;
     cursor: pointer;
     font-size: 1em;
+    border-color: white;
+    color: white;
+    margin-left: 10px;
   }
+
+  
+  
+  nav button {
+    background: #3A0CA3;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-family: JetBrains Mono;
+    cursor: pointer;
+    font-size: 1em;
+    border-color: white;
+    color: white;
+  }
+
