@@ -19,14 +19,6 @@ const questionSchema = new Schema({
     module: {
         type: Number,
         required: true,
-    },
-    completed: {
-        type: Boolean,
-        default: false // Default value is false (question not completed)
-    },
-    moduleQuestionsCompleted: {
-        type: Number,
-        default: 0 // Default value is 0 (no questions completed in the module)
     }
 })
 
