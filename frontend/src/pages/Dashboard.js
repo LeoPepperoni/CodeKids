@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 
+import { Link } from 'react-router-dom'; 
+
 const Dashboard = () => {
   // Sample data for modules (you can replace it with data from your database)
   const modules = [
@@ -24,9 +26,19 @@ const Dashboard = () => {
               <h3 className="module-title">Module {module.id}: {module.name}</h3>
               <div id="module-fraction">{calculateFraction(module.completed)}
               <div className="module-buttons">
-                <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
-                <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
-                <button className="test-btn" id={`mod${module.id}-test-btn`}>Test</button>
+
+                <Link to={`/learn/${module.id}`}> 
+                  <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
+                </Link>
+
+                <Link to={`/practice/${module.id}`}>
+                  <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
+                </Link>
+                
+                <Link to={`/test/${module.id}`}>
+                  <button className="test-btn" id={`mod${module.id}-test-btn`}>Test</button>
+                </Link>
+                
               </div>
               </div>
             </ul>
