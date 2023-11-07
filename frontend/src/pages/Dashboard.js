@@ -27,17 +27,18 @@ const Dashboard = () => {
               <div id="module-fraction">{calculateFraction(module.completed)}
               <div className="module-buttons">
 
-                <Link to={`/learn/${module.id}`}> 
-                  <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
-                </Link>
+              <Link to={`/learn/${module.id}/${encodeURIComponent(module.name)}`}>
+                <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
+              </Link>
 
-                <Link to={`/practice/${module.id}`}>
-                  <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
-                </Link>
-                
-                <Link to={`/test/${module.id}`}>
-                  <button className="test-btn" id={`mod${module.id}-test-btn`}>Test</button>
-                </Link>
+              <Link to={`/practice/${module.id}/${encodeURIComponent(module.name)}`}>
+                <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
+              </Link>
+
+              <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
+                <button className="test-btn" id={`mod${module.id}-test-btn`}>Test</button>
+              </Link>
+
                 
               </div>
               </div>

@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom';
 
 
 const Learn = () => {
-    // Use the useParams hook to access the moduleId parameter
-    const { moduleId } = useParams();
+   
+    const { moduleName } = useParams();
+
 
     return (
         <div>
             <div>
-                <h1>Learn Content</h1>
+                <h1>Learn Content for Module: {decodeURIComponent(moduleName)}</h1>
             </div>
             
         </div>

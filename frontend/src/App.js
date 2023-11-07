@@ -40,7 +40,7 @@ function App() {
             />
 
             <Route
-              path="/learn"
+              path="/learn/:moduleID/:moduleName"
               element={<Learn />}
             />
 
@@ -50,12 +50,12 @@ function App() {
             />
 
             <Route 
-              path="/practice"
+              path="/practice/:moduleID/:moduleName"
               element={<Practice />}
             />
 
             <Route 
-              path="/test"
+              path="/test/:moduleID/:moduleName"
               element={<Test />}
             />
 
