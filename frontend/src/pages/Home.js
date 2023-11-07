@@ -2,8 +2,12 @@ import './Home.css';
 
 const Home = () => {
     return (
-         <body>
-            <h2>Home</h2>
+        <body>
+            <div className='box'>
+                <div>
+                    <h2>printf("Welcome to CodeKids");</h2>
+                </div>
+            </div>
         </body>
     );
 }
