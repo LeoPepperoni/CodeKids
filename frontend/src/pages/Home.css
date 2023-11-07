@@ -1,0 +1,15 @@
+@import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+    font-family: JetBrains Mono;
+}
+
+.box div {
+    background-color: white;
+    width: 600px;
+}
