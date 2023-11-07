@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './Dashboard.css';
 
 const Dashboard = () => {
   // Sample data for modules (you can replace it with data from your database)
@@ -14,24 +15,25 @@ const Dashboard = () => {
   const calculateFraction = (completed) => `${completed}/10`;
 
   return (
-    <div>
-      <h2 className="module-title">Welcome User</h2>
+    <body>
+      <h2 className="module-title1">Welcome User!</h2>
       <div className="module-list">
         <ul>
           {modules.map((module) => (
-            <li key={module.id}>
+            <ul className="module-component" key={module.id}>
               <h3 className="module-title">Module {module.id}: {module.name}</h3>
-              <div id="module-fraction">{calculateFraction(module.completed)}</div>
+              <div id="module-fraction">{calculateFraction(module.completed)}
               <div className="module-buttons">
                 <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
                 <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
                 <button className="test-btn" id={`mod${module.id}-test-btn`}>Test</button>
               </div>
-            </li>
+              </div>
+            </ul>
           ))}
         </ul>
       </div>
-    </div>
+    </body>
   );
 };
 

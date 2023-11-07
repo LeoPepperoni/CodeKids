@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hook/useLogout'
 import { useAuthContext } from '../hook/useAuthContext'
+import './Navbar.css';
 
 const Navbar = () => {
     // Importing the logout function from the custom hook
