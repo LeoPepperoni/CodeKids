@@ -46,19 +46,19 @@ const Login = () => {
 
                 />
 
-             {/* Submit button with disabled attribute while loading */}
-            <button disabled={isLoading}>Log in</button>
-            {/* Display error message if there is an error */}
-            {error && <div className="error">{error}</div>}
+                {/* Submit button with disabled attribute while loading */}
+                <button disabled={isLoading}>Log in</button>
+                {/* Display error message if there is an error */}
+                {error && <div className="error">{error}</div>}
 
-            <label className="message">Don't have an account? 
-            <Link to="/signup">Signup Here</Link>
+                <label className="message">Don't have an account? 
+                    <Link to="/signup">Signup Here</Link>
+                </label>
 
-            </label>
-
-            {/* Link to reset password modal */} 
-            <label className="message">Forgot password?
-            </label>
+                {/* Link to reset password modal */} 
+                <label className="message">
+                    <Link to="/forgot-password">Forgot password?</Link>
+                </label>
             </form>
         </body>
     )

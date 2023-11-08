@@ -19,8 +19,10 @@ const Navbar = () => {
             <div className="container">
                 {!user && (
                     <div>
-                        {/* Need to link about page */}
-                        <button className="about-btn">About</button>
+                        <Link to="../pages/About">
+                            <button className="about-btn">About</button>
+                        </Link>
+                        
                     </div>
                 )}
                 <Link to="/">

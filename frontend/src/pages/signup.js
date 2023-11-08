@@ -4,6 +4,8 @@ import './signup.css'
 import { Link } from 'react-router-dom'; 
 
 const Signup = () => {
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const { signup, error, isLoading } = useSignup()
@@ -18,6 +20,22 @@ const Signup = () => {
         <body>
             <form className="signup" onSubmit={handleSubmit}>
                 <h3>Sign Up</h3>
+
+                <label>First Name:</label>
+                <input
+                    type="text" 
+                    onChange={(e) => setFirstName(e.target.value)}
+                    value={firstName}
+                    placeholder="Enter First Name"
+                />
+
+                <label>Last Name:</label>
+                <input
+                    type="text" 
+                    onChange={(e) => setLastName(e.target.value)}
+                    value={lastName}
+                    placeholder="Enter Last Name"
+                />
 
                 <label>Email address:</label>
                 <input
