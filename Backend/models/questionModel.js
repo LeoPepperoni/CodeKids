@@ -12,13 +12,9 @@ const questionSchema = new Schema({
         type: String,
         required: true
     },
-    type: {
-        type: Number, // 1 for fill in the blank, 2 for multiple choice
-        required: true,
-    },
     module: {
         type: Number,
-        required: true,
+        required: true
     }
 })
 
