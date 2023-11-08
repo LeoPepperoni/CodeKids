@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useLogout } from '../hook/useLogout'
 import { useAuthContext } from '../hook/useAuthContext'
+import './Navbar.css';
 
 const Navbar = () => {
     // Importing the logout function from the custom hook
@@ -18,8 +19,10 @@ const Navbar = () => {
             <div className="container">
                 {!user && (
                     <div>
-                        {/* Need to link about page */}
-                        <button className="about-btn">About</button>
+                        <Link to="../pages/About">
+                            <button className="about-btn">About</button>
+                        </Link>
+                        
                     </div>
                 )}
                 <Link to="/">
