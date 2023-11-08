@@ -18,7 +18,8 @@ const Login = () => {
 
         // Call the login function from the custom hook with email and password
         const response = await login(email, password);
-
+        console.log(response);
+        console.log(response.success);
         if (response && response.success) {
             // If the login is successful, navigate to the dashboard route
             navigate('/dashboard');
