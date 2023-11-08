@@ -6,6 +6,10 @@ import Login from './pages/Login'
 import Signup from './pages/signup'
 import Dashboard from './pages/Dashboard'
 import Learn from './pages/Learn'
+import Practice from './pages/Practice'
+import Test from './pages/Test'
+import ForgotPassword from './pages/forgot-password'
+import About from './pages/About'
 import Navbar from './components/Navbar'
 
 function App() {
@@ -36,8 +40,28 @@ function App() {
             />
 
             <Route
-              path="/learn"
+              path="/learn/:moduleID/:moduleName"
               element={<Learn />}
+            />
+
+            <Route 
+              path="/forgot-password"
+              element={<ForgotPassword />}
+            />
+
+            <Route 
+              path="/practice/:moduleID/:moduleName"
+              element={<Practice />}
+            />
+
+            <Route 
+              path="/test/:moduleID/:moduleName"
+              element={<Test />}
+            />
+
+            <Route
+              path="/about"
+              element={<About />}
             />
 
           </Routes>

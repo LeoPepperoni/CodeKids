@@ -33,11 +33,11 @@ const loginUser = async (req, res) => {
 // Controller function to sign up a new user
 const signupUser = async (req, res) => {
     // Extract 'email' and 'password' sent by client from the request body
-    const { email, password } = req.body;
+    const { firstName, lastName, email, password } = req.body;
 
     try {
         // Use the 'signup' method defined in User model to create a new user
-        const user = await User.signup(email, password);
+        const user = await User.signup(firstName, lastName, email, password);
 
         // If user creation is successful, create a token for the user
         const token = createToken(user._id);

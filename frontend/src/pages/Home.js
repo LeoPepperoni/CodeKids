@@ -1,8 +1,14 @@
+import './Home.css';
+
 const Home = () => {
     return (
-        <div className="home">
-            <h2>Home</h2>
-        </div>
+        <body>
+            <div className='box'>
+                <div>
+                    <h2>printf("Welcome to CodeKids");</h2>
+                </div>
+            </div>
+        </body>
     );
 }
 
