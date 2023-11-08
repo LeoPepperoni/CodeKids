@@ -6,7 +6,7 @@ import './Login.css';
 import { Link } from 'react-router-dom'; 
 
 const Login = () => {
-    const navigate = useNavigate();
+    
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
      // Custom hook for handling login functionality
@@ -17,13 +17,7 @@ const Login = () => {
         e.preventDefault()
 
         // Call the login function from the custom hook with email and password
-        const response = await login(email, password);
-        console.log(response);
-        console.log(response.success);
-        if (response && response.success) {
-            // If the login is successful, navigate to the dashboard route
-            navigate('/dashboard');
-        }
+        await login(email, password);
     }
 
     return (

@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const validator = require('validator')
@@ -64,7 +66,7 @@ userSchema.statics.signup = async function (firstName, lastName, email, password
 
 // static login method
 userSchema.statics.login = async function (email, password) {
-
+    const navigate = useNavigate();
     if (!email || !password) {
         throw Error('All fields must be filled')
     }
@@ -78,7 +80,8 @@ userSchema.statics.login = async function (email, password) {
     if (!match) {
         throw Error('Incorrect password')
     }
-
+    // Transistion to dashboard on successful login
+    navigate('/dashboard');
     return user
 }
 
