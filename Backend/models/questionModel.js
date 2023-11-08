@@ -12,14 +12,9 @@ const questionSchema = new Schema({
         type: String,
         required: true
     },
-    type: {
+    module: {
         type: Number,
-        required: true,
-    },
-    difficulty: {
-        type: String,
-        required: true,
-        enum: ['easy', 'medium', 'hard']
+        required: true
     }
 })
 
