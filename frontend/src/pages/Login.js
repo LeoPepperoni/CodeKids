@@ -1,12 +1,10 @@
 import { useState } from "react"
 import { useLogin } from "../hook/useLogin"
-import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
 import { Link } from 'react-router-dom'; 
 
 const Login = () => {
-    const navigate = useNavigate();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
      // Custom hook for handling login functionality
@@ -18,7 +16,6 @@ const Login = () => {
 
         // Call the login function from the custom hook with email and password
         await login(email, password);
-        navigate('/dashboard');
     }
 
     return (
