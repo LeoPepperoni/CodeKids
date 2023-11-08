@@ -9,6 +9,8 @@ const path = require('path');
 // Route imports
 const userRoutes = require('./routes/user');
 const questionRoutes = require('./routes/question');
+const progressRoutes = require('./routes/progress');
+
 
 // Initialize express app
 const app = express();
@@ -27,6 +29,8 @@ app.use((req, res, next) => {
 // API routes
 app.use('/api/user', userRoutes);
 app.use('/api/question', questionRoutes);
+app.use('/api/progress', progressRoutes);
+
 
 // Serve static files in production
 __dirname = path.resolve();
