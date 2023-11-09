@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'; 
+import './Practice.css';
 import QuestionContent from '../components/QuestionContent'; // Import the QuestionContent component
 
 
@@ -42,33 +43,37 @@ const Practice = () => {
                 <h4>Practice: Module {moduleID}: {decodeURIComponent(moduleName)}</h4>
             </div>
 
-            <div class="question-list">
-                <h3>Questions:</h3>
-                <ul>
-                    {Array.from({ length: questionsCount }, (_, index) => (
-                        <li key={index + 1}>
-                            <Link to={`/practice/${moduleID}/${encodeURIComponent(moduleName)}/${index + 1}`}>
-                                Question {index + 1}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <div class="practice-div">
 
-            <div class="question-box">
-
-                <div className="question-content">
-                    {/* Render the QuestionContent component for the current question */}
-                    <QuestionContent questionNumber={currentQuestion} />
+                <div class="question-list">
+                    <h3>Questions:</h3>
+                    <ul>
+                        {Array.from({ length: questionsCount }, (_, index) => (
+                            <li key={index + 1}>
+                                <Link to={`/practice/${moduleID}/${encodeURIComponent(moduleName)}/${index + 1}`} className="question-link">
+                                    Question {index + 1}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
 
-                <div class="button-container">
-                    <button className="prev-btn" onClick={handlePreviousClick}>Previous</button>
-                    <button className="submit-btn" onClick={handleNextClick}>Submit</button>
-                </div>
+                <div class="question-box">
 
-            </div>
+                    <div className="question-content">
+                        {/* Render the QuestionContent component for the current question */}
+                        <QuestionContent questionNumber={currentQuestion} />
+                    </div>
+
+                    <div className="button-container">
+                        <button className="prev-btn" onClick={handlePreviousClick}>Previous</button>
+                        <button className="submit-btn" onClick={handleNextClick}>Submit</button>
+                    </div>
+
+                </div>
             
+            </div>
+
         </div>
     );
 }
