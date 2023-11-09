@@ -22,15 +22,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    questions: [ // Modules field is an array of objects
-        {
-            // questionID field references the 'question' model using an ObjectId
-            questionID: {
-                type: Schema.Types.ObjectId,
-                ref: 'Question',  // This field references the 'Module' model
-            }
-        },
-    ],
 })
 
 // static signup method
