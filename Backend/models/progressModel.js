@@ -18,7 +18,7 @@ const progressSchema = new Schema({
     },
     completed: {
         type: Boolean,
-        default: false // You can set a default value if it makes sense for your logic
+        default: true // You can set a default value if it makes sense for your logic
     },
     // Consider adding a timestamp for when the progress was recorded
     createdAt: {

@@ -1,4 +1,5 @@
 const Progress = require('../models/progressModel');
+const Question = require('../models/questionModel');
 
 exports.createProgress = async (req, res) => {
     const { userID, questionID } = req.body;
@@ -65,5 +66,50 @@ exports.getUserModuleProgress = async (req, res) => {
         res.status(200).json(userModuleProgress);
     } catch (err) {
         res.status(500).json({ message: 'Error fetching user module progress', error: err.message });
+    }
+};
+
+exports.getUncompletedQuestions = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+
+        // Get the IDs of questions the user has completed
+        const completedQuestions = await Progress.find({ userID: userId, completed: true }).select('questionID -_id');
+        const completedQuestionIds = completedQuestions.map(q => q.questionID);
+
+        // Find all questions that are not in the completedQuestionIds array
+        const uncompletedQuestions = await Question.find({
+            _id: { $nin: completedQuestionIds }
+        });
+
+        res.status(200).json(uncompletedQuestions);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching uncompleted questions', error: err.message });
+    }
+};
+
+exports.getUncompletedQuestionsByModule = async (req, res) => {
+    try {
+        const userId = req.params.userId;
+        const moduleId = parseInt(req.params.moduleId); // Assuming module is a number
+
+        // Get the IDs of questions the user has completed for the specific module
+        const completedQuestions = await Progress.find({
+            userID: userId,
+            module: moduleId,
+            completed: true
+        }).select('questionID -_id');
+
+        const completedQuestionIds = completedQuestions.map(q => q.questionID);
+
+        // Find all questions that are not in the completedQuestionIds array and are in the specified module
+        const uncompletedQuestions = await Question.find({
+            _id: { $nin: completedQuestionIds },
+            module: moduleId // Assuming there is a module field in your question schema
+        });
+
+        res.status(200).json(uncompletedQuestions);
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching uncompleted questions for module', error: err.message });
     }
 };

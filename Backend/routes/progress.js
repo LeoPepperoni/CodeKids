@@ -3,7 +3,8 @@ const {
     createProgress,
     deleteProgress,
     getUserProgress,
-    getUserModuleProgress  // Include your new controller function here
+    getUserModuleProgress,
+    getUncompletedQuestionsByModule
   } = require('../controllers/progressController');  
 
 const router = express.Router();
@@ -19,6 +20,9 @@ router.get('/user/:userId', getUserProgress);
 
 // Get progress for a specific user by module
 router.get('/user/:userId/module/:moduleId', getUserModuleProgress);
+
+// Get uncompleted questions per module
+router.get('/user/uncompleted/:userId/module/:moduleId', getUncompletedQuestionsByModule)
 
 
 module.exports = router;
