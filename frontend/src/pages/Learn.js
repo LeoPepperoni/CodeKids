@@ -4,13 +4,21 @@ import { useParams } from 'react-router-dom';
 
 const Learn = () => {
    
-    const { moduleName } = useParams();
+    const { moduleID, moduleName } = useParams();
 
 
     return (
         <div>
-            <div>
-                <h1>Learn Content for Module: {decodeURIComponent(moduleName)}</h1>
+            <div class="path">
+                <h3>Learn: Module {moduleID}: {decodeURIComponent(moduleName)}</h3>
+            </div>
+
+            <div class="supp-material-list">
+                
+            </div>
+
+            <div class="question-box">
+
             </div>
             
         </div>
