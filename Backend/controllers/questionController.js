@@ -56,5 +56,20 @@ const getQuestion = async (req, res) => {
     }
 };
 
-module.exports = { createQuestion, deleteQuestion, getQuestion };
+// Function to get all questions from a specific module
+const getAllQuestionsFromModule = async (req, res) => {
+    const { moduleName } = req.params; // Assuming you pass the module name as a URL parameter
+
+    try {
+        const questions = await Question.find({ module: moduleName });
+        if (questions.length === 0) {
+            return res.status(404).json({ message: 'No questions found for this module' });
+        }
+        res.status(200).json(questions);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+module.exports = { createQuestion, deleteQuestion, getQuestion, getAllQuestionsFromModule };
 
