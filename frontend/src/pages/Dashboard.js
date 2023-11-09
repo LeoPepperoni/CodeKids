@@ -24,18 +24,17 @@ const Dashboard = () => {
           {modules.map((module) => (
             <ul className="module-component" key={module.id}>
               <h3 className="module-title">Module {module.id}: {module.name}</h3>
-              <div id="module-fraction">{calculateFraction(module.completed)}
+              <div id="module-fraction">{calculateFraction(module.completed)}</div>
               <div className="module-buttons">
 
-              <Link to={`/learn/${module.id}/${encodeURIComponent(module.name)}`}>
-                <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
-              </Link>
+                <Link to={`/learn/${module.id}/${encodeURIComponent(module.name)}`}>
+                  <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
+                </Link>
 
-              <Link to={`/practice/${module.id}/${encodeURIComponent(module.name)}`}>
-                <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
-              </Link>
+                <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
+                  <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Test</button>
+                </Link>
 
-              </div>
               </div>
             </ul>
           ))}

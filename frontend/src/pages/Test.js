@@ -2,11 +2,11 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'; 
-import './Practice.css';
+import './Test.css';
 import QuestionContent from '../components/QuestionContent'; // Import the QuestionContent component
 
 
-const Practice = () => {
+const Test = () => {
     // Use the useParams hook to access the moduleId parameter
     const { moduleID, moduleName, questionNumber } = useParams();
 
@@ -40,7 +40,7 @@ const Practice = () => {
     return (
         <div>
             <div class="path">
-                <h4>Practice: Module {moduleID}: {decodeURIComponent(moduleName)}</h4>
+                <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
             </div>
 
             <div class="practice-div">
@@ -50,7 +50,7 @@ const Practice = () => {
                     <ul>
                         {Array.from({ length: questionsCount }, (_, index) => (
                             <li key={index + 1}>
-                                <Link to={`/practice/${moduleID}/${encodeURIComponent(moduleName)}/${index + 1}`} className="question-link">
+                                <Link to={`/test/${moduleID}/${encodeURIComponent(moduleName)}/${index + 1}`} className="question-link">
                                     Question {index + 1}
                                 </Link>
                             </li>
@@ -78,4 +78,4 @@ const Practice = () => {
     );
 }
 
-export default Practice;
+export default Test;

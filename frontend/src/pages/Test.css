@@ -1,6 +1,6 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
   
-    h4 {
+    .path {
         font-family: JetBrains Mono;
         color: white;
     }
