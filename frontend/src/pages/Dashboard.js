@@ -13,22 +13,22 @@ const Dashboard = () => {
     { id: 5, name: "Input & Output", completed: 3 },
   ];
 
-  // Function to calculate completion fraction
-  const calculateFraction = (completed) => `${completed}/10`;
 
   return (
     <body>
-      <h2 className="module-title1">Welcome User!</h2>
       <div className="module-list">
         <ul>
           {modules.map((module) => (
             <ul className="module-component" key={module.id}>
               <h3 className="module-title">Module {module.id}: {module.name}</h3>
-              <div id="module-fraction">{calculateFraction(module.completed)}</div>
               <div className="module-buttons">
 
                 <Link to={`/learn/${module.id}/${encodeURIComponent(module.name)}`}>
                   <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
+                </Link>
+
+                <Link to={'practice/${module.id}/${encodeURIComponenet(module.name)}'}>
+                  <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
