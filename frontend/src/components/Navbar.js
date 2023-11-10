@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className="container">
                 {!user && (
                     <div>
-                        <Link to="../pages/About">
+                        <Link to="/About">
                             <button className="about-btn">About</button>
                         </Link>
                         
