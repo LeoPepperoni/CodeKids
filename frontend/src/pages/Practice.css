@@ -1,0 +1,28 @@
+@import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
+
+.path {
+    font-family: JetBrains Mono;
+    color: white;
+}
+
+.practice-div {
+    display: flex;
+    flex-direction: column;
+    font-family: JetBrains Mono;
+    height: 60vh;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.practice-content {
+    display: flex;
+}
+
+.practice-content .button-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between elements */
+    align-items: flex-end; /* Align items to the bottom */
+}
+

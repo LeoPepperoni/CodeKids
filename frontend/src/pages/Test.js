@@ -22,14 +22,6 @@ const Test = () => {
         setCurrentQuestion(newQuestionNumber);
     }, [questionNumber]);
 
-
-    // Function to handle "Previous" button click
-    const handlePreviousClick = () => {
-        if (currentQuestion > 1) {
-            setCurrentQuestion(currentQuestion - 1);
-        }
-    };
-
     // Function to handle "Next" button click
     const handleNextClick = () => {
         if (currentQuestion < questionsCount) {
@@ -43,7 +35,7 @@ const Test = () => {
                 <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
             </div>
 
-            <div class="practice-div">
+            <div class="test-div">
 
                 <div class="question-list">
                     <h3>Questions:</h3>
@@ -70,7 +62,6 @@ const Test = () => {
                     </div>
 
                 </div>
-            
             </div>
 
         </div>

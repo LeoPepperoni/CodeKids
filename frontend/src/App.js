@@ -7,6 +7,7 @@ import Signup from './pages/signup'
 import Dashboard from './pages/Dashboard'
 import Learn from './pages/Learn'
 import Test from './pages/Test'
+import Practice from './pages/Practice'
 import ForgotPassword from './pages/forgot-password'
 import About from './pages/About'
 import QuestionContent from './components/QuestionContent'
@@ -48,6 +49,11 @@ function App() {
               path="/forgot-password"
               element={<ForgotPassword />}
             />
+
+            <Route path="/practice/:moduleID/:moduleName" element={<Practice />}>
+              <Route path=":questionNumber" element={<QuestionContent />} />
+            </Route>
+
 
             <Route path="/test/:moduleID/:moduleName" element={<Test />}>
               <Route path=":questionNumber" element={<QuestionContent />} />
