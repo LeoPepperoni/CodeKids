@@ -16,6 +16,7 @@ const QuestionContent = ({ moduleID, position }) => {
     return <div>Question not found</div>;
   }
 
+
   return (
     <div>
       <h1>Question Details</h1>
