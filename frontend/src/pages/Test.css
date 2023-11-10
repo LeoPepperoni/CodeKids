@@ -66,15 +66,9 @@
 
   .button-container {
     flex: 1;
-  }
-
-  .button-container .prev-btn {
-    font-family: JetBrains Mono;
-    width: 100px;
-    margin-bottom: 20px; 
-    border-radius: 30px;
-    margin-right: 10px;
-    margin-top: 10px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
   }
 
   .button-container .submit-btn {

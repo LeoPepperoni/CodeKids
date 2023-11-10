@@ -66,7 +66,6 @@ const Test = () => {
                     </div>
 
                     <div className="button-container">
-                        <button className="prev-btn" onClick={handlePreviousClick}>Previous</button>
                         <button className="submit-btn" onClick={handleNextClick}>Submit</button>
                     </div>
 
