@@ -16,18 +16,18 @@ const questionSchema = new Schema({
         type: Number,
         required: true
     },
-    option1: {
+    answerChoice1: {
         type: String,
         required: true
     },
-    option2: {
+    answerChoice2: {
         type: String,
         required: true
     },
-    option3: {
+    answerChoice3: {
         type: String,
         required: true
-    }
+    },
 
 })
 
