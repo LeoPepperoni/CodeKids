@@ -1,15 +1,29 @@
 import React from 'react';
+import { useGetQuestion } from '../hook/useGetQuestion';
 
 const QuestionContent = ({ questionNumber }) => {
-    // You can fetch the content for the specific question based on questionNumber
-    const questionContent = `Content for Question ${questionNumber}`;
 
+    const { question, isLoading, error } = useGetQuestion(questionNumber);
+
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
+    if (!question) {
+        return <div>Question not found</div>;
+    }
+
+   
     return (
         <div>
-            <h6>Question Box!!!!!!!!!!!!: {questionNumber}.</h6>
-            <div className="question-content">
-                {questionContent}
-            </div>
+            <h1>Question Details</h1>
+            <p>Question: {question.question}</p>
+            <p>Answer: {question.answer}</p>
+            {/* Display other question details as needed */}
         </div>
     );
 };
