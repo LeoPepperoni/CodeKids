@@ -3,7 +3,7 @@ const Question = require('../models/questionModel'); // Correctly require the Qu
 // Function to create a new question in the database
 const createQuestion = async (req, res) => {
     // Destructuring question, answer, module, and answer choices from the request body
-    const { question, answer, module, answerChoice1, answerChoice2, answerChoice3 } = req.body;
+    const { question, answer, module, answerChoice1, answerChoice2, answerChoice3, position } = req.body;
 
     // Trying to add the new question to the database
     try {
@@ -13,7 +13,8 @@ const createQuestion = async (req, res) => {
             module,
             answerChoice1,
             answerChoice2,
-            answerChoice3
+            answerChoice3,
+            position
         });
 
         // Sending the created question as a response with status code 200 (OK)
@@ -79,4 +80,28 @@ const getAllQuestionsFromModule = async (req, res) => {
     }
 };
 
-module.exports = { createQuestion, deleteQuestion, getQuestion, getAllQuestionsFromModule };
+const getQuestionByModule = async (req, res) => {
+    const { moduleId, position } = req.params;
+
+    try {
+        // Convert moduleId and position to numbers
+        const moduleNumber = Number(moduleId);
+        const positionNumber = Number(position);
+
+        // Query the database for the question with the specified moduleId and position
+        const question = await Question.findOne({ module: moduleNumber, position: positionNumber });
+
+        if (!question) {
+            return res.status(404).json({ message: 'Question not found at the specified position in the module' });
+        }
+
+        res.status(200).json(question);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+
+
+
+module.exports = { createQuestion, deleteQuestion, getQuestion, getAllQuestionsFromModule, getQuestionByModule };

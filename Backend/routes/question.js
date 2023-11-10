@@ -1,5 +1,5 @@
 const express = require('express');
-const { createQuestion, deleteQuestion, getQuestion, getAllQuestionsFromModule} = require('../controllers/questionController');
+const { createQuestion, deleteQuestion, getQuestion, getAllQuestionsFromModule, getQuestionByModule} = require('../controllers/questionController');
 
 const router = express.Router();
 
@@ -14,5 +14,8 @@ router.get('/get/:id', getQuestion);
 
 // get question by module
 router.get('/get/module/:moduleName', getAllQuestionsFromModule)
+
+// Get question by module route
+router.get('/get/:moduleId/:position', getQuestionByModule);
 
 module.exports = router;
