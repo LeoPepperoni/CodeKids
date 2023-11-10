@@ -15,7 +15,25 @@ const questionSchema = new Schema({
     module: {
         type: Number,
         required: true
+    },
+    answerChoice1: {
+        type: String,
+        required: true
+    },
+    answerChoice2: {
+        type: String,
+        required: true
+    },
+    answerChoice3: {
+        type: String,
+        required: true
+    },
+
+    position: {
+        type: Number,
+        required: true
     }
+
 })
 
 module.exports = mongoose.model('Question', questionSchema)

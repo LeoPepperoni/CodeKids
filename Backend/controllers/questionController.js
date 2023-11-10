@@ -2,16 +2,24 @@ const Question = require('../models/questionModel'); // Correctly require the Qu
 
 // Function to create a new question in the database
 const createQuestion = async (req, res) => {
-    // Destructuring question, answer, and difficulty from the request body
-    const { question, answer, module } = req.body;
+    // Destructuring question, answer, module, and answer choices from the request body
+    const { question, answer, module, answerChoice1, answerChoice2, answerChoice3 } = req.body;
 
     // Trying to add the new question to the database
     try {
-        const newQuestion = await Question.create({ question, answer, module });
+        const newQuestion = await Question.create({
+            question,
+            answer,
+            module,
+            answerChoice1,
+            answerChoice2,
+            answerChoice3
+        });
+
         // Sending the created question as a response with status code 200 (OK)
         res.status(200).json(newQuestion);
     } catch (error) {
-        // In case of an error (e.g., validation error), sending an error response with status code 400 (Bad Request)
+        // In case of an error, sending an error response with status code 400 (Bad Request)
         res.status(400).json({ error: error.message });
     }
 };
@@ -56,5 +64,19 @@ const getQuestion = async (req, res) => {
     }
 };
 
-module.exports = { createQuestion, deleteQuestion, getQuestion };
+// Function to get all questions from a specific module
+const getAllQuestionsFromModule = async (req, res) => {
+    const { moduleName } = req.params; // Assuming you pass the module name as a URL parameter
 
+    try {
+        const questions = await Question.find({ module: moduleName });
+        if (questions.length === 0) {
+            return res.status(404).json({ message: 'No questions found for this module' });
+        }
+        res.status(200).json(questions);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+};
+
+module.exports = { createQuestion, deleteQuestion, getQuestion, getAllQuestionsFromModule };
