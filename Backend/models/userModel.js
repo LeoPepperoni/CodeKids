@@ -27,11 +27,7 @@ const userSchema = new Schema({
 // static signup method
 userSchema.statics.signup = async function (firstName, lastName, email, password) {
 
-    if (!firstName || !password) {
-        throw Error('All fields must be filled')
-    }
-
-    if (!email || !password) {
+    if (!firstName || !lastName || !email || !password) {
         throw Error('All fields must be filled')
     }
 
