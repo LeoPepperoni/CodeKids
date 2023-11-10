@@ -12,7 +12,7 @@ export const useGetQuestion = (moduleID, position) => {
         setError(null);
 
         try {
-            const response = await axios.get(`/api/question/${moduleID}/${position}`);
+            const response = await axios.get(`/api/question/get/${moduleID}/${position}`);
             setQuestion(response.data);
             setIsLoading(false);
         } catch (error) {
