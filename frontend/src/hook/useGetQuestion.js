@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios'; // Import Axios for API requests
 
-export const useGetQuestion = (questionId) => {
+export const useGetQuestion = (moduleID, position) => {
     const [question, setQuestion] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -12,7 +12,7 @@ export const useGetQuestion = (questionId) => {
         setError(null);
 
         try {
-            const response = await axios.get(`/api/questions/${questionId}`);
+            const response = await axios.get(`/api/questions/${moduleID}/${position}`);
             setQuestion(response.data);
             setIsLoading(false);
         } catch (error) {
@@ -23,11 +23,14 @@ export const useGetQuestion = (questionId) => {
 
     // Use useEffect to fetch the question when the component mounts or when questionId changes
     useEffect(() => {
-        if (questionId) {
+        if (moduleID && position) {
             fetchQuestion();
         }
-    }, [questionId]);
+    }, [moduleID, position]);
 
     return { question, isLoading, error };
 };
+
+export default useGetQuestion;
+
 

@@ -54,7 +54,7 @@ const Test = () => {
 
                     <div className="question-content">
                         {/* Render the QuestionContent component for the current question */}
-                        <QuestionContent questionNumber={currentQuestion} />
+                        <QuestionContent moduleID={moduleID} position={currentQuestion} />
                     </div>
 
                     <div className="button-container">
