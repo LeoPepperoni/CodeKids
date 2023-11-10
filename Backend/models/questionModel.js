@@ -29,6 +29,11 @@ const questionSchema = new Schema({
         required: true
     },
 
+    position: {
+        type: Number,
+        required: true
+    }
+
 })
 
 module.exports = mongoose.model('Question', questionSchema)
