@@ -20,7 +20,7 @@ const QuestionContent = ({ moduleID, position }) => {
   return (
     <div>
       <h1>Question Details</h1>
-      <p className="question-txt">Question: {question.question}</p>
+      <p className="question-txt">{question.question}</p>
 
       <div className="answer-choices">
         <button className="answer-choice-btn">{question.answerChoice1}</button>
@@ -28,7 +28,6 @@ const QuestionContent = ({ moduleID, position }) => {
         <button className="answer-choice-btn">{question.answerChoice2}</button>
         <button className="answer-choice-btn">{question.answerChoice3}</button>
       </div>
-      
       
     </div>
   );
