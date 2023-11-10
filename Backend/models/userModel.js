@@ -31,10 +31,10 @@ userSchema.statics.signup = async function (firstName, lastName, email, password
         throw Error('All fields must be filled')
     }
 
-    // validation
     if (!email || !password) {
         throw Error('All fields must be filled')
     }
+
     if (!validator.isEmail(email)) {
         throw Error('Email not valid')
     }
