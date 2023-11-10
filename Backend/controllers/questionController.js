@@ -9,15 +9,7 @@ const createQuestion = async (req, res) => {
     // Trying to add the new question to the database
     try {
         const newQuestion = await Question.create({ question, answer, module, answerChoice1, answerChoice2, answerChoice3 });
-
-    const { question, answer, module, option1, option2, option3 } = req.body;
-
-    // Trying to add the new question to the database
-    try {
-        const newQuestion = await Question.create({ question, answer, module, option1, option2, option3 });
-
-        // Sending the created question as a response with status code 200 (OK)
-        res.status(200).json(newQuestion);
+        
     } catch (error) {
         // In case of an error (e.g., validation error), sending an error response with status code 400 (Bad Request)
         res.status(400).json({ error: error.message });
