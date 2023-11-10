@@ -10,7 +10,7 @@ const Learn = () => {
     return (
         <div>
             <div class="path">
-                <h3>Learn: Module {moduleID}: {decodeURIComponent(moduleName)}</h3>
+                <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Learn</h4>
             </div>
 
             <div class="supp-material-list">

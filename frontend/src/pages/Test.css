@@ -1,16 +1,16 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
   
-    .path {
-        font-family: JetBrains Mono;
-        color: white;
-    }
+  .path {
+    font-family: JetBrains Mono;
+    color: white;
+  }
 
-    h3 {
-        font-family: JetBrains Mono;
-        color: white;
-    }
+  h3 {
+    font-family: JetBrains Mono;
+    color: white;
+  }
 
-  .practice-div {
+  .test-div {
     display: flex;
     flex-direction: row;
     font-family: JetBrains Mono;

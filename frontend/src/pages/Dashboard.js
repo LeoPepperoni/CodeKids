@@ -27,7 +27,7 @@ const Dashboard = () => {
                   <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
                 </Link>
 
-                <Link to={'practice/${module.id}/${encodeURIComponenet(module.name)}'}>
+                <Link to={`/practice/${module.id}/${encodeURIComponent(module.name)}`}>
                   <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
                 </Link>
 
