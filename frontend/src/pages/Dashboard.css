@@ -11,25 +11,39 @@ body {
 
 }
 
+.module-title {
+    color: black;
+}
+
+.module-list {
+    display: flex;
+    flex-direction: column;
+}
+
 .module-component {
     background-color: white;
     width: auto;
     height: auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-right: auto; 
-    margin-top: 30px;
+    margin-top: 10px;
     border-radius: 30px;
     font-family: JetBrains Mono;
     margin-left: auto;
-
+    justify-content: space-between; 
+    padding: 15px;
+    align-items: center;
 }
 
 .module-component button{
     font-family: JetBrains Mono;
     width: 100px;
-    margin-bottom: 20px; 
     border-radius: 30px;
     margin-right: 10px;
-    margin-top: 10px;
+}
+
+#module-fraction {
+    font-size: 20px;
+    margin-right: 30px;
 }

@@ -1,0 +1,81 @@
+@import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
+  
+    .path {
+        font-family: JetBrains Mono;
+        color: white;
+    }
+
+    h3 {
+        font-family: JetBrains Mono;
+        color: white;
+    }
+
+  .practice-div {
+    display: flex;
+    flex-direction: row;
+    font-family: JetBrains Mono;
+    height: 70vh;
+  }
+
+  .question-list {
+    flex: 1; /* Adjust the width as needed */
+    margin-top: 10px;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  li {
+    padding: 5px;
+    color: white;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  .question-link:hover {
+    color: green; /* Change the color as needed */
+  }
+
+
+  .question-link {
+    color: white; /* Change the color as needed */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  /* Style for the right section (question-box) */
+  .question-box {
+    display: flex;
+    flex-direction: column;
+    flex: 3; /* Adjust the width as needed */
+    margin-top: 20px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 30px;
+  }
+
+  .question-box .button-container {
+    display: flex;
+    justify-content: space-between; /* Distribute space between elements */
+    align-items: flex-end; /* Align items to the bottom */
+  }
+
+  .question-content {
+    flex: 10;
+  }
+
+  .button-container {
+    flex: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .button-container .submit-btn {
+    font-family: JetBrains Mono;
+    width: 100px;
+    margin-bottom: 20px; 
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
