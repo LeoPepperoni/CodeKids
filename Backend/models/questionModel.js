@@ -29,6 +29,11 @@ const questionSchema = new Schema({
         required: true
     },
 
+    hint: {
+        type: String,
+        required: true
+    },
+
     position: {
         type: Number,
         required: true
