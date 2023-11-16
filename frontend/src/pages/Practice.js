@@ -41,17 +41,17 @@ const Practice = () => {
  
     return (
         <div>
-            <div class="path">
+            <div className="path">
                 <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Practice</h4>
             </div>
 
-            <div class="practice-div">
+            <div className="practice-div">
                 <div className="practice-content">
                     {/* Render the PracticeContent component for the current question */}
-                    <PracticeContent questionNumber={currentQuestion} />
+                    <PracticeContent moduleID={moduleID} position={currentQuestion} />
                 </div>
 
-                <div className="button-container">
+                <div className="button-container-back-next">
                     <button className="back-btn" onClick={handleBackClick}>Back</button>
                     <button className="next-btn" onClick={handleNextClick}>Next</button>
                 </div>
