@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import './forgot-password.css';
 import { Link } from 'react-router-dom'; 
 
 const ForgotPassword = () => {
@@ -19,17 +19,19 @@ const ForgotPassword = () => {
 
     return (
         <div className="forgot-password">
-            <h3>Forgot Password</h3>
-            <form onSubmit={handleForgotPassword}>
-                <label>Email</label>
-                <input
-                    type="email"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    placeholder="Enter your email address"
-                />
-                <button>Reset Password</button>
-            </form>
+            <h3>Reset Your Password</h3>
+            <div className="reset-content">
+                <form onSubmit={handleForgotPassword}>
+                    <label className="email-label">Email:</label>
+                    <input
+                        type="email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                        placeholder="Enter your email address"
+                    />
+                    <button className="reset-password">Reset</button>
+                </form>
+            </div>
             {message && <div className="message">{message}</div>}
         </div>
     );

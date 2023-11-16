@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className="container">
                 {user && (
                     <div>
-                        <button className="dropdown-btn">Temp drop down button</button>
+                        <button className="dropdown-btn">"Drop Down"</button>
                     </div>
                 )}
                 {!user && (
