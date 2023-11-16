@@ -17,6 +17,11 @@ const Navbar = () => {
     return (
         <header>
             <div className="container">
+                {user && (
+                    <div>
+                        <button className="dropdown-btn">Temp drop down button</button>
+                    </div>
+                )}
                 {!user && (
                     <div>
                         <Link to="/About">
@@ -31,7 +36,6 @@ const Navbar = () => {
                 <nav>
                     {user && (
                         <div>
-                            <span>Hello, {user.firstName}</span>
                             <button onClick={handleClick}>Log out</button>
                         </div>
                     )}
