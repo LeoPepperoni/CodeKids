@@ -1,10 +1,5 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
 
-body {
-    background-color: #3A0CA3;
-    position: relative;
-}
-
 .login {
     background-color: white;
     width: 600px;

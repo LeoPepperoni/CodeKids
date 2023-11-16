@@ -1,15 +1,15 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
 
-.box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-top: 50px;
-    font-family: JetBrains Mono;
+.main-branding {
+  display: flex;
+  padding-left: 50px;
+  max-width: 800px;
+  padding-top: 25px;
 }
 
-.box div {
-    background-color: white;
-    width: 600px;
+.branding-text {
+  color: #FFF;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-weight: 600;
+  font-size: 6.5rem;
 }

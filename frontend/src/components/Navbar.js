@@ -25,14 +25,11 @@ const Navbar = () => {
                 {!user && (
                     <div>
                         <Link to="/About">
-                            <button className="about-btn">About</button>
+                            <button className="branded-button">About Us</button>
                         </Link>
                         
                     </div>
                 )}
-                <Link to="/">
-                    <h1>Code Kids</h1>
-                </Link>
                 <nav>
                     {user && (
                         <div>
@@ -41,10 +38,10 @@ const Navbar = () => {
                     )}
                     {!user && (
                         <div>
-                            <button className="login-btn">
+                            <button className="branded-button">
                                 <Link to="/login">Login</Link>
                             </button>
-                            <button className="signup-btn">
+                            <button className="branded-button">
                                 <Link to="/signup">Signup</Link>
                             </button>
                         </div>

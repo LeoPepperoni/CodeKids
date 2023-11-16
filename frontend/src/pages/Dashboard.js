@@ -15,7 +15,7 @@ const Dashboard = () => {
 
 
   return (
-    <body>
+    <div>
       <div className="module-list">
         <ul>
           {modules.map((module) => (
@@ -40,7 +40,7 @@ const Dashboard = () => {
           ))}
         </ul>
       </div>
-    </body>
+    </div>
   );
 };
 

@@ -19,7 +19,7 @@ const Login = () => {
     }
 
     return (
-        <body>
+        <div>
             <form className="login" onSubmit={handleSubmit}>
                 <h3>Login to your existing account</h3>
 
@@ -53,7 +53,7 @@ const Login = () => {
                     <Link to="/forgot-password">Forgot password?</Link>
                 </label>
             </form>
-        </body>
+        </div>
     )
 }
 
