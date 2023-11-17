@@ -17,8 +17,8 @@ const Signup = () => {
     }
 
     return (
-        <body>
-            <form className="signup" onSubmit={handleSubmit}>
+        <div>
+            <form className="signup branded-shadow" onSubmit={handleSubmit}>
                 <h3>Sign Up</h3>
 
                 <label>First Name:</label>
@@ -59,7 +59,7 @@ const Signup = () => {
                 <label className="message">Already have an account?
                 <Link to="/login">Login Here</Link></label>
              </form>
-        </body>
+        </div>
     )
 }
 

@@ -20,11 +20,12 @@ const Login = () => {
 
     return (
         <div>
-            <form className="login" onSubmit={handleSubmit}>
-                <h3>Login to your existing account</h3>
+            <form className="login branded-shadow" onSubmit={handleSubmit}>
+                <h3 className="branded-header">Welcome Back to CodeKids!</h3>
 
-                <label>Email</label>
+                <label className="branded-text">Email:</label>
                 <input
+                    className="branded-shadow branded-text"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
@@ -32,6 +33,7 @@ const Login = () => {
                 />
                 <label>Password:</label>
                 <input
+                    className="branded-shadow"
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
@@ -44,12 +46,12 @@ const Login = () => {
                 {/* Display error message if there is an error */}
                 {error && <div className="error">{error}</div>}
 
-                <label className="message">Don't have an account? 
-                    <Link to="/signup">Signup Here</Link>
+                <label>Don't have an account? 
+                    <Link to="/signup"> Signup Here</Link>
                 </label>
 
                 {/* Link to reset password modal */} 
-                <label className="message">
+                <label >
                     <Link to="/forgot-password">Forgot password?</Link>
                 </label>
             </form>

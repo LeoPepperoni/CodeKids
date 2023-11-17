@@ -12,18 +12,11 @@
     border-radius: 30px;
 }
 
-.login h3 {
-    display: flex;
-    align-self: flex-start ;
-    margin-left: 100px;
-    font-family: JetBrains Mono;
-}
-
 .login label {
     display: flex;
     align-self: flex-start ;
     margin-left: 100px;
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     margin-top: 10px;
 }
 
@@ -37,17 +30,31 @@
     background: #D9D9D9;
     border-radius: 30px;
     border-color: white;
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     text-align: left;
     padding-left: 10px;
 
 }
 
+.branded-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
+.branded-text {
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+.branded-header {
+  display: flex;
+  align-self: start;
+  margin-left: 100px;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
 .login button {
     width: 300px;
     align-self: center;
     margin-bottom: 20px; 
     border-radius: 30px;
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
+
