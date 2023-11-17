@@ -8,11 +8,11 @@ import QuestionContent from '../components/QuestionContent'; // Import the Quest
 
 const Test = () => {
     // Use the useParams hook to access the moduleId parameter
-    const { moduleID, moduleName, questionNumber } = useParams();
+    const { moduleID, moduleName, questionNumber ="1" } = useParams();
 
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
-
+ 
     console.log("test questionNumber:", questionNumber);
 
     // Total number of questions
@@ -60,7 +60,7 @@ const Test = () => {
 
         
                     <div className="question-div">
-                        <div className="question-num">{questionNumber}</div>
+                        <div className="question-num">{questionNumber}.</div>
 
                         <div className="question-content">
                             {/* Render the QuestionContent component for the current question */}
