@@ -14,6 +14,8 @@ const Practice = () => {
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
 
+    console.log("practice questionNumber:", questionNumber);
+
     // Total number of questions
     const questionsCount = 10; 
    
