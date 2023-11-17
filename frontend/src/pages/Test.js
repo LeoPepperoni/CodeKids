@@ -29,6 +29,12 @@ const Test = () => {
         }
     };
 
+    const handleBackClick = () => {
+        if (currentQuestion > 1) {
+            setCurrentQuestion(currentQuestion - 1);
+        }
+    };
+
     return (
         <div>
             <div class="path">
@@ -50,18 +56,19 @@ const Test = () => {
                     </ul>
                 </div>
 
-                <div class="question-box">
+        
+                    <div className="question-div">
+                        <div className="question-content">
+                            {/* Render the QuestionContent component for the current question */}
+                            <QuestionContent moduleID={moduleID} position={currentQuestion} />
+                        </div>
 
-                    <div className="question-content">
-                        {/* Render the QuestionContent component for the current question */}
-                        <QuestionContent moduleID={moduleID} position={currentQuestion} />
+                        <div className="test-button-container">
+                            <button className="test-back-btn" onClick={handleBackClick}>Back</button>
+                            <button className="test-next-btn" onClick={handleNextClick}>Next</button>
+                        </div>
                     </div>
 
-                    <div className="button-container">
-                        <button className="submit-btn" onClick={handleNextClick}>Submit</button>
-                    </div>
-
-                </div>
             </div>
 
         </div>

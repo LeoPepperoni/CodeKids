@@ -46,6 +46,10 @@ const Practice = () => {
             </div>
 
             <div className="practice-div">
+                <div className="hint-btn-container">
+                    <button className="hint-btn">Reveal Hint</button>
+                </div>
+
                 <div className="practice-content">
                     {/* Render the PracticeContent component for the current question */}
                     <PracticeContent moduleID={moduleID} position={currentQuestion} />

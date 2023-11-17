@@ -43,39 +43,40 @@
     text-decoration: none; /* Remove underline */
   }
   
-  /* Style for the right section (question-box) */
-  .question-box {
-    display: flex;
-    flex-direction: column;
-    flex: 3; /* Adjust the width as needed */
-    margin-top: 20px;
-    padding: 10px;
+
+  .question-div {
+    margin-top: 10px;
     background-color: white;
     border-radius: 30px;
-  }
-
-  .question-box .button-container {
+    padding: 20px; 
+    width: 60%; 
     display: flex;
-    justify-content: space-between; /* Distribute space between elements */
-    align-items: flex-end; /* Align items to the bottom */
+    margin-left: auto;
+    margin-right: 30px;
+    flex-direction: column;
+    height: 60vh;
   }
 
   .question-content {
-    flex: 10;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px; 
+    margin-bottom: 10px; 
   }
 
-  .button-container {
-    flex: 1;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  .test-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
   }
 
-  .button-container .submit-btn {
+  .test-back-btn {
     font-family: JetBrains Mono;
     width: 100px;
-    margin-bottom: 20px; 
-    border-radius: 30px;
-    margin-right: 10px;
-    margin-top: 10px;
+  }
+
+  .test-next-btn {
+    font-family: JetBrains Mono;
+    width: 100px;
   }
