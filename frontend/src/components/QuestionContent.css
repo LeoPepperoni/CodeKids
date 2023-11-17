@@ -1,8 +1,6 @@
 .question-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text within the container */
 }
 
 
@@ -19,7 +17,7 @@
 
 .answer-choice-btn {
     width: 200px;
-    margin: 10px 10px;
+    margin: 2px;
     padding: 5px 7px;
 }
 
