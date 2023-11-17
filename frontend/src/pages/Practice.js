@@ -47,6 +47,7 @@ const Practice = () => {
 
             <div className="practice-div">
                 <div className="hint-btn-container">
+                    <div className="question-num"> {decodeURIComponent(questionNumber)}.</div>
                     <button className="hint-btn">Reveal Hint</button>
                 </div>
 
