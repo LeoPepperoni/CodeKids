@@ -40,6 +40,11 @@ const Dashboard = () => {
           ))}
         </ul>
       </div>
+
+      <div className="all-btn-container">
+        <button className="practice-all-btn">Practice All</button>
+        <button className="test-all-btn">Test All</button>
+      </div>
     </div>
   );
 };

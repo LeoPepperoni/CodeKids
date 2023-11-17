@@ -38,7 +38,24 @@
     margin-right: 10px;
 }
 
-#module-fraction {
-    font-size: 20px;
-    margin-right: 30px;
+.test-all-btn {
+    font-family: JetBrains Mono;
+    width: 150px;
+    border-radius: 30px;
+    margin-right: 10px;
 }
+
+.all-btn-container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end; 
+    margin-right: 20px;
+}
+
+.practice-all-btn {
+    font-family: JetBrains Mono;
+    width: 150px;
+    border-radius: 30px;
+    margin-right: 10px;
+}
+
