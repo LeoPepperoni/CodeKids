@@ -19,15 +19,16 @@ const QuestionContent = ({ moduleID, position }) => {
 
   return (
     <div>
-      <p className="question-txt">{question.question}</p>
+      <div className="question-container">
+        <p className="question-txt">{question.question}</p>
 
-      <div className="answer-choices">
-        <button className="answer-choice-btn">{question.answerChoice1}</button>
-        <button className="answer-choice-btn">{question.answer}</button>
-        <button className="answer-choice-btn">{question.answerChoice2}</button>
-        <button className="answer-choice-btn">{question.answerChoice3}</button>
+        <div className="answer-choices">
+          <button className="answer-choice-btn">{question.answerChoice1}</button>
+          <button className="answer-choice-btn">{question.answer}</button>
+          <button className="answer-choice-btn">{question.answerChoice2}</button>
+          <button className="answer-choice-btn">{question.answerChoice3}</button>
+        </div>
       </div>
-      
     </div>
   );
 };
