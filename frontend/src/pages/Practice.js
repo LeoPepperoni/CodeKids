@@ -9,7 +9,7 @@ import PracticeContent from '../components/PracticeContent';
 const Practice = () => {
 
     // Use the useParams hook to access the moduleId parameter
-    const { moduleID, moduleName, questionNumber } = useParams();
+    const { moduleID, moduleName, questionNumber = "1" } = useParams();
 
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
@@ -49,7 +49,7 @@ const Practice = () => {
 
             <div className="practice-div">
                 <div className="hint-btn-container">
-                    <div className="question-num"> {questionNumber}.</div>
+                    <div className="question-num">{questionNumber}.</div>
                     <button className="hint-btn">Reveal Hint</button>
                 </div>
 

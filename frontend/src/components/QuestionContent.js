@@ -19,7 +19,6 @@ const QuestionContent = ({ moduleID, position }) => {
 
   return (
     <div>
-      <h1>Question Details</h1>
       <p className="question-txt">{question.question}</p>
 
       <div className="answer-choices">
