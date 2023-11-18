@@ -22,7 +22,7 @@ const Navbar = () => {
     return (
         <div>
             <div className="container">
-                {!user && (
+                {user && (
                     <div>
                       <div class="hamburger-menu">
                         <input id="menu-toggle" type="checkbox" />
@@ -38,7 +38,7 @@ const Navbar = () => {
                       </div>
                     </div>
                 )}
-                {user && (
+                {!user && (
                     <div>
                         <Link to="/About">
                             <button className="branded-button">About Us</button>
