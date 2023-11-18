@@ -24,15 +24,15 @@ const Dashboard = () => {
               <div className="module-buttons">
 
                 <Link to={`/learn/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-btn" id={`mod${module.id}-learn-btn`}>Learn</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-learn-btn`}>Learn</button>
                 </Link>
 
                 <Link to={`/practice/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Practice</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>Practice</button>
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="practice-btn" id={`mod${module.id}-practice-btn`}>Test</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>Test</button>
                 </Link>
 
               </div>

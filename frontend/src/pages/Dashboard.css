@@ -31,12 +31,7 @@
     align-items: center;
 }
 
-.module-component button{
-    font-family: JetBrains Mono;
-    width: 100px;
-    border-radius: 30px;
-    margin-right: 10px;
-}
+
 
 .test-all-btn {
     font-family: JetBrains Mono;
@@ -61,4 +56,27 @@
 .branded-shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.learn-button {
+  background: lightgray;
+  color: var(--primary);
+  border: 2px solid lightgray;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, Arial, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  cursor: pointer;
+  font-size: 1em;
+  color: #000;
+  width: 100px;
+  margin-right: 10px;
+  transition: border-radius 0.4s, background-color 0.4s;
+}
+
+.learn-button:hover {
+  border-radius: 30px;
+  background-color: #3a0ca3;
+  border: 2px solid #3a0ca3;;
+  -webkit-text-fill-color: #fff;
+}
+
 

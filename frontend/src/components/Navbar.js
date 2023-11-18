@@ -14,15 +14,31 @@ const Navbar = () => {
         logout()
     }
 
+    const menuClick = () => {
+      const menu = document.getElementById("menu-toggle");
+      menu.click();
+    }
+
     return (
-        <header>
+        <div>
             <div className="container">
-                {user && (
+                {!user && (
                     <div>
-                        <button className="dropdown-btn branded-button">"Drop Down"</button>
+                      <div class="hamburger-menu">
+                        <input id="menu-toggle" type="checkbox" />
+                        <label class="menu-btn" for="menu-toggle">
+                          <span></span>
+                        </label>
+
+                        <ul class="menu-box">
+                          <li><Link to="/"><div className="menu-item" onClick={menuClick}>Home</div></Link></li>
+                          <li><Link to="/about"><div className="menu-item" onClick={menuClick}>About</div></Link></li>
+                          <li><Link to="/dashboard"><div className="menu-item" onClick={menuClick}>Modules</div></Link></li>
+                        </ul>
+                      </div>
                     </div>
                 )}
-                {!user && (
+                {user && (
                     <div>
                         <Link to="/About">
                             <button className="branded-button">About Us</button>
@@ -33,7 +49,7 @@ const Navbar = () => {
                 <nav>
                     {user && (
                         <div>
-                            <button onClick={handleClick}>Log out</button>
+                            <button className="branded-button" onClick={handleClick}>Log out</button>
                         </div>
                     )}
                     {!user && (
@@ -49,7 +65,7 @@ const Navbar = () => {
                     )}
                 </nav>
             </div>
-        </header>
+        </div>
     )
 }
 
