@@ -47,7 +47,7 @@ const Practice = () => {
                 <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Practice</h4>
             </div>
 
-            <div className="practice-div">
+            <div className="practice-div branded-shadow">
                 <div className="hint-btn-container">
                     <div className="question-num">{questionNumber}.</div>
                     <button className="hint-btn">Reveal Hint</button>

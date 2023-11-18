@@ -17,7 +17,7 @@
 
 .module-component {
     background-color: white;
-    width: auto;
+    max-width: 1000px;
     height: auto;
     display: flex;
     flex-direction: row;
@@ -47,8 +47,7 @@
 
 .all-btn-container {
     display: flex;
-    align-items: flex-end;
-    justify-content: flex-end; 
+    justify-content: center; 
     margin-right: 20px;
 }
 
@@ -57,5 +56,9 @@
     width: 150px;
     border-radius: 30px;
     margin-right: 10px;
+}
+
+.branded-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 

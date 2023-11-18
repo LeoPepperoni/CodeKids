@@ -19,7 +19,7 @@ const Dashboard = () => {
       <div className="module-list">
         <ul>
           {modules.map((module) => (
-            <ul className="module-component" key={module.id}>
+            <ul className="module-component branded-shadow" key={module.id}>
               <h3 className="module-title">Module {module.id}: {module.name}</h3>
               <div className="module-buttons">
 
@@ -39,11 +39,10 @@ const Dashboard = () => {
             </ul>
           ))}
         </ul>
-      </div>
-
-      <div className="all-btn-container">
-        <button className="practice-all-btn">Practice All</button>
-        <button className="test-all-btn">Test All</button>
+        <div className="all-btn-container">
+          <button className="practice-all-btn">Practice All</button>
+          <button className="test-all-btn">Test All</button>
+        </div>
       </div>
     </div>
   );

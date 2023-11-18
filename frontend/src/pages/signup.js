@@ -23,6 +23,7 @@ const Signup = () => {
 
                 <label>First Name:</label>
                 <input
+                    className="branded-input"
                     type="text" 
                     onChange={(e) => setFirstName(e.target.value)}
                     value={firstName}
@@ -31,6 +32,7 @@ const Signup = () => {
 
                 <label>Last Name:</label>
                 <input
+                    className="branded-input"
                     type="text" 
                     onChange={(e) => setLastName(e.target.value)}
                     value={lastName}
@@ -39,6 +41,7 @@ const Signup = () => {
 
                 <label>Email address:</label>
                 <input
+                    className="branded-input"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
@@ -47,6 +50,7 @@ const Signup = () => {
                 />
                 <label>Password:</label>
                 <input
+                    className="branded-input"
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}

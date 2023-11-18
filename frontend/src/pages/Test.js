@@ -59,7 +59,7 @@ const Test = () => {
                 </div>
 
         
-                    <div className="question-div">
+                    <div className="question-div branded-shadow">
                         <div className="question-num">{questionNumber}.</div>
 
                         <div className="question-content">

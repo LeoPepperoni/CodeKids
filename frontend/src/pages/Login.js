@@ -25,7 +25,7 @@ const Login = () => {
 
                 <label className="branded-text">Email:</label>
                 <input
-                    className="branded-shadow branded-text"
+                    className="branded-shadow branded-input"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
@@ -33,7 +33,7 @@ const Login = () => {
                 />
                 <label>Password:</label>
                 <input
-                    className="branded-shadow"
+                    className="branded-shadow branded-input"
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
