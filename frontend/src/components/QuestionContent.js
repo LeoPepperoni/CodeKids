@@ -19,7 +19,7 @@ const QuestionContent = ({ moduleID, position }) => {
 
   return (
     <div>
-      <div className="question-container branded-shadow">
+      <div className="question-container">
         <p className="question-txt">{question.question}</p>
 
         <div className="answer-choices">
