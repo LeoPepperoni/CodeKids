@@ -19,49 +19,50 @@ const Signup = () => {
     return (
         <div>
             <form className="signup branded-shadow" onSubmit={handleSubmit}>
-                <h3>Sign Up</h3>
+                <h3 className="branded-header">Create An Account</h3>
 
-                <label>First Name:</label>
+                <label className="branded-text">First Name:</label>
                 <input
-                    className="branded-input"
+                    className="branded-input branded-shadow"
                     type="text" 
                     onChange={(e) => setFirstName(e.target.value)}
                     value={firstName}
                     placeholder="Enter First Name"
                 />
 
-                <label>Last Name:</label>
+                <label className="branded-text">Last Name:</label>
                 <input
-                    className="branded-input"
+                    className="branded-input branded-shadow"
                     type="text" 
                     onChange={(e) => setLastName(e.target.value)}
                     value={lastName}
                     placeholder="Enter Last Name"
                 />
 
-                <label>Email address:</label>
+                <label className="branded-text">Email address:</label>
                 <input
-                    className="branded-input"
+                    className="branded-input branded-shadow"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
                     placeholder="Enter Email here"
 
                 />
-                <label>Password:</label>
+                <label className="branded-text">Password:</label>
                 <input
-                    className="branded-input"
+                    className="branded-input branded-shadow"
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
                     placeholder="Enter Password here"
                 />
 
-                <button disabled={isLoading}>Sign up</button>
+                <button disabled={isLoading} className="branded-long-button">Sign up</button>
                 {error && <div className="error">{error}</div>}
 
-                <label className="message">Already have an account?
-                <Link to="/login">Login Here</Link></label>
+                <div className="login-extras">Already have an account?
+                  &nbsp;<Link className="link-text" to="/login">Login Here</Link>
+                </div>
              </form>
         </div>
     )

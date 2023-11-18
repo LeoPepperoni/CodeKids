@@ -42,18 +42,18 @@ const Login = () => {
                 />
 
                 {/* Submit button with disabled attribute while loading */}
-                <button disabled={isLoading}>Log in</button>
+                <button className="branded-long-button" disabled={isLoading}>Log in</button>
                 {/* Display error message if there is an error */}
                 {error && <div className="error">{error}</div>}
 
-                <label>Don't have an account? 
-                    <Link to="/signup"> Signup Here</Link>
-                </label>
+                <div className="login-extras">Don't have an account? 
+                    &nbsp; <Link className="link-text" to="/signup"> Signup Here</Link>
+                </div>
 
                 {/* Link to reset password modal */} 
-                <label >
-                    <Link to="/forgot-password">Forgot password?</Link>
-                </label>
+                <div className="login-extras">
+                    <Link className="link-text" to="/forgot-password">Forgot password?</Link>
+                </div>
             </form>
         </div>
     )

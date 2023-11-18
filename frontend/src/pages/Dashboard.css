@@ -59,7 +59,6 @@
 
 .learn-button {
   background: lightgray;
-  color: var(--primary);
   border: 2px solid lightgray;
   padding: 6px 10px;
   border-radius: 10px;

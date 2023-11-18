@@ -13,11 +13,20 @@
 }
 
 .login label {
-    display: flex;
     align-self: flex-start ;
     margin-left: 100px;
     font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     margin-top: 10px;
+}
+
+.login-extras {
+  display: flex;
+  justify-content: center;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  margin-top: 10px;
+}
+.link-text:hover {
+  color:rgb(42, 69, 164);
 }
 
 .branded-input {
@@ -33,7 +42,6 @@
     font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     text-align: left;
     padding-left: 10px;
-
 }
 
 .branded-shadow {
@@ -50,11 +58,25 @@
   margin-left: 100px;
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
-.login button {
-    width: 300px;
+
+.branded-long-button {
+    background: lightgray;
+    border: 2px solid lightgray;
+    width: 250px;
+    height: 30px;
+    border: none;
     align-self: center;
     margin-bottom: 20px; 
-    border-radius: 30px;
+    border-radius: 10px;
+    color: #000;
+    font-weight: 700;
     font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    transition: border-radius 0.4s, background-color 0.4s;
 }
 
+.branded-long-button:hover {
+  border-radius: 30px;
+  background-color: #3a0ca3;
+  border: 2px solid #3a0ca3;;
+  -webkit-text-fill-color: #fff;
+}
