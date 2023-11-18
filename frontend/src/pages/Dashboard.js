@@ -40,8 +40,13 @@ const Dashboard = () => {
           ))}
         </ul>
         <div className="all-btn-container">
-          <button className="branded-long-button">Practice All</button>
-          <button className="branded-long-button">Test All</button>
+          <div className="long-btn-1">
+            <button className="branded-long-button">Practice All</button>
+          </div>
+          <div className="long-btn-2">
+            <button className="branded-long-button">Test All</button>
+          </div>
+          
         </div>
       </div>
     </div>

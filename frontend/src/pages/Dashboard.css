@@ -31,6 +31,13 @@
     align-items: center;
 }
 
+.long-btn-1 {
+  padding-right: 10px;
+}
+
+.long-btn-2 {
+  padding-left: 10px;
+}
 
 
 .test-all-btn {
