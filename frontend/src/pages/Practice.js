@@ -50,7 +50,7 @@ const Practice = () => {
             <div className="practice-div branded-shadow">
                 <div className="hint-btn-container">
                     <div className="question-num">{questionNumber}.</div>
-                    <button className="hint-btn">Reveal Hint</button>
+                    <button className="branded-long-button branded-shadow hint-btn">Hint 💡</button>
                 </div>
 
                 <div className="practice-content">
@@ -59,8 +59,8 @@ const Practice = () => {
                 </div>
 
                 <div className="button-container-back-next">
-                    <button className="back-btn" onClick={handleBackClick}>Back</button>
-                    <button className="next-btn" onClick={handleNextClick}>Next</button>
+                    <button className="branded-long-button branded-shadow back-btn" onClick={handleBackClick}>Back</button>
+                    <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
                 </div>
             </div>
         </div>

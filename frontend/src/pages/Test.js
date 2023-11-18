@@ -39,12 +39,9 @@ const Test = () => {
 
     return (
         <div>
-            <div class="path">
-                <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
-            </div>
-
+            <h4 className="question-header">Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
+            
             <div class="test-div">
-
                 <div class="question-list">
                     <h3>Questions:</h3>
                     <ul>
@@ -68,8 +65,8 @@ const Test = () => {
                         </div>
 
                         <div className="test-button-container">
-                            <button className="test-back-btn" onClick={handleBackClick}>Back</button>
-                            <button className="test-next-btn" onClick={handleNextClick}>Next</button>
+                            <button className="branded-long-button branded-shadow test-back-btn" onClick={handleBackClick}>Back</button>
+                            <button className="branded-long-button branded-shadow test-next-btn" onClick={handleNextClick}>Next</button>
                         </div>
                     </div>
 
