@@ -23,10 +23,10 @@ const PracticeContent = ({ moduleID, position }) => {
                 <p className="question-txt">{question.question}</p>
 
                 <div className="answer-choices">
-                    <button className="answer-choice-btn">{question.answerChoice1}</button>
-                    <button className="answer-choice-btn">{question.answer}</button>
-                    <button className="answer-choice-btn">{question.answerChoice2}</button>
-                    <button className="answer-choice-btn">{question.answerChoice3}</button>
+                    <button className="branded-long-button answer-choice-btn">{question.answerChoice1}</button>
+                    <button className="branded-long-button answer-choice-btn">{question.answer}</button>
+                    <button className="branded-long-button answer-choice-btn">{question.answerChoice2}</button>
+                    <button className="branded-long-button answer-choice-btn">{question.answerChoice3}</button>
                 </div>
             </div>
         </div>
