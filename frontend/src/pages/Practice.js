@@ -57,7 +57,7 @@ const Practice = () => {
 
             <div className="practice-div branded-shadow">
                 <div className="hint-btn-container">
-                    <div className="question-num">{questionNumber}.</div>
+                    <div className="question-num">{currentQuestion}.</div>
                     <button className="branded-long-button branded-shadow hint-btn">Hint 💡</button>
                 </div>
 
