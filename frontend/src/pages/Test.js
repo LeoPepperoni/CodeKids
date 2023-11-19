@@ -13,7 +13,7 @@ const Test = () => {
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
  
-    console.log("test questionNumber:", questionNumber);
+    console.log("test currentQuestion:", currentQuestion);
 
     // Total number of questions
     const questionsCount = 10; 
@@ -27,14 +27,23 @@ const Test = () => {
     // Function to handle "Next" button click
     const handleNextClick = () => {
         if (currentQuestion < questionsCount) {
-            setCurrentQuestion(currentQuestion + 1);
+            const newQuestionNumber = currentQuestion + 1;
+            setCurrentQuestion(newQuestionNumber);
+            updateURL(newQuestionNumber);
         }
     };
 
     const handleBackClick = () => {
         if (currentQuestion > 1) {
-            setCurrentQuestion(currentQuestion - 1);
+            const newQuestionNumber = currentQuestion - 1;
+            setCurrentQuestion(newQuestionNumber);
+            updateURL(newQuestionNumber);
         }
+    };
+
+    const updateURL = (newQuestionNumber) => {
+        // Update the URL based on the new question number
+        window.history.pushState({}, '', `/test/${moduleID}/${encodeURIComponent(moduleName)}/${newQuestionNumber}`);
     };
 
     return (
@@ -47,7 +56,7 @@ const Test = () => {
                     <ul>
                         {Array.from({ length: questionsCount }, (_, index) => (
                             <li key={index + 1}>
-                                <Link to={`/test/${moduleID}/${encodeURIComponent(moduleName)}/${index + 1}`} className="question-link">
+                               <Link to={`/test/${moduleID}/${encodeURIComponent(moduleName)}/${index + 1}`} className={`question-link ${index + 1 === currentQuestion ? 'active' : ''}`}>
                                     Question {index + 1}
                                 </Link>
                             </li>
@@ -57,7 +66,7 @@ const Test = () => {
 
         
                     <div className="question-div branded-shadow">
-                        <div className="question-num">{questionNumber}.</div>
+                        <div className="question-num">{currentQuestion}.</div>
 
                         <div className="question-content">
                             {/* Render the QuestionContent component for the current question */}
