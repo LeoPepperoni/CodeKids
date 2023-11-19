@@ -10,6 +10,7 @@ import Test from './pages/Test'
 import Practice from './pages/Practice'
 import ForgotPassword from './pages/forgot-password'
 import About from './pages/About'
+import HintContent from './components/HintContent'
 import QuestionContent from './components/QuestionContent'
 import Navbar from './components/Navbar'
 
@@ -52,6 +53,7 @@ function App() {
 
             <Route path="/practice/:moduleID/:moduleName" element={<Practice />}>
               <Route path=":questionNumber" element={<QuestionContent />} />
+              <Route path=":questionNumber/hint" element={<HintContent />} />
             </Route>
 
 
