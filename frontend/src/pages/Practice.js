@@ -28,17 +28,25 @@ const Practice = () => {
         // Function to handle "Previous" button click
     const handleBackClick = () => {
         if (currentQuestion > 1) {
-            setCurrentQuestion(currentQuestion - 1);
+            const newQuestionNumber = currentQuestion - 1;
+            setCurrentQuestion(newQuestionNumber);
+            updateURL(newQuestionNumber);
         }
     };
 
     // Function to handle "Next" button click
     const handleNextClick = () => {
         if (currentQuestion < questionsCount) {
-            setCurrentQuestion(currentQuestion + 1);
+            const newQuestionNumber = currentQuestion + 1;
+            setCurrentQuestion(newQuestionNumber);
+            updateURL(newQuestionNumber);
         }
     };
 
+    const updateURL = (newQuestionNumber) => {
+        // Update the URL based on the new question number
+        window.history.pushState({}, '', `/practice/${moduleID}/${encodeURIComponent(moduleName)}/${newQuestionNumber}`);
+    };
 
  
     return (
