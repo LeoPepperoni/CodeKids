@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useGetQuestion } from '../hook/useGetQuestion'; 
 
-const RandomQuestion = () => {
+const RandomQuestion = ({ handleNextClick }) => {
   const [randomModuleID, setRandomModuleID] = useState(null);
   const [randomPosition, setRandomPosition] = useState(null);
 
@@ -26,14 +26,14 @@ const RandomQuestion = () => {
       {error && <p>Error: {error}</p>}
       {question && (
         <div>
-             <div className="question-container">
-                <p className="question-txt">{question.question}</p>
+             <div className="random-question-container">
+                <p className="random-question-txt">{question.question}</p>
 
-                <div className="answer-choices">
-                    <button className="answer-choice-btn">{question.answerChoice1}</button>
-                    <button className="answer-choice-btn">{question.answer}</button>
-                    <button className="answer-choice-btn">{question.answerChoice2}</button>
-                    <button className="answer-choice-btn">{question.answerChoice3}</button>
+                <div className="random-answer-choices">
+                    <button className="random-answer-choice-btn">{question.answerChoice1}</button>
+                    <button className="random-answer-choice-btn">{question.answer}</button>
+                    <button className="random-answer-choice-btn">{question.answerChoice2}</button>
+                    <button className="random-answer-choice-btn">{question.answerChoice3}</button>
                 </div>
             </div>
         </div>
