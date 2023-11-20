@@ -1,10 +1,11 @@
 import React from 'react';
+import RandomQuestion from '../components/RandomQuestion';
 
 const PracticeAll = () => {
   return (
     <div>
       <h1>Welcome to the PracticeAll Page</h1>
-      <p>This is a simple React page. Modify it as needed!</p>
+      <RandomQuestion />
     </div>
   );
 };
