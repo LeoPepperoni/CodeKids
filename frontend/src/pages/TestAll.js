@@ -11,13 +11,6 @@ const TestAll = () => {
     setKeyProp((prevKeyProp) => prevKeyProp + 1);
   };
 
-  // Placeholder function for handling hint click
-  const handleHintClick = () => {
-    // Implement hint logic here if needed
-    console.log('Hint clicked');
-  };
-
-
   return (
     <div>
        <div className="container-div">
@@ -27,9 +20,6 @@ const TestAll = () => {
                     </div>
 
                     <div className="practice-div branded-shadow">
-                        <div className="hint-btn-container">
-                            <button className="branded-long-button branded-shadow hint-btn" onClick={handleHintClick}>Hint 💡</button>
-                        </div>
 
                         <div className="random-question-content">
                           <RandomQuestion keyProp={keyProp} />
