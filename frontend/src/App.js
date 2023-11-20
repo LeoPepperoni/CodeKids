@@ -10,6 +10,7 @@ import Test from './pages/Test'
 import Practice from './pages/Practice'
 import ForgotPassword from './pages/forgot-password'
 import About from './pages/About'
+import TestAll from './pages/TestAll'
 import HintContent from './components/HintContent'
 import QuestionContent from './components/QuestionContent'
 import Navbar from './components/Navbar'
@@ -39,6 +40,11 @@ function App() {
             <Route
               path="/dashboard"
               element={<Dashboard />}
+            />
+
+            <Route
+              path="/testall"
+              element={<TestAll />}
             />
 
             <Route

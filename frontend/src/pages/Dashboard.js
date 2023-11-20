@@ -4,6 +4,7 @@ import './Dashboard.css';
 import { Link } from 'react-router-dom'; 
 
 const Dashboard = () => {
+
   // Sample data for modules (you can replace it with data from your database)
   const modules = [
     { id: 1, name: "Variables & Data Types", completed: 8 },
@@ -44,7 +45,9 @@ const Dashboard = () => {
             <button className="branded-long-button">Practice All</button>
           </div>
           <div className="long-btn-2">
-            <button className="branded-long-button">Test All</button>
+            <Link to="/testall">
+              <button className="branded-long-button">Test All</button>
+            </Link>
           </div>
           
         </div>
