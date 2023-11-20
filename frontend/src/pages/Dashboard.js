@@ -42,7 +42,9 @@ const Dashboard = () => {
         </ul>
         <div className="all-btn-container">
           <div className="long-btn-1">
-            <button className="branded-long-button">Practice All</button>
+            <Link to="/practiceall">
+              <button className="branded-long-button">Practice All</button>
+            </Link>
           </div>
           <div className="long-btn-2">
             <Link to="/testall">

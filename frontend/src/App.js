@@ -11,6 +11,7 @@ import Practice from './pages/Practice'
 import ForgotPassword from './pages/forgot-password'
 import About from './pages/About'
 import TestAll from './pages/TestAll'
+import PracticeAll from './pages/PracticeAll'
 import HintContent from './components/HintContent'
 import QuestionContent from './components/QuestionContent'
 import Navbar from './components/Navbar'
@@ -45,6 +46,11 @@ function App() {
             <Route
               path="/testall"
               element={<TestAll />}
+            />
+
+            <Route
+              path="/practiceall"
+              element={<PracticeAll />}
             />
 
             <Route
