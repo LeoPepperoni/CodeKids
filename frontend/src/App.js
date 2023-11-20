@@ -44,7 +44,7 @@ function App() {
             />
 
             <Route
-              path="/testall"
+              path="/TestAll"
               element={<TestAll />}
             />
 
