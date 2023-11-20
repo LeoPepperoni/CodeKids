@@ -49,7 +49,7 @@ function App() {
             />
 
             <Route
-              path="/practiceall"
+              path="/PracticeAll"
               element={<PracticeAll />}
             />
 
