@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useGetQuestion } from '../hook/useGetQuestion'; 
 
-const RandomQuestion = ({ handleNextClick }) => {
+const RandomQuestion = ({ keyProp }) => {
   const [randomModuleID, setRandomModuleID] = useState(null);
   const [randomPosition, setRandomPosition] = useState(null);
 
@@ -14,7 +14,7 @@ const RandomQuestion = ({ handleNextClick }) => {
 
     setRandomModuleID(randomModuleID);
     setRandomPosition(randomPosition);
-  }, []);
+  }, [keyProp]);
 
   // Use the useGetQuestion hook with the random values
   const { question, isLoading, error } = useGetQuestion(randomModuleID, randomPosition);

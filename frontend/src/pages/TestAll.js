@@ -4,14 +4,11 @@ import RandomQuestion from '../components/RandomQuestion';
 
 const TestAll = () => {
 
-  // State to manage the random question data
-  const [randomQuestion, setRandomQuestion] = useState(null);
+  const [keyProp, setKeyProp] = useState(0);
 
   // Function to handle the "Next" button click
   const handleNextClick = () => {
-    // You can add any logic here needed before moving to the next question
-    // For now, just update the state to trigger a re-render of RandomQuestion
-    setRandomQuestion(Math.random());
+    setKeyProp((prevKeyProp) => prevKeyProp + 1);
   };
 
   // Placeholder function for handling hint click
@@ -35,7 +32,7 @@ const TestAll = () => {
                         </div>
 
                         <div className="random-question-content">
-                            <RandomQuestion handleNextClick={handleNextClick}/>
+                          <RandomQuestion keyProp={keyProp} />
                         </div>
 
                         <div className="button-container-back-next">
