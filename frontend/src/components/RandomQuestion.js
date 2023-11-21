@@ -13,13 +13,17 @@ const RandomQuestion = ({ moduleID, position, onRandomValuesChange }) => {
     const initialRandomModuleID = getRandomNumber(1, 5);
     const initialRandomPosition = getRandomNumber(1, 10);
 
-    setRandomModuleID(initialRandomModuleID);
-    setRandomPosition(initialRandomPosition);
+    if (initialRandomModuleID !== randomModuleID || initialRandomPosition !== randomPosition) {
+      setRandomModuleID(initialRandomModuleID);
+      setRandomPosition(initialRandomPosition);
+    }
 
     // Call the callback function to pass the random values to the parent component
     onRandomValuesChange(initialRandomModuleID, initialRandomPosition);
+
     console.log('BEFOREuseGetQRandomQuestion - moduleID:', initialRandomModuleID);
     console.log('BEFOREuseGetQRandomQuestion - position:', initialRandomPosition);
+
   }, [moduleID, position]);
 
   // Use the useGetQuestion hook with the random values
