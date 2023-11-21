@@ -1,23 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useGetQuestion } from '../hook/useGetQuestion'; 
 
+// RandomQuestion component receives a keyProp as a prop
 const RandomQuestion = ({ keyProp }) => {
   const [randomModuleID, setRandomModuleID] = useState(null);
   const [randomPosition, setRandomPosition] = useState(null);
 
-  // Generate random values for moduleID and position
+  // useEffect hook runs when keyProp changes
   useEffect(() => {
     const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
     const randomModuleID = getRandomNumber(1, 5);
     const randomPosition = getRandomNumber(1, 10);
 
+     // Update state with the new random values
     setRandomModuleID(randomModuleID);
     setRandomPosition(randomPosition);
-  }, [keyProp]);
+  }, [keyProp]); // Dependency array ensures this effect runs when keyProp changes
 
   // Use the useGetQuestion hook with the random values
   const { question, isLoading, error } = useGetQuestion(randomModuleID, randomPosition);
+  console.log("after use get question: ", randomModuleID, randomPosition)
 
   return (
     <div>
