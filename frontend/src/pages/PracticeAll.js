@@ -12,6 +12,7 @@ const PracticeAll = () => {
 
   // Function to handle the "Next" button click
   const handleNextClick = () => {
+    console.log('Next clicked');
     // Generate new random values for module ID and position
     const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
     const newModuleID = getRandomNumber(1, 5);
@@ -29,6 +30,7 @@ const PracticeAll = () => {
   };
 
   const handleHintClick = () => {
+    console.log('Hint clicked');
     setShowHint(true); // Show the hint when the hint button is clicked
   };
 
@@ -40,6 +42,7 @@ const PracticeAll = () => {
 
    // useEffect to handle the initial random values
    useEffect(() => {
+    console.log('Use Effect');
     // Function to generate a random number between min and max (inclusive)
     const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
