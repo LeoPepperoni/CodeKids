@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useGetQuestion } from '../hook/useGetQuestion'; 
 
-const RandomQuestion = ({ moduleID, position }) => {
-
-  console.log('RandomQuestion - moduleID:', moduleID);
-  console.log('RandomQuestion - position:', position);
+const RandomQuestion = ({ moduleID, position, onRandomValuesChange }) => {
 
   const [randomModuleID, setRandomModuleID] = useState(null);
   const [randomPosition, setRandomPosition] = useState(null);
@@ -18,7 +15,10 @@ const RandomQuestion = ({ moduleID, position }) => {
 
     setRandomModuleID(initialRandomModuleID);
     setRandomPosition(initialRandomPosition);
-  }, []);
+
+    // Call the callback function to pass the random values to the parent component
+    onRandomValuesChange(initialRandomModuleID, initialRandomPosition);
+  }, [onRandomValuesChange]);
 
   // Use the useGetQuestion hook with the random values
   const { question, isLoading, error } = useGetQuestion(randomModuleID, randomPosition);

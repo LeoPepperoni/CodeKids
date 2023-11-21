@@ -18,6 +18,10 @@ const PracticeAll = () => {
     setPosition(newPosition);
   };
 
+  const handleRandomValuesChange = (newModuleID, newPosition) => {
+    console.log('Received random values:', newModuleID, newPosition);
+  };
+
   const handleNextClick = () => {
     setKeyProp((prevKeyProp) => prevKeyProp + 1);
     setShowHint(false);
@@ -42,7 +46,7 @@ const PracticeAll = () => {
               </div>
 
               <div className="random-question-content">
-                <RandomQuestion moduleID={moduleID} position={position} />
+                <RandomQuestion moduleID={moduleID} position={position} onRandomValuesChange={handleRandomValuesChange} />
               </div>
 
               <div className="button-container-back-next">
