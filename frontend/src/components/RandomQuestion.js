@@ -1,36 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useGetQuestion } from '../hook/useGetQuestion'; 
 
-const RandomQuestion = ({ onRandomValuesChange }) => {
-
+const RandomQuestion = ({ keyProp }) => {
   const [randomModuleID, setRandomModuleID] = useState(null);
   const [randomPosition, setRandomPosition] = useState(null);
 
-  // Effect to generate random values only when the component is mounted
+  // Generate random values for moduleID and position
   useEffect(() => {
     const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-    // Generate initial random values for moduleID and position
-    const initialRandomModuleID = getRandomNumber(1, 5);
-    const initialRandomPosition = getRandomNumber(1, 10);
+    const randomModuleID = getRandomNumber(1, 5);
+    const randomPosition = getRandomNumber(1, 10);
 
-    // Update state with the new random values
-    setRandomModuleID(initialRandomModuleID);
-    setRandomPosition(initialRandomPosition);
-
-    // Call the callback function to pass the random values to the parent component
-    onRandomValuesChange(initialRandomModuleID, initialRandomPosition);
-
-    console.log('BEFOREuseGetQRandomQuestion - moduleID:', initialRandomModuleID);
-    console.log('BEFOREuseGetQRandomQuestion - position:', initialRandomPosition);
-
-  }, [onRandomValuesChange]);
+    setRandomModuleID(randomModuleID);
+    setRandomPosition(randomPosition);
+  }, [keyProp]);
 
   // Use the useGetQuestion hook with the random values
   const { question, isLoading, error } = useGetQuestion(randomModuleID, randomPosition);
-
-  console.log('useGetQRandomQuestion - moduleID:', randomModuleID);
-  console.log('useGetQRandomQuestion - position:', randomPosition);
 
   return (
     <div>
