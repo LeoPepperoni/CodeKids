@@ -28,7 +28,7 @@ const PracticeAll = () => {
   };  
 
   console.log('PracticeAll - moduleID:', moduleID);
-    console.log('PracticeAll - position:', position);
+  console.log('PracticeAll - position:', position);
 
 
   return (
