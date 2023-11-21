@@ -42,9 +42,7 @@ const PracticeAll = () => {
               </div>
 
               <div className="random-question-content">
-                <RandomQuestion  keyProp={{ moduleID, position }}
-                                 onModuleIDChange={handleModuleIDChange}
-                                 onPositionChange={handlePositionChange} />
+                <RandomQuestion moduleID={moduleID} position={position} />
               </div>
 
               <div className="button-container-back-next">
