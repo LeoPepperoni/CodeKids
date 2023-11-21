@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useGetQuestion } from '../hook/useGetQuestion'; 
 
 // RandomQuestion component receives a keyProp as a prop
-const RandomQuestion = ({ keyProp }) => {
+const RandomQuestion = ({ keyProp, onRandomValuesChange }) => {
   const [randomModuleID, setRandomModuleID] = useState(null);
   const [randomPosition, setRandomPosition] = useState(null);
 
@@ -16,11 +16,16 @@ const RandomQuestion = ({ keyProp }) => {
      // Update state with the new random values
     setRandomModuleID(randomModuleID);
     setRandomPosition(randomPosition);
-  }, [keyProp]); // Dependency array ensures this effect runs when keyProp changes
+
+    // Pass the random values back to the parent component
+    onRandomValuesChange(randomModuleID, randomPosition);
+
+    console.log("after use get question: ", randomModuleID, randomPosition)
+  }, [keyProp, onRandomValuesChange]); // Dependency array ensures this effect runs when keyProp changes
 
   // Use the useGetQuestion hook with the random values
   const { question, isLoading, error } = useGetQuestion(randomModuleID, randomPosition);
-  console.log("after use get question: ", randomModuleID, randomPosition)
+ 
 
   return (
     <div>

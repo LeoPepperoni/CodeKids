@@ -11,6 +11,11 @@ const TestAll = () => {
     setKeyProp((prevKeyProp) => prevKeyProp + 1);
   };
 
+  const handleRandomValuesChange = (newModuleID, newPosition) => {
+    console.log('Received random values in parent:', newModuleID, newPosition);
+    // You can do further processing or state updates in the parent component if needed
+  };
+
   return (
     <div>
        <div className="container-div">
@@ -22,7 +27,7 @@ const TestAll = () => {
                     <div className="practice-div branded-shadow">
 
                         <div className="random-question-content">
-                          <RandomQuestion keyProp={keyProp} />
+                          <RandomQuestion keyProp={keyProp} onRandomValuesChange={handleRandomValuesChange}/>
                         </div>
 
                         <div className="button-container-back-next">
