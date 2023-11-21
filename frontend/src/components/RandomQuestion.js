@@ -23,6 +23,9 @@ const RandomQuestion = ({ moduleID, position }) => {
   // Use the useGetQuestion hook with the random values
   const { question, isLoading, error } = useGetQuestion(randomModuleID, randomPosition);
 
+  console.log('useGetQRandomQuestion - moduleID:', randomModuleID);
+  console.log('useGetQRandomQuestion - position:', randomPosition);
+
   return (
     <div>
       <h2>Random Question</h2>
