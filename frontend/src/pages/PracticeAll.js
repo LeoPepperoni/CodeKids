@@ -34,7 +34,7 @@ const PracticeAll = () => {
     setNewModuleID(initialRandomModuleID);
     setNewPosition(initialRandomPosition);
 
-    console.log('Use effect:', newModuleID, newPosition);
+    console.log('Use effect:', initialRandomModuleID, initialRandomPosition);
 
     // Additional logic if needed...
 
