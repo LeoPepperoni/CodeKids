@@ -18,6 +18,7 @@ const PracticeAll = () => {
     setPosition(newPosition);
   };
 
+  // Callback function to receive random values from child component (RandomQuestion)
   const handleRandomValuesChange = (newModuleID, newPosition) => {
     console.log('Received random values:', newModuleID, newPosition);
     setModuleID(newModuleID);

@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useGetQuestion } from '../hook/useGetQuestion'; 
 
-const RandomQuestion = ({ moduleID, position, onRandomValuesChange }) => {
+const RandomQuestion = ({ onRandomValuesChange }) => {
 
   const [randomModuleID, setRandomModuleID] = useState(null);
   const [randomPosition, setRandomPosition] = useState(null);
 
-  // Generate random values for moduleID and position
+  // Effect to generate random values only when the component is mounted
   useEffect(() => {
     const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+    // Generate initial random values for moduleID and position
     const initialRandomModuleID = getRandomNumber(1, 5);
     const initialRandomPosition = getRandomNumber(1, 10);
 
-    if (initialRandomModuleID !== randomModuleID || initialRandomPosition !== randomPosition) {
-      setRandomModuleID(initialRandomModuleID);
-      setRandomPosition(initialRandomPosition);
-    }
+    // Update state with the new random values
+    setRandomModuleID(initialRandomModuleID);
+    setRandomPosition(initialRandomPosition);
 
     // Call the callback function to pass the random values to the parent component
     onRandomValuesChange(initialRandomModuleID, initialRandomPosition);
