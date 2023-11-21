@@ -41,7 +41,7 @@ const PracticeAll = () => {
   };
 
    // useEffect to handle the initial random values
-   useEffect(() => {
+   /*useEffect(() => {
     console.log('Use Effect');
     // Function to generate a random number between min and max (inclusive)
     const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -60,7 +60,7 @@ const PracticeAll = () => {
     // Pass the values to the parent component
     handleRandomValuesChange(initialRandomModuleID, initialRandomPosition);
 
-  }, []); 
+  }, []); */
 
   return (
     <div>
