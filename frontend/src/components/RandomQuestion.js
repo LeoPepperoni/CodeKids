@@ -9,12 +9,12 @@ const RandomQuestion = ({ moduleID, position }) => {
   useEffect(() => {
     const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
-    const randomModuleID = getRandomNumber(1, 5);
-    const randomPosition = getRandomNumber(1, 10);
+    const initialRandomModuleID = getRandomNumber(1, 5);
+    const initialRandomPosition = getRandomNumber(1, 10);
 
-    setRandomModuleID(randomModuleID);
-    setRandomPosition(randomPosition);
-  }, [moduleID, position]);
+    setRandomModuleID(initialRandomModuleID);
+    setRandomPosition(initialRandomPosition);
+  }, []);
 
   // Use the useGetQuestion hook with the random values
   const { question, isLoading, error } = useGetQuestion(randomModuleID, randomPosition);
