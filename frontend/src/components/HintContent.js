@@ -4,6 +4,9 @@ import useGetQuestion from '../hook/useGetQuestion';
 const HintContent = ({ moduleID, position }) => {
     const { question, isLoading, error } = useGetQuestion(moduleID, position);
 
+    console.log('HintContent - moduleID:', moduleID);
+    console.log('HintContent - position:', position);
+
     if (isLoading) {
         return <div>Loading...</div>;
     }

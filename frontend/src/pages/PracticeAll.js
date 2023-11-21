@@ -27,6 +27,9 @@ const PracticeAll = () => {
     setShowHint(true); // Show the hint when the hint button is clicked
   };  
 
+  console.log('PracticeAll - moduleID:', moduleID);
+    console.log('PracticeAll - position:', position);
+
 
   return (
     <div>
