@@ -20,6 +20,9 @@ const PracticeAll = () => {
 
   const handleRandomValuesChange = (newModuleID, newPosition) => {
     console.log('Received random values:', newModuleID, newPosition);
+    setModuleID(newModuleID);
+    setPosition(newPosition);
+    console.log('Received random values AFTER:', newModuleID, newPosition);
   };
 
   const handleNextClick = () => {

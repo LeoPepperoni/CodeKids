@@ -20,7 +20,7 @@ const RandomQuestion = ({ moduleID, position, onRandomValuesChange }) => {
     onRandomValuesChange(initialRandomModuleID, initialRandomPosition);
     console.log('BEFOREuseGetQRandomQuestion - moduleID:', initialRandomModuleID);
     console.log('BEFOREuseGetQRandomQuestion - position:', initialRandomPosition);
-  }, [onRandomValuesChange]);
+  }, [moduleID, position, onRandomValuesChange]);
 
   // Use the useGetQuestion hook with the random values
   const { question, isLoading, error } = useGetQuestion(randomModuleID, randomPosition);
