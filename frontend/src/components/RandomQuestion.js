@@ -5,8 +5,8 @@ const RandomQuestion = ({ moduleID, position }) => {
 
   console.log('RandomQuestion - moduleID:', moduleID);
   console.log('RandomQuestion - position:', position);
-  
-  const [moduleID, setRandomModuleID] = useState(null);
+
+  const [randomModuleID, setRandomModuleID] = useState(null);
   const [randomPosition, setRandomPosition] = useState(null);
 
   // Generate random values for moduleID and position
