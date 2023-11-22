@@ -23,6 +23,9 @@ const HintContent = ({ moduleID, position }) => {
         <div>
             <div className="hint-container">
                <p>HINT CONTENT Module: {moduleID} & Position: {position}</p>
+               <div className="hint">
+                    {question.hint}
+               </div>
             </div>
         </div>
     );
