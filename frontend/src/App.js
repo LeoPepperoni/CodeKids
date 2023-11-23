@@ -15,6 +15,7 @@ import PracticeAll from './pages/PracticeAll'
 import HintContent from './components/HintContent'
 import QuestionContent from './components/QuestionContent'
 import Navbar from './components/Navbar'
+import Settings from './pages/settings'
 
 function App() {
   return (
@@ -42,6 +43,11 @@ function App() {
               path="/dashboard"
               element={<Dashboard />}
             />
+
+            <Route
+              path="/settings"
+              element={<Settings />}
+            /> 
 
             <Route
               path="/TestAll"

@@ -21,7 +21,7 @@ const Login = () => {
     return (
         <div>
             <form className="login branded-shadow" onSubmit={handleSubmit}>
-                <h3 className="branded-header">Welcome Back to CodeKids!</h3>
+                <h3 className="branded-header">Welcome Back to CodeKids! 👋</h3>
 
                 <label className="branded-text">Email:</label>
                 <input
