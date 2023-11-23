@@ -24,6 +24,8 @@ const Navbar = () => {
     const hiddenRoutes = ['/login', '/signup', '/forgot-password'];
     const shouldShowNavbar = !hiddenRoutes.includes(pathname);
 
+    
+
     return shouldShowNavbar ?  (
         <div>
             <div className="container">
@@ -34,6 +36,8 @@ const Navbar = () => {
                         <label class="menu-btn" for="menu-toggle">
                           <span></span>
                         </label>
+
+                        console.log({user.email}, {user.firstName});
 
                         <ul class="menu-box">
                           <li><Link to="/"><div className="menu-item" onClick={menuClick}>Home</div></Link></li>
@@ -55,7 +59,6 @@ const Navbar = () => {
                 <nav>
                     {user && (
                         <div>
-                            <h6>Welcome, {user.firstName}</h6>
                             <button className="branded-button" onClick={handleClick}>Log out</button>
                         </div>
                     )}
