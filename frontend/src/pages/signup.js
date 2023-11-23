@@ -19,7 +19,7 @@ const Signup = () => {
     return (
         <div>
             <form className="signup branded-shadow" onSubmit={handleSubmit}>
-                <h3 className="branded-header">Create An Account</h3>
+                <h3 className="branded-header">Lets Create Your Account! 💪</h3>
 
                 <label className="branded-text">First Name:</label>
                 <input
