@@ -18,7 +18,6 @@ const loginUser = async (req, res) => {
     try {
         // Use the 'login' method defined in User model to authenticate the user
         const user = await User.login(email, password);
-
         // If successful, create a token for the user
         const token = createToken(user._id);
 

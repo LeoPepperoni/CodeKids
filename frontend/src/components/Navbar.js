@@ -37,8 +37,6 @@ const Navbar = () => {
                           <span></span>
                         </label>
 
-                        console.log({user.email}, {user.firstName});
-
                         <ul class="menu-box">
                           <li><Link to="/"><div className="menu-item" onClick={menuClick}>Home</div></Link></li>
                           <li><Link to="/settings"><div className="menu-item" onClick={menuClick}>Settings</div></Link></li>
