@@ -55,6 +55,7 @@ const Navbar = () => {
                 <nav>
                     {user && (
                         <div>
+                            <h6>Welcome, {user.firstName}</h6>
                             <button className="branded-button" onClick={handleClick}>Log out</button>
                         </div>
                     )}
