@@ -16,6 +16,10 @@ import QuestionContent from './components/QuestionContent'
 import Navbar from './components/Navbar'
 import Settings from './pages/settings'
 import Learn1 from './pages/Learn1'
+import Learn2 from './pages/Learn2'
+import Learn3 from './pages/Learn3'
+import Learn4 from './pages/Learn4'
+import Learn5 from './pages/Learn5'
 
 function App() {
   return (
@@ -62,6 +66,26 @@ function App() {
             <Route
               path="/Learn1/:moduleName"
               element={<Learn1 />}
+            />
+
+            <Route
+              path="/Learn2/:moduleName"
+              element={<Learn2 />}
+            />
+
+            <Route
+              path="/Learn3/:moduleName"
+              element={<Learn3 />}
+            />
+
+            <Route
+              path="/Learn4/:moduleName"
+              element={<Learn4 />}
+            />
+
+            <Route
+              path="/Learn5/:moduleName"
+              element={<Learn5 />}
             />
 
             <Route 
