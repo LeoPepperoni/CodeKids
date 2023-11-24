@@ -16,6 +16,7 @@ import HintContent from './components/HintContent'
 import QuestionContent from './components/QuestionContent'
 import Navbar from './components/Navbar'
 import Settings from './pages/settings'
+import Learn1 from './pages/Learn1'
 
 function App() {
   return (
@@ -60,8 +61,8 @@ function App() {
             />
 
             <Route
-              path="/learn/:moduleID/:moduleName"
-              element={<Learn />}
+              path="/Learn1/:moduleName"
+              element={<Learn1 />}
             />
 
             <Route 

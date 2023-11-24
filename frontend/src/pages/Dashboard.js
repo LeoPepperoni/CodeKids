@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
 
-import { Link } from 'react-router-dom'; 
+import { Link, useHistory } from 'react-router-dom'; 
 
 const Dashboard = () => {
 
@@ -14,6 +14,10 @@ const Dashboard = () => {
     { id: 5, name: "Input & Output", completed: 3 },
   ];
 
+  const constructPath = (moduleId, moduleName) => {
+    return `/learn${moduleId}/${encodeURIComponent(moduleName)}`;
+  };
+
 
   return (
     <div>
@@ -24,8 +28,9 @@ const Dashboard = () => {
               <h3 className="module-title">Module {module.id}: {module.name}</h3>
               <div className="module-buttons">
 
-                <Link to={`/learn/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-learn-btn`}>Learn</button>
+                <Link to={constructPath(module.id, module.name)}>
+                  <button
+                    className="learn-button branded-shadow" id={`mod${module.id}-learn-btn`}>Learn</button>
                 </Link>
 
                 <Link to={`/practice/${module.id}/${encodeURIComponent(module.name)}`}>
