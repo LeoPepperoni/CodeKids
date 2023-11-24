@@ -1,5 +1,6 @@
 import React from 'react';
 import YouTube from 'react-youtube';
+import './Learn.css';
 import { useParams } from 'react-router-dom';
 
 
@@ -16,16 +17,18 @@ const Learn1 = () => {
             </div>
 
             <div class="learn-container">
-                <p>Learn 1 content</p>
-
                 <div className="video-container">
-                <iframe
-                    width="560"
-                    height="315"
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    title="YouTube Video"
-                    allowFullScreen
-                ></iframe>
+                    <iframe
+                        width="640"
+                        height="360"
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        title="YouTube Video"
+                        allowFullScreen
+                    ></iframe>
+                </div>
+
+                <div className="link-container">
+                    <p>Links go here</p>
                 </div>
             </div>
 

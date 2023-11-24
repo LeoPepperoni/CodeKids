@@ -1,0 +1,19 @@
+.path {
+    font-family: JetBrains Mono;
+    padding: 10px;
+}
+
+.learn-container {
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px; 
+    width: 60%; 
+    display: flex;
+    flex-direction: column;
+    height: 70vh;
+    margin: auto;
+}
+
+.video-container {
+    margin: auto;
+}
