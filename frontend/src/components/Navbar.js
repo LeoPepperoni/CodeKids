@@ -22,6 +22,8 @@ const Navbar = () => {
 
     // We dont want to show the nav bar on the login, signup, or forgot password routes since it doesnt make sense
     const hiddenRoutes = ['/login', '/signup', '/forgot-password'];
+    const hideAbout = ['/About'];
+    const shouldShowAbout = !hideAbout.includes(pathname);
     const shouldShowNavbar = !hiddenRoutes.includes(pathname);
 
     
@@ -46,12 +48,16 @@ const Navbar = () => {
                       </div>
                     </div>
                 )}
-                {!user && (
+                {!user && shouldShowAbout && (
                     <div>
                         <Link to="/About">
                             <button className="branded-button">About Us</button>
                         </Link>
                         
+                    </div>
+                )}
+                {!user && !shouldShowAbout && (
+                    <div>
                     </div>
                 )}
                 <nav>

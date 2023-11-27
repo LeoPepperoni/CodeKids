@@ -1,0 +1,92 @@
+.about-header {
+  color: #fff;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.about-main-text-container {
+  display: flex;
+  justify-content: left;
+  padding-left: 250px;
+}
+.about-main-text {
+  color: #fff;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-weight: 500;
+  font-size: 1.2rem;
+  max-width: 400px;
+  margin-top: 20px;
+}
+
+.branded-underline {
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),var(--tw-ring-shadow, 0 0 #0000),var(--tw-shadow);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: inset 0 -.5em 0 0 rgb(150, 19, 148);
+  --tw-shadow-colored: inset 0 -.5em 0 0 var(--tw-shadow-color);
+  text-overflow: clip;
+}
+
+.about-container {
+  display: flex;
+  justify-content: left;
+  padding-left: 250px;
+  margin-top: 100px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -40px;
+}
+
+.branded-logo {
+  background-color: #fff;
+  color: #000;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-weight: 900;
+  font-size: 3rem;
+  letter-spacing: -.035em;
+  border-radius: 30px;
+  padding: 10px 20px 10px 20px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 60px;
+}
+
+.about-card {
+  background-color: #fff;
+  height: 350px;
+  width: 300px;
+  border-radius: 30px;
+  transition: border-radius 0.4s, height 0.4s, width 0.4s, font-size 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  font-size: 1.5rem;
+}
+.about-card:hover {
+  height: 450px;
+  width: 400px;
+  border-radius: 40px;
+  font-size: 2rem;
+}
+
+.about-card-header {
+  margin-top: 25px;
+  color: #000;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-weight: 600;
+}
+
+.about-card-text {
+  margin-top: 40px;
+  color: #000;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-weight: 400;
+  padding-left: 15px;
+}
