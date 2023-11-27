@@ -12,6 +12,7 @@ const Practice = () => {
     const { moduleID, moduleName, questionNumber = "1" } = useParams();
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
     const [showHint, setShowHint] = useState(false);
+    var isHintActive = false;
 
     // Total number of questions
     const questionsCount = 10; 
@@ -22,7 +23,7 @@ const Practice = () => {
         setCurrentQuestion(newQuestionNumber);
     }, [questionNumber]);
 
-        // Function to handle "Previous" button click
+    // Function to handle "Previous" button click
     const handleBackClick = () => {
         if (currentQuestion > 1) {
             const newQuestionNumber = currentQuestion - 1;
@@ -34,6 +35,7 @@ const Practice = () => {
 
     // Function to handle "Next" button click
     const handleNextClick = () => {
+        console.log(isLastQuestion());
         if (currentQuestion < questionsCount) {
             const newQuestionNumber = currentQuestion + 1;
             setCurrentQuestion(newQuestionNumber);
@@ -43,7 +45,8 @@ const Practice = () => {
     };
 
     const handleHintClick = () => {
-        setShowHint(true); // Show the hint when the hint button is clicked
+        isHintActive = true;
+        setShowHint(true);
     };
 
     const updateURL = (newQuestionNumber) => {
@@ -51,7 +54,24 @@ const Practice = () => {
         window.history.pushState({}, '', `/practice/${moduleID}/${encodeURIComponent(moduleName)}/${newQuestionNumber}`);
     };
 
- 
+    // Function checks if we are on the last question
+    function isLastQuestion() {
+      return currentQuestion === 10;
+    }
+    
+    // Toggle on/off hint
+    function toggleHint() {
+      if (showHint) {
+        setShowHint(false);
+      } else {
+        setShowHint(true);
+      }
+    }
+
+    function hintButtonText() {
+      return showHint ? 'Hide Hint' : 'Hint 💡';
+    }
+
     return (
         <div>
             <div className="container-div">
@@ -63,7 +83,7 @@ const Practice = () => {
                     <div className="practice-div branded-shadow">
                         <div className="hint-btn-container">
                             <div className="question-num">{currentQuestion}.</div>
-                            <button className="branded-long-button branded-shadow hint-btn" onClick={handleHintClick}>Hint 💡</button>
+                              <button className="branded-long-button branded-shadow hint-btn" onClick={toggleHint}>{hintButtonText()}</button>
                         </div>
 
                         <div className="practice-content">
@@ -73,7 +93,9 @@ const Practice = () => {
 
                         <div className="button-container-back-next">
                             <button className="branded-long-button branded-shadow back-btn" onClick={handleBackClick}>Back</button>
-                            <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
+                            {!isLastQuestion() && (
+                              <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
+                            )}
                         </div>
                     </div>
                 </div>

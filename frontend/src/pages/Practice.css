@@ -1,7 +1,6 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
 
 .path {
-    font-family: JetBrains Mono;
     padding: 10px;
 }
 
@@ -53,17 +52,14 @@
 }
 
 .back-btn {
-    font-family: JetBrains Mono;
     width: 100px;
 }
 
 .next-btn {
-    font-family: JetBrains Mono;
     width: 100px;
 }
 
 .hint-btn {
-    font-family: JetBrains Mono;
     width: 150px;
     position: absolute;
     top: 10px; /* Adjust the top distance as needed */
@@ -71,7 +67,6 @@
 }
 
 .question-num {
-    font-family: JetBrains Mono;
     color: black;
 }
 
