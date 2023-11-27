@@ -42,6 +42,11 @@ const PracticeContent = ({ moduleID, position }) => {
         return <div>Question not found</div>;
     }
 
+    function isCorrect(answerChoice) {
+      console.log(question.answer);
+      return (answerChoice === question.answer) ? true : false;
+    }
+
     return (
         <div>
             <div className="practice-container">
@@ -51,8 +56,8 @@ const PracticeContent = ({ moduleID, position }) => {
                     {shuffledChoices.map((choice, index) => (
                         <button
                             key={index}
-                            className={`branded-long-button answer-choice-btn ${
-                                clickedButtonIndex === index ? 'clicked' : ''
+                            className={`branded-question-btn answer-choice-btn ${
+                                (clickedButtonIndex === index && isCorrect(choice)) ? 'clicked' : ''
                             }`}
                             onClick={() => handleButtonClick(index)}
                         >
