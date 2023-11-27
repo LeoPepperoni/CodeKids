@@ -56,7 +56,7 @@ const PracticeContent = ({ moduleID, position }) => {
                         <button
                             key={index}
                             className={`branded-question-btn answer-choice-btn ${
-                                (clickedButtonIndex === index && isCorrect(choice)) ? 'clicked' : 'branded-question-btn-incorrect'
+                                (clickedButtonIndex === index && isCorrect(choice)) ? 'correct' : 'incorrect'
                             }`}
                             onClick={() => handleButtonClick(index)}
                         >

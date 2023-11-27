@@ -47,14 +47,14 @@
   -webkit-text-fill-color: #fff;
 }
 
-.branded-question-btn.clicked {
+.branded-question-btn.correct {
   background-color: #14a40a;
   border: 2px solid #14a40a;
   border-radius: 30px;
   -webkit-text-fill-color: #fff;
 }
 
-.branded-question-btn-incorrect.clicked {
+.branded-question-btn.incorrect {
   background-color: #ce1e1e;
   border: 2px solid #ce1e1e;
   border-radius: 30px;
