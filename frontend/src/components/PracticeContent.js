@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useGetQuestion from '../hook/useGetQuestion';
 import './PracticeContent.css';
 
 const PracticeContent = ({ moduleID, position }) => {
     const { question, isLoading, error } = useGetQuestion(moduleID, position);
+    const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
+
+    const handleButtonClick = (index) => {
+        setClickedButtonIndex(index);
+    };
 
     if (isLoading) {
         return <div>Loading...</div>;
@@ -23,10 +28,17 @@ const PracticeContent = ({ moduleID, position }) => {
                 <p className="question-txt">{question.question}</p>
 
                 <div className="answer-choices">
-                    <button className="branded-long-button answer-choice-btn">{question.answerChoice1}</button>
-                    <button className="branded-long-button answer-choice-btn">{question.answer}</button>
-                    <button className="branded-long-button answer-choice-btn">{question.answerChoice2}</button>
-                    <button className="branded-long-button answer-choice-btn">{question.answerChoice3}</button>
+                    {question.answerChoices.map((choice, index) => (
+                        <button
+                            key={index}
+                            className={`branded-long-button ${
+                                clickedButtonIndex === index ? 'clicked' : ''
+                            }`}
+                            onClick={() => handleButtonClick(index)}
+                        >
+                            {choice}
+                        </button>
+                    ))}
                 </div>
             </div>
         </div>
