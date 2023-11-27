@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import useGetQuestion from '../hook/useGetQuestion';
 import './PracticeContent.css';
 
 const PracticeContent = ({ moduleID, position }) => {
     const { question, isLoading, error } = useGetQuestion(moduleID, position);
-    const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
+    const [shuffledChoices, setShuffledChoices] = useState([]);
 
-    const handleButtonClick = (index) => {
-        setClickedButtonIndex(index);
+    useEffect(() => {
+        if (question) {
+            // Create an array of answer choices and shuffle it
+            const choices = [question.answerChoice1, question.answer, question.answerChoice2, question.answerChoice3];
+            const shuffled = shuffleArray(choices);
+            setShuffledChoices(shuffled);
+        }
+    }, [question]);
+
+    const shuffleArray = (array) => {
+        const newArray = [...array];
+        for (let i = newArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+        }
+        return newArray;
     };
 
     if (isLoading) {
@@ -22,23 +36,14 @@ const PracticeContent = ({ moduleID, position }) => {
         return <div>Question not found</div>;
     }
 
-    // Check if answerChoices is defined before mapping
-    const answerChoices = question.answerChoices || [];
-
     return (
         <div>
             <div className="practice-container">
                 <p className="question-txt">{question.question}</p>
 
                 <div className="answer-choices">
-                    {answerChoices.map((choice, index) => (
-                        <button
-                            key={index}
-                            className={`branded-long-button ${
-                                clickedButtonIndex === index ? 'clicked' : ''
-                            }`}
-                            onClick={() => handleButtonClick(index)}
-                        >
+                    {shuffledChoices.map((choice, index) => (
+                        <button key={index} className="branded-long-button answer-choice-btn">
                             {choice}
                         </button>
                     ))}
@@ -49,3 +54,4 @@ const PracticeContent = ({ moduleID, position }) => {
 };
 
 export default PracticeContent;
+
