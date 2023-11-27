@@ -21,6 +21,9 @@ const Dashboard = () => {
 
   return (
     <div>
+      <div className='logo-container'>
+                <div className='branded-logo branded-shadow'>CodeKids</div>
+            </div>
       <div className="module-list">
         <ul>
           {modules.map((module) => (
