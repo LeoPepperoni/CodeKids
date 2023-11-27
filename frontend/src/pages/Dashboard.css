@@ -2,7 +2,7 @@
 
 .module-title1{
     color: white;
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 
 }
 
@@ -24,10 +24,11 @@
     margin-right: auto; 
     margin-top: 10px;
     border-radius: 30px;
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     margin-left: auto;
     justify-content: space-between; 
     padding: 15px;
+    letter-spacing: -.035em;
     align-items: center;
 }
 
@@ -41,7 +42,7 @@
 
 
 .test-all-btn {
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     width: 150px;
     border-radius: 30px;
     margin-right: 10px;
@@ -54,7 +55,7 @@
 }
 
 .practice-all-btn {
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     width: 150px;
     border-radius: 30px;
     margin-right: 10px;
