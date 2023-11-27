@@ -22,13 +22,16 @@ const PracticeContent = ({ moduleID, position }) => {
         return <div>Question not found</div>;
     }
 
+    // Check if answerChoices is defined before mapping
+    const answerChoices = question.answerChoices || [];
+
     return (
         <div>
             <div className="practice-container">
                 <p className="question-txt">{question.question}</p>
 
                 <div className="answer-choices">
-                    {question.answerChoices.map((choice, index) => (
+                    {answerChoices.map((choice, index) => (
                         <button
                             key={index}
                             className={`branded-long-button ${
