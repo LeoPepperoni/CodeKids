@@ -35,6 +35,9 @@ const PracticeContent = ({ moduleID, position }) => {
     if (!question) {
         return <div>Question not found</div>;
     }
+    if(question) {
+      console.log(question);
+    }
 
     return (
         <div>
