@@ -5,6 +5,7 @@ import './PracticeContent.css';
 const PracticeContent = ({ moduleID, position }) => {
     const { question, isLoading, error } = useGetQuestion(moduleID, position);
     const [shuffledChoices, setShuffledChoices] = useState([]);
+    const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
 
     useEffect(() => {
         if (question) {
@@ -12,6 +13,7 @@ const PracticeContent = ({ moduleID, position }) => {
             const choices = [question.answerChoice1, question.answer, question.answerChoice2, question.answerChoice3];
             const shuffled = shuffleArray(choices);
             setShuffledChoices(shuffled);
+            setClickedButtonIndex(null); // Reset clicked button index when question changes
         }
     }, [question]);
 
@@ -22,6 +24,10 @@ const PracticeContent = ({ moduleID, position }) => {
             [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
         }
         return newArray;
+    };
+
+    const handleButtonClick = (index) => {
+        setClickedButtonIndex(index);
     };
 
     if (isLoading) {
@@ -35,9 +41,6 @@ const PracticeContent = ({ moduleID, position }) => {
     if (!question) {
         return <div>Question not found</div>;
     }
-    if(question) {
-      console.log(question);
-    }
 
     return (
         <div>
@@ -46,7 +49,13 @@ const PracticeContent = ({ moduleID, position }) => {
 
                 <div className="answer-choices">
                     {shuffledChoices.map((choice, index) => (
-                        <button key={index} className="branded-long-button answer-choice-btn">
+                        <button
+                            key={index}
+                            className={`branded-long-button answer-choice-btn ${
+                                clickedButtonIndex === index ? 'clicked' : ''
+                            }`}
+                            onClick={() => handleButtonClick(index)}
+                        >
                             {choice}
                         </button>
                     ))}
@@ -57,4 +66,5 @@ const PracticeContent = ({ moduleID, position }) => {
 };
 
 export default PracticeContent;
+
 
