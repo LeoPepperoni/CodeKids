@@ -60,7 +60,7 @@
     display: flex;
     margin-right: 30px;
     flex-direction: column;
-    height: 60vh;
+    height: 50vh;
   }
 
   .question-content {

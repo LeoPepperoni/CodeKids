@@ -82,7 +82,7 @@ const Practice = () => {
 
                     <div className="practice-div branded-shadow">
                         <div className="hint-btn-container">
-                            <div className="question-num">{currentQuestion}.</div>
+                            <div className="question-num">Question {currentQuestion}.</div>
                               <button className="branded-long-button branded-shadow hint-btn" onClick={toggleHint}>{hintButtonText()}</button>
                         </div>
 
@@ -101,7 +101,7 @@ const Practice = () => {
                 </div>
 
                 {showHint && (
-                    <div className="hint-box">
+                    <div className="hint-box branded-shadow">
                         <HintContent moduleID={moduleID} position={currentQuestion} />
                     </div>
                 )}
