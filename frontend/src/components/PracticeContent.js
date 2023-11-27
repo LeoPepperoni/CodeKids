@@ -43,7 +43,6 @@ const PracticeContent = ({ moduleID, position }) => {
     }
 
     function isCorrect(answerChoice) {
-      console.log(question.answer);
       return (answerChoice === question.answer) ? true : false;
     }
 
@@ -57,7 +56,7 @@ const PracticeContent = ({ moduleID, position }) => {
                         <button
                             key={index}
                             className={`branded-question-btn answer-choice-btn ${
-                                (clickedButtonIndex === index && isCorrect(choice)) ? 'clicked' : ''
+                                (clickedButtonIndex === index && isCorrect(choice)) ? 'clicked' : 'branded-question-btn-incorrect'
                             }`}
                             onClick={() => handleButtonClick(index)}
                         >

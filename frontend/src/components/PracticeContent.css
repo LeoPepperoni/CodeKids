@@ -41,15 +41,22 @@
 }
 
 .branded-question-btn:hover {
-border-radius: 30px;
-background-color: #3a0ca3;
-border: 2px solid #3a0ca3;;
--webkit-text-fill-color: #fff;
+  border-radius: 30px;
+  background-color: #3a0ca3;
+  border: 2px solid #3a0ca3;;
+  -webkit-text-fill-color: #fff;
 }
 
 .branded-question-btn.clicked {
-background-color: #14a40a;
-border: 2px solid #14a40a;
-border-radius: 30px;
--webkit-text-fill-color: #fff;
+  background-color: #14a40a;
+  border: 2px solid #14a40a;
+  border-radius: 30px;
+  -webkit-text-fill-color: #fff;
+}
+
+.branded-question-btn-incorrect.clicked {
+  background-color: #ce1e1e;
+  border: 2px solid #ce1e1e;
+  border-radius: 30px;
+  -webkit-text-fill-color: #fff;
 }
