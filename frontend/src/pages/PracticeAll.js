@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import HintContent from '../components/HintContent';
 import './Practice.css'
+import '../components/PracticeContent.css'
 import PracticeContent from '../components/PracticeContent';
 
 const PracticeAll = () => {
