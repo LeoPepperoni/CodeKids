@@ -37,7 +37,21 @@ const Learn3 = () => {
                 </div>
 
                 <div className="link-container">
-                    <p>Links go here</p>
+                    <a href="https://www.geeksforgeeks.org/decision-making-c-cpp/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                        Decision Making in C - GeeksForGeeks
+                    </a>
+
+                    <a href="https://www.geeksforgeeks.org/c-if-statement/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                        C If Statements - GeeksForGeeks
+                    </a>
+
+                    <a href="https://www.geeksforgeeks.org/c-if-else-statement/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                        C If Else Statements - GeeksForGeeks
+                    </a>
+
+                    <a href="https://www.geeksforgeeks.org/c-switch-statement/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                        Switch Statements in C - GeeksForGeeks
+                    </a>
                 </div>
             </div>
 

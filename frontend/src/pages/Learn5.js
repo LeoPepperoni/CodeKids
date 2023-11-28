@@ -28,7 +28,13 @@ const Learn5 = () => {
                 </div>
 
                 <div className="link-container">
-                    <p>Links go here</p>
+                    <a href="https://www.geeksforgeeks.org/basic-input-and-output-in-c/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                        Basic Input/Output in C - GeeksForGeeks
+                    </a>
+
+                    <a href="https://www.geeksforgeeks.org/format-specifiers-in-c/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                        Format Specifiers in C - GeeksForGeeks
+                    </a>
                 </div>
             </div>
 
