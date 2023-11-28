@@ -5,10 +5,15 @@ import RandomQuestion from '../components/RandomQuestion';
 const TestAll = () => {
 
   const [keyProp, setKeyProp] = useState(0);
+  const [count, setCount] = useState(0); 
 
   // Function to handle the "Next" button click
   const handleNextClick = () => {
-    setKeyProp((prevKeyProp) => prevKeyProp + 1);
+    if (count < 20) {
+      setKeyProp((prevKeyProp) => prevKeyProp + 1);
+      setCount((prevCount) => prevCount + 1);
+      console.log('set count = '. setCount);
+    }
   };
 
   const handleRandomValuesChange = (newModuleID, newPosition) => {
