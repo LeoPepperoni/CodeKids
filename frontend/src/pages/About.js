@@ -17,15 +17,23 @@ const About = () => {
             <div className='card-container'>
               <div className='about-card branded-shadow'>
                 <div className='about-card-header'>Learn 🔍</div>
-                <div className='about-card-text'>Sample text about using learn this is really long text pls change</div>
+                <div className='about-card-text'>Embark on your coding journey with our carefully selected collection of educational videos and articles from various experts and sources. 
+                Each module features a range of resources, including insightful YouTube videos and comprehensive articles, chosen to provide in-depth coverage of each topic. These external 
+                resources are handpicked for their ability to break down complex coding concepts into understandable segments. Perfect for beginners and those looking to refine their skills, 
+                our curated learning materials cater to diverse learning styles, ensuring everyone has access to a rich and effective learning experience.</div>
               </div>
               <div className='about-card branded-shadow'>
                 <div className='about-card-header'>Practice 🏋️‍♀️</div>
-                <div className='about-card-text'>Sample text about using Practice this is really long text pls change</div>
+                <div className='about-card-text'>Put your coding knowledge to the test with our interactive practice section. Here, you'll find a variety of multiple-choice questions 
+                that are not only challenging but also insightful. Struggling with a question? Our unique "hint" function is here to guide you through. It's a perfect way to reinforce 
+                what you've learned, identify areas for improvement, and build confidence in your coding abilities, all at your own pace.</div>
               </div>
               <div className='about-card branded-shadow'>
                 <div className='about-card-header'>Test 👩🏽‍💻</div>
-                <div className='about-card-text'>Sample text about using Test this is really long text pls change</div>
+                <div className='about-card-text'>Are you prepared to put your coding knowledge to the test? Our testing feature invites you to tackle comprehensive multiple-choice tests, 
+                offering immediate scores upon submission. These tests are thoughtfully designed to reflect real-world coding scenarios, allowing you to evaluate your grasp of the material 
+                in a practical, accessible format. This is an excellent way to track your learning journey, celebrate your milestones, and pinpoint areas that might require additional focus. 
+                Embrace the challenge and see how far you've come in your coding adventure!</div>
               </div>
             </div>
         </div>
