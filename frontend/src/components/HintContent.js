@@ -1,5 +1,6 @@
 import React from 'react';
 import useGetQuestion from '../hook/useGetQuestion';
+import './HintContent.css'
 
 const HintContent = ({ moduleID, position }) => {
     const { question, isLoading, error } = useGetQuestion(moduleID, position);
