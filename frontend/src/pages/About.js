@@ -17,8 +17,7 @@ const About = () => {
             <div className='card-container'>
               <div className='about-card branded-shadow'>
                 <div className='about-card-header'>Learn 🔍</div>
-                <div className='about-card-text'>Embark on your coding journey with our carefully selected collection of educational videos and articles from various experts and sources. 
-                Each module features a range of resources, including insightful YouTube videos and comprehensive articles, chosen to provide in-depth coverage of each topic. These external 
+                <div className='about-card-text'>Each module features a range of resources, including insightful YouTube videos and comprehensive articles, chosen to provide in-depth coverage of each topic. These external 
                 resources are handpicked for their ability to break down complex coding concepts into understandable segments. Perfect for beginners and those looking to refine their skills, 
                 our curated learning materials cater to diverse learning styles, ensuring everyone has access to a rich and effective learning experience.</div>
               </div>
@@ -30,9 +29,8 @@ const About = () => {
               </div>
               <div className='about-card branded-shadow'>
                 <div className='about-card-header'>Test 👩🏽‍💻</div>
-                <div className='about-card-text'>Are you prepared to put your coding knowledge to the test? Our testing feature invites you to tackle comprehensive multiple-choice tests, 
-                offering immediate scores upon submission. These tests are thoughtfully designed to reflect real-world coding scenarios, allowing you to evaluate your grasp of the material 
-                in a practical, accessible format. This is an excellent way to track your learning journey, celebrate your milestones, and pinpoint areas that might require additional focus. 
+                <div className='about-card-text'>Our testing feature invites you to tackle comprehensive multiple-choice tests, offering immediate scores upon submission. These tests are thoughtfully designed to allow you to evaluate your grasp of the 
+                material in a practical format. This is an excellent way to track your learning journey, celebrate your milestones, and pinpoint areas that might require additional focus. 
                 Embrace the challenge and see how far you've come in your coding adventure!</div>
               </div>
             </div>

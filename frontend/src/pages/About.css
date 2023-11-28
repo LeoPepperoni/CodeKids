@@ -60,7 +60,7 @@
 
 .about-card {
   background-color: #fff;
-  height: 350px;
+  height: 370px;
   width: 300px;
   border-radius: 30px;
   transition: border-radius 0.4s, height 0.4s, width 0.4s, font-size 0.4s;
@@ -70,8 +70,8 @@
   font-size: 1.5rem;
 }
 .about-card:hover {
-  height: 450px;
-  width: 400px;
+  height: 370px;
+  width: 450px;
   border-radius: 40px;
   font-size: 2rem;
 }
@@ -88,5 +88,7 @@
   color: #000;
   font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   font-weight: 400;
-  padding-left: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 11pt;
 }
