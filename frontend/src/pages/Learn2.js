@@ -38,15 +38,15 @@ const Learn2 = () => {
 
 
                 <div className="link-container">
-                    <a href="https://www.geeksforgeeks.org/c-loops/" target="_blank" rel="noopener noreferrer">
+                    <a className="article-link" href="https://www.geeksforgeeks.org/c-loops/" target="_blank" rel="noopener noreferrer">
                         Loops in C - GeeksForGeeks
                     </a>
 
-                    <a href="https://www.geeksforgeeks.org/c-for-loop/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                    <a className="article-link" href="https://www.geeksforgeeks.org/c-for-loop/?ref=lbp" target="_blank" rel="noopener noreferrer">
                         C For Loop - GeeksForGeeks
                     </a>
 
-                    <a href="https://www.geeksforgeeks.org/c-while-loop/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                    <a className="article-link" href="https://www.geeksforgeeks.org/c-while-loop/?ref=lbp" target="_blank" rel="noopener noreferrer">
                         C While Loop - GeeksForGeeks
                     </a>
                 </div>

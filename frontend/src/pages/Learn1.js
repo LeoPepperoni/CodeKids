@@ -28,11 +28,11 @@ const Learn1 = () => {
                 </div>
 
                 <div className="link-container">
-                    <a href="https://www.geeksforgeeks.org/variables-in-c/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                    <a className="article-link" href="https://www.geeksforgeeks.org/variables-in-c/?ref=lbp" target="_blank" rel="noopener noreferrer">
                         Variables in C - GeeksForGeeks
                     </a>
                 
-                    <a href="https://www.geeksforgeeks.org/data-types-in-c/" target="_blank" rel="noopener noreferrer">
+                    <a className="article-link" href="https://www.geeksforgeeks.org/data-types-in-c/" target="_blank" rel="noopener noreferrer">
                         Data Types in C - GeeksForGeeks
                     </a>
 

@@ -46,11 +46,11 @@ const Learn4 = () => {
                 </div>
 
                 <div className="link-container">
-                    <a href="https://www.geeksforgeeks.org/c-functions/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                    <a className="article-link" href="https://www.geeksforgeeks.org/c-functions/?ref=lbp" target="_blank" rel="noopener noreferrer">
                         C Functions - GeeksForGeeks
                     </a>
 
-                    <a href="https://www.geeksforgeeks.org/function-prototype-in-c/?ref=lbp" target="_blank" rel="noopener noreferrer">
+                    <a className="article-link" href="https://www.geeksforgeeks.org/function-prototype-in-c/?ref=lbp" target="_blank" rel="noopener noreferrer">
                         Function Prototypes in C - GeeksForGeeks
                     </a>
                 </div>
