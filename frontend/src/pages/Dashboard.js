@@ -55,7 +55,7 @@ const Dashboard = () => {
             </Link>
           </div>
           <div className="long-btn-2">
-            <Link to="/testall">
+            <Link to="/TestAll">
               <button className="branded-long-button">Test All</button>
             </Link>
           </div>

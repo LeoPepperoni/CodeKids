@@ -12,7 +12,7 @@ const TestAll = () => {
     if (count < 20) {
       setKeyProp((prevKeyProp) => prevKeyProp + 1);
       setCount((prevCount) => prevCount + 1);
-      console.log('set count = '. setCount);
+      console.log('set count = ', setCount);
     }
   };
 
