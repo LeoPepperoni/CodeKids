@@ -20,6 +20,7 @@ import Learn2 from './pages/Learn2'
 import Learn3 from './pages/Learn3'
 import Learn4 from './pages/Learn4'
 import Learn5 from './pages/Learn5'
+import SubmitTestAllModal from './components/SubmitTestAllModal'
 
 function App() {
   return (
@@ -56,6 +57,11 @@ function App() {
             <Route
               path="/TestAll"
               element={<TestAll />}
+            />
+
+            <Route
+              path="/SubmitTestAllModal"
+              element={<SubmitTestAllModal />}
             />
 
             <Route

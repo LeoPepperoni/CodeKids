@@ -1,11 +1,16 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import RandomQuestion from '../components/RandomQuestion';
+import SubmitTestAllModal from '../components/SubmitTestAllModal';
 
 const TestAll = () => {
 
   const [keyProp, setKeyProp] = useState(0);
   const [count, setCount] = useState(0); 
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => setShowModal(true);
+  const closeModal = () => setShowModal(false);
 
   // Function to handle the "Next" button click
   const handleNextClick = () => {
@@ -36,6 +41,10 @@ const TestAll = () => {
                         </div>
 
                         <div className="button-container-back-next">
+                            <button className="submit-test-all-btn" onClick={openModal}>Submit</button>
+                            <SubmitTestAllModal show={showModal} close={closeModal}>
+                              <p>This is modal content!</p>
+                            </SubmitTestAllModal>
                             <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
                         </div>
                     </div>
