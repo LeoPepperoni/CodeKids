@@ -2,6 +2,7 @@
     background-color: white;
     border-radius: 30px;
     display: flex;
+    flex-direction: column;
     height: auto;
     width: 175px;
     font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
@@ -9,4 +10,8 @@
 
 .hint {
     font-size: 16pt;
+}
+
+.hint-title {
+    font-size: 22pt;
 }
