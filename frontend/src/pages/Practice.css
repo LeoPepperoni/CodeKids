@@ -40,6 +40,12 @@
     height: auto;
 }
 
+.random-question-content {
+    display: flex;
+    padding: 5px 10px; 
+    margin-bottom: 10px; 
+}
+
 .button-container-back-next {
     display: flex;
     align-items: center;
@@ -48,8 +54,9 @@
 }
 
 .hint-btn-container {
+    display: flex;
     position: relative;
-
+    margin-bottom: 5px;
 }
 
 .back-btn {
