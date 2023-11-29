@@ -26,3 +26,7 @@
 .answer-choice-btn:hover {
     color: green;
 }
+
+.selected-choice {
+    color: blue;
+}
