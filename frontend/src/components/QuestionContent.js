@@ -29,10 +29,12 @@ const QuestionContent = ({ moduleID, position }) => {
       return newArray;
   };
 
+  /*
   const handleChoiceClick = (choice) => {
     setSelectedChoice(choice); // Update the selected choice
     console.log('handleChoiceClick - selectedChoice:', choice);
   };
+  */
 
   console.log('Render - selectedChoice:', selectedChoice); 
 
@@ -47,6 +49,9 @@ const QuestionContent = ({ moduleID, position }) => {
   if (!question) {
     return <div>Question not found</div>;
   }
+  const handleButtonClick = (index) => {
+    setClickedButtonIndex(index);
+  };
 
   return (
     <div>
@@ -56,8 +61,10 @@ const QuestionContent = ({ moduleID, position }) => {
         <div className="answer-choices">
           {shuffledChoices.map((choice, index) => (
               <button
-                  className={`branded-question-btn answer-choice-btn ${selectedChoice === choice ? 'selected-choice' : ''}`}
-                  onClick={() => handleChoiceClick(choice)}
+                  className={`branded-question-btn answer-choice-btn ${
+                    (clickedButtonIndex === index)
+                  }`}
+                  onClick={() => handleButtonClick(index)}
               >
                   {choice}
               </button>
