@@ -17,6 +17,7 @@ const QuestionContent = ({ moduleID, position }) => {
       setClickedButtonIndex(null); // Reset clicked button index when question changes
       setSelectedChoice(null);
     }
+    console.log('useEffect - selectedChoice:', selectedChoice);
   }, [question]);
 
   const shuffleArray = (array) => {
@@ -30,7 +31,10 @@ const QuestionContent = ({ moduleID, position }) => {
 
   const handleChoiceClick = (choice) => {
     setSelectedChoice(choice); // Update the selected choice
+    console.log('handleChoiceClick - selectedChoice:', choice);
   };
+
+  console.log('Render - selectedChoice:', selectedChoice); 
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -53,6 +57,7 @@ const QuestionContent = ({ moduleID, position }) => {
           {shuffledChoices.map((choice, index) => (
               <button
                   className={`branded-question-btn answer-choice-btn ${selectedChoice === choice ? 'selected-choice' : ''}`}
+                  onClick={() => handleChoiceClick(choice)}
               >
                   {choice}
               </button>
