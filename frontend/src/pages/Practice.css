@@ -6,7 +6,7 @@
 
 .container-div {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .practice-div {
@@ -15,14 +15,13 @@
     padding: 20px; 
     display: flex;
     flex-direction: column;
+    width: 80vh;
     height: 50vh;
-    margin-left: 200px;
     max-width: 800px;
     max-height: 600px;
 }
 
 .practice-box {
-    flex: 1;
 }
 
 .practice-content {

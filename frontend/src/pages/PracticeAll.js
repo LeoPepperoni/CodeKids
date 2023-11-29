@@ -62,7 +62,20 @@ const PracticeAll = () => {
     // Pass the values to the parent component
     handleRandomValuesChange(initialRandomModuleID, initialRandomPosition);
 
-  }, [keyProp]); 
+  }, [keyProp]);
+
+  // Toggle on/off hint
+  function toggleHint() {
+    if (showHint) {
+      setShowHint(false);
+    } else {
+      setShowHint(true);
+    }
+  }
+
+  function hintButtonText() {
+    return showHint ? 'Hide Hint' : 'Hint 💡';
+  }
 
   return (
     <div>
@@ -74,7 +87,7 @@ const PracticeAll = () => {
 
           <div className="practice-div branded-shadow">
             <div className="hint-btn-container">
-              <button className="branded-long-button branded-shadow hint-btn" onClick={handleHintClick}>Hint 💡</button>
+              <button className="branded-long-button branded-shadow hint-btn" onClick={toggleHint}>{hintButtonText()}</button>
             </div>
 
             <div className="random-question-content">
