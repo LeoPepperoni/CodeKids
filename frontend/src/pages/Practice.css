@@ -6,17 +6,19 @@
 
 .container-div {
     display: flex;
+    justify-content: center;
 }
 
 .practice-div {
     background-color: white;
     border-radius: 30px;
     padding: 20px; 
-    width: 50%; 
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: 50vh;
     margin-left: 200px;
+    max-width: 800px;
+    max-height: 600px;
 }
 
 .practice-box {
