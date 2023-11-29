@@ -5,19 +5,19 @@ import './QuestionContent.css';
 const QuestionContent = ({ moduleID, position }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
   const [shuffledChoices, setShuffledChoices] = useState([]);
+  const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null); 
-  const [correctAnswersCount, setCorrectAnswersCount] = useState(0); 
 
   useEffect(() => {
-      if (question) {
-          // Create an array of answer choices and shuffle it
-          const choices = [question.answerChoice1, question.answer, question.answerChoice2, question.answerChoice3];
-          const shuffled = shuffleArray(choices);
-          setShuffledChoices(shuffled);
-          evaluateAnswer(selectedChoice); 
-          setSelectedChoice(null);
-      }
-  }, [question, evaluateAnswer, selectedChoice]);
+    if (question) {
+      // Create an array of answer choices and shuffle it
+      const choices = [question.answerChoice1, question.answer, question.answerChoice2, question.answerChoice3];
+      const shuffled = shuffleArray(choices);
+      setShuffledChoices(shuffled);
+      setClickedButtonIndex(null); // Reset clicked button index when question changes
+      setSelectedChoice(null);
+    }
+  }, [question]);
 
   const shuffleArray = (array) => {
       const newArray = [...array];
@@ -28,14 +28,8 @@ const QuestionContent = ({ moduleID, position }) => {
       return newArray;
   };
 
-  const handleAnswerClick = (choice) => {
-    setSelectedChoice(choice); // Store selected choice
-  };
-
-  const evaluateAnswer = (choice) => {
-    if (choice === question.answer) {
-        setCorrectAnswersCount(prevCount => prevCount + 1);
-    }
+  const handleChoiceClick = (choice) => {
+    setSelectedChoice(choice); // Update the selected choice
   };
 
   if (isLoading) {
@@ -59,8 +53,6 @@ const QuestionContent = ({ moduleID, position }) => {
           {shuffledChoices.map((choice, index) => (
               <button
                   className={`branded-question-btn answer-choice-btn ${selectedChoice === choice ? 'selected-choice' : ''}`}
-                  onClick={() => handleAnswerClick(choice)}
-                  key={index}
               >
                   {choice}
               </button>
