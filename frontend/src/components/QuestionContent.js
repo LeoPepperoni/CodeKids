@@ -5,6 +5,7 @@ const QuestionContent = ({ moduleID, position }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
   const [shuffledChoices, setShuffledChoices] = useState([]);
   const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
+  const [correctAnswersCount, setCorrectAnswersCount] = useState(0); 
 
   useEffect(() => {
       if (question) {
@@ -24,6 +25,14 @@ const QuestionContent = ({ moduleID, position }) => {
       }
       return newArray;
   };
+
+  const handleAnswerClick = (choice, index) => {
+    setClickedButtonIndex(index);
+    if (choice === question.answer) {
+        console.log("right answer");
+        setCorrectAnswersCount(prevCount => prevCount + 1); // Increment correct answers count
+    }
+};
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -46,6 +55,7 @@ const QuestionContent = ({ moduleID, position }) => {
           {shuffledChoices.map((choice, index) => (
               <button
                   className="branded-question-btn answer-choice-btn"
+                  onClick={() => handleAnswerClick(choice, index)}
               >
                   {choice}
               </button>
