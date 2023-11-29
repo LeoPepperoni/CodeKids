@@ -17,7 +17,7 @@ const QuestionContent = ({ moduleID, position }) => {
           evaluateAnswer(selectedChoice); 
           setSelectedChoice(null);
       }
-  }, [question]);
+  }, [question, evaluateAnswer, selectedChoice]);
 
   const shuffleArray = (array) => {
       const newArray = [...array];
