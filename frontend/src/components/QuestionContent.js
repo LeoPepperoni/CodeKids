@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import useGetQuestion from '../hook/useGetQuestion';
 import './QuestionContent.css';
-import './Login.css';
 
 const QuestionContent = ({ moduleID, position }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
@@ -53,7 +52,9 @@ const QuestionContent = ({ moduleID, position }) => {
   const handleButtonClick = (index) => {
     setClickedButtonIndex(index);
   };
-
+  function isCorrect(answerChoice) {
+    return (answerChoice === question.answer) ? true : false;
+  }
   return (
     <div>
       <div className="question-container">
@@ -64,7 +65,7 @@ const QuestionContent = ({ moduleID, position }) => {
               <button
                   key={index}
                   className={`branded-question-btn answer-choice-btn ${
-                    clickedButtonIndex === index ? 'clicked' : ''
+                    (clickedButtonIndex === index && isCorrect(choice)) ? 'correct' : (clickedButtonIndex === index ? 'incorrect' : '')
                   }`}
                   onClick={() => handleButtonClick(index)}
               >
