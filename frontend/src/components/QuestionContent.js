@@ -3,6 +3,27 @@ import useGetQuestion from '../hook/useGetQuestion';
 
 const QuestionContent = ({ moduleID, position }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
+  const [shuffledChoices, setShuffledChoices] = useState([]);
+  const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
+
+  useEffect(() => {
+      if (question) {
+          // Create an array of answer choices and shuffle it
+          const choices = [question.answerChoice1, question.answer, question.answerChoice2, question.answerChoice3];
+          const shuffled = shuffleArray(choices);
+          setShuffledChoices(shuffled);
+          setClickedButtonIndex(null); // Reset clicked button index when question changes
+      }
+  }, [question]);
+
+  const shuffleArray = (array) => {
+      const newArray = [...array];
+      for (let i = newArray.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      return newArray;
+  };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -16,17 +37,19 @@ const QuestionContent = ({ moduleID, position }) => {
     return <div>Question not found</div>;
   }
 
-
   return (
     <div>
       <div className="question-container">
         <p className="question-txt">{question.question}</p>
 
         <div className="answer-choices">
-          <button className="answer-choice-btn">{question.answerChoice1}</button>
-          <button className="answer-choice-btn">{question.answer}</button>
-          <button className="answer-choice-btn">{question.answerChoice2}</button>
-          <button className="answer-choice-btn">{question.answerChoice3}</button>
+          {shuffledChoices.map((choice, index) => (
+              <button
+                  className="branded-question-btn answer-choice-btn"
+              >
+                  {choice}
+              </button>
+          ))}
         </div>
       </div>
     </div>
