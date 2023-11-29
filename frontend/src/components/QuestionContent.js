@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import useGetQuestion from '../hook/useGetQuestion';
 import './QuestionContent.css';
+import './Login.css';
 
 const QuestionContent = ({ moduleID, position }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
