@@ -61,6 +61,7 @@ const QuestionContent = ({ moduleID, position }) => {
         <div className="answer-choices">
           {shuffledChoices.map((choice, index) => (
               <button
+                  key={index}
                   className={`branded-question-btn answer-choice-btn ${
                     (clickedButtonIndex === index)
                   }`}
