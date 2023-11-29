@@ -62,3 +62,10 @@
   border-radius: 30px;
   -webkit-text-fill-color: #fff;
 }
+
+.branded-question-btn.clicked {
+  background-color: #3a0ca3;
+  border: 2px solid #3a0ca3;
+  border-radius: 30px;
+  -webkit-text-fill-color: #fff;
+}

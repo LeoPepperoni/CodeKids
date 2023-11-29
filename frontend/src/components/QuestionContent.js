@@ -65,7 +65,7 @@ const QuestionContent = ({ moduleID, position }) => {
               <button
                   key={index}
                   className={`branded-question-btn answer-choice-btn ${
-                    (clickedButtonIndex === index && isCorrect(choice)) ? 'correct' : (clickedButtonIndex === index ? 'incorrect' : '')
+                    (clickedButtonIndex === index ) ? 'clicked' : ''
                   }`}
                   onClick={() => handleButtonClick(index)}
               >
