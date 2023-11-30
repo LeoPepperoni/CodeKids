@@ -3,14 +3,9 @@ const Schema = mongoose.Schema;
 
 const progressSchema = new Schema({
     userID: {
-        type: mongoose.Schema.Types.ObjectId, // Using ObjectId instead of String for referencing
-        ref: 'User', // Assuming you have a User model
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User', // Reference to User model
         required: true,
-    },
-    questionID: {
-        type: mongoose.Schema.Types.ObjectId, // Using ObjectId for referencing
-        ref: 'Question', // Assuming you have a Question model
-        required: true
     },
     module: {
         type: Number,
@@ -18,15 +13,11 @@ const progressSchema = new Schema({
     },
     completed: {
         type: Boolean,
-        default: true // You can set a default value if it makes sense for your logic
-    },
-    // Consider adding a timestamp for when the progress was recorded
-    createdAt: {
-        type: Date,
-        default: Date.now
+        default: false // Default to false, indicating the module is not yet completed
     }
 });
 
-progressSchema.index({ userID: 1, questionID: 1 }, { unique: true });
+// Creating an index to ensure unique combination of userID and module
+progressSchema.index({ userID: 1, module: 1 }, { unique: true });
 
 module.exports = mongoose.model('Progress', progressSchema);
