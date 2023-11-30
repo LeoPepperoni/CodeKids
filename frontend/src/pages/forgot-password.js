@@ -18,20 +18,31 @@ const ForgotPassword = () => {
     };
 
     return (
-        <div className="forgot-password">
-            <h3>Reset Your Password</h3>
-            <div className="reset-content">
-                <form onSubmit={handleForgotPassword}>
-                    <label className="email-label">Email:</label>
-                    <input
-                        type="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                        placeholder="Enter your email address"
-                    />
-                    <button className="reset-password">Reset</button>
-                </form>
+        <div className="branded-shadow forgot-password">
+            <h3 className="branded-header">Oops... Let's Reset Your Password!</h3>
+            <div className='reset-text'>
+              <p className='branded-text'>Please provide the email used to create your <em>CodeKids</em> account.
+                We will send an email to the address with account retrieval instructions! 🤠
+              </p>
             </div>
+            <div className="">
+                
+                <form onSubmit={handleForgotPassword} className='fp-form'>
+                  <label className="branded-text">Email:</label>
+                  <input
+                      className="branded-shadow branded-input"
+                      type="email"
+                      onChange={(e) => setEmail(e.target.value)}
+                      value={email}
+                      placeholder="Enter your email address"
+                  />
+                </form>
+
+            </div>
+            <button className="branded-long-button fp-long-button">Reset</button>
+            <div className="fp-extras">
+                    <Link className="link-text" to="/login">Remember Your Login?</Link>
+                </div>
             {message && <div className="message">{message}</div>}
         </div>
     );

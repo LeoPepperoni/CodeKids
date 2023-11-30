@@ -1,0 +1,19 @@
+.settings-content {
+  background-color: #fff;
+  width: 800px;
+  height: 500px;
+  margin-top: 60px;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.settings-main {
+  display: flex;
+  justify-content: center;
+}
+
+.settings-header {
+  background-color: rgb(170, 178, 178);
+  border-radius: 35px;
+}

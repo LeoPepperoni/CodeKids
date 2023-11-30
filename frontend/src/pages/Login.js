@@ -19,12 +19,13 @@ const Login = () => {
     }
 
     return (
-        <body>
-            <form className="login" onSubmit={handleSubmit}>
-                <h3>Login to your existing account</h3>
+        <div>
+            <form className="login branded-shadow" onSubmit={handleSubmit}>
+                <h3 className="branded-header">Welcome Back to CodeKids! 👋</h3>
 
-                <label>Email</label>
+                <label className="branded-text">Email:</label>
                 <input
+                    className="branded-shadow branded-input"
                     type="email"
                     onChange={(e) => setEmail(e.target.value)}
                     value={email}
@@ -32,6 +33,7 @@ const Login = () => {
                 />
                 <label>Password:</label>
                 <input
+                    className="branded-shadow branded-input"
                     type="password"
                     onChange={(e) => setPassword(e.target.value)}
                     value={password}
@@ -40,20 +42,20 @@ const Login = () => {
                 />
 
                 {/* Submit button with disabled attribute while loading */}
-                <button disabled={isLoading}>Log in</button>
+                <button className="branded-long-button" disabled={isLoading}>Log in</button>
                 {/* Display error message if there is an error */}
                 {error && <div className="error">{error}</div>}
 
-                <label className="message">Don't have an account? 
-                    <Link to="/signup">Signup Here</Link>
-                </label>
+                <div className="login-extras">Don't have an account? 
+                    &nbsp; <Link className="link-text" to="/signup"> Signup Here</Link>
+                </div>
 
                 {/* Link to reset password modal */} 
-                <label className="message">
-                    <Link to="/forgot-password">Forgot password?</Link>
-                </label>
+                <div className="login-extras">
+                    <Link className="link-text" to="/forgot-password">Forgot password?</Link>
+                </div>
             </form>
-        </body>
+        </div>
     )
 }
 

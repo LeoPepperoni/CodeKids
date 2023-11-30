@@ -1,19 +1,22 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
   
   .path {
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     color: white;
   }
-
-  h3 {
-    font-family: JetBrains Mono;
+  .question-header-div {
+    background-color: #000;
+  }
+  .question-header {
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    padding-left: 200px;
     color: white;
   }
 
   .test-div {
     display: flex;
-    flex-direction: row;
-    font-family: JetBrains Mono;
+    justify-content: space-evenly;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     height: 70vh;
   }
 
@@ -22,11 +25,15 @@
     margin-top: 10px;
     text-align: left;
     padding-left: 10px;
+    background-color: white;
+    border-radius: 30px;
+    max-width: 200px;
+    max-height: 400px;
   }
 
   li {
     padding: 5px;
-    color: white;
+    color: black;
   }
 
   ul {
@@ -39,43 +46,43 @@
 
 
   .question-link {
-    color: white; /* Change the color as needed */
+    color: black; /* Change the color as needed */
     text-decoration: none; /* Remove underline */
   }
   
-  /* Style for the right section (question-box) */
-  .question-box {
-    display: flex;
-    flex-direction: column;
-    flex: 3; /* Adjust the width as needed */
-    margin-top: 20px;
-    padding: 10px;
+
+  .question-div {
+    margin-top: 10px;
     background-color: white;
     border-radius: 30px;
-  }
-
-  .question-box .button-container {
+    padding: 20px; 
+    width: 50%; 
     display: flex;
-    justify-content: space-between; /* Distribute space between elements */
-    align-items: flex-end; /* Align items to the bottom */
+    margin-right: 30px;
+    flex-direction: column;
+    height: 50vh;
   }
 
   .question-content {
-    flex: 10;
-  }
-
-  .button-container {
-    flex: 1;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
-
-  .button-container .submit-btn {
-    font-family: JetBrains Mono;
-    width: 100px;
-    margin-bottom: 20px; 
+    background-color: white;
     border-radius: 30px;
-    margin-right: 10px;
-    margin-top: 10px;
+    padding: 5px 10px; 
+    margin-bottom: 10px; 
+  }
+
+  .test-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .test-back-btn {
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    width: 100px;
+  }
+
+  .test-next-btn {
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    width: 100px;
   }

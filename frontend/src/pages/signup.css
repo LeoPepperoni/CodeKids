@@ -1,58 +1,24 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
 
-body {
-    background-color: #3A0CA3;
-    position: relative;
-}
-
 .signup {
+    padding-top: 20px;
     background-color: white;
     width: 600px;
-    height: 400px;
+    height: auto;
+    min-height: 500px;
     display: flex;
     flex-direction: column;
     margin-left: auto;
     margin-right: auto; 
-    margin-top: 30px;
+    margin-top: 125px;
     border-radius: 30px;
-}
-
-.signup h3 {
-    display: flex;
-    align-self: flex-start ;
-    margin-left: 100px;
-    font-family: JetBrains Mono;
 }
 
 .signup label {
     display: flex;
     align-self: flex-start ;
     margin-left: 100px;
-    font-family: JetBrains Mono;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     margin-top: 10px;
 }
 
-.signup input {
-    width: 400px;
-    height: 30px;
-    align-self: center;
-    margin-bottom: 20px;
-    padding: 0;
-    border: none;
-    background: #D9D9D9;
-    border-radius: 30px;
-    border-color: white;
-    font-family: JetBrains Mono;
-    text-align: left;
-    padding-left: 10px;
-
-}
-
-
-.signup button {
-    width: 300px;
-    align-self: center;
-    margin-bottom: 20px; 
-    border-radius: 30px;
-    font-family: JetBrains Mono;
-}

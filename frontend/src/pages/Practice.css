@@ -1,26 +1,50 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
 
 .path {
-    font-family: JetBrains Mono;
     padding: 10px;
+}
+
+.container-div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .practice-div {
     background-color: white;
     border-radius: 30px;
     padding: 20px; 
-    width: 60%; 
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
     flex-direction: column;
-    height: 60vh;
+    width: 80vh;
+    height: 50vh;
+    max-width: 800px;
+    max-height: 600px;
+}
+
+.practice-box {
 }
 
 .practice-content {
     background-color: white;
     border-radius: 30px;
+    padding: 5px 10px; 
+    margin-bottom: 10px; 
+}
+
+.hint-boxxx {
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
     padding: 20px; 
+    margin-top: 80px;
+    margin-right: 40px;
+    height: auto;
+}
+
+.random-question-content {
+    display: flex;
+    padding: 5px 10px; 
     margin-bottom: 10px; 
 }
 
@@ -31,6 +55,30 @@
     margin-top: auto;
 }
 
+.hint-btn-container {
+    display: flex;
+    position: relative;
+    margin-bottom: 5px;
+}
 
+.back-btn {
+    width: 100px;
+}
+
+.next-btn {
+    width: 100px;
+}
+
+.hint-btn {
+    width: 150px;
+    position: absolute;
+    top: 10px; /* Adjust the top distance as needed */
+    right: 10px; /* Adjust the right distance as needed */
+}
+
+.question-num {
+    color: black;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
 
 

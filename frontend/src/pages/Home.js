@@ -2,13 +2,13 @@ import './Home.css';
 
 const Home = () => {
     return (
-        <body>
+        <div>
             <div className='box'>
-                <div>
-                    <h2>printf("Welcome to CodeKids");</h2>
+                <div className="main-branding">
+                    <div className="branding-text">CodeKids<br></br> Learn to Code Younger, Faster, <em>Smarter.</em> </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 }
 

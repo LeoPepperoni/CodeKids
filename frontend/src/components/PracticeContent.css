@@ -1,0 +1,72 @@
+.practice-container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.question-txt {
+    font-size: 18pt;
+    margin-top: 5px;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    max-width: 500px;
+}
+
+.answer-choices {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+}
+
+.answer-choice-btn {
+    width: 200px;
+    margin: 2px;
+    padding: 5px 7px;
+}
+
+.answer-choice-btn:hover {
+    color: green;
+}
+
+.branded-question-btn{
+  background: lightgray;
+  border: 2px solid lightgray;
+  width: 250px;
+  min-height: 30px;
+  border: none;
+  align-self: center;
+  margin-bottom: 20px; 
+  border-radius: 10px;
+  color: #000;
+  font-weight: 700;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  transition: border-radius 0.4s, background-color 0.4s;
+}
+
+.branded-question-btn:hover {
+  border-radius: 30px;
+  background-color: #3a0ca3;
+  border: 2px solid #3a0ca3;;
+  -webkit-text-fill-color: #fff;
+}
+
+.branded-question-btn.correct {
+  background-color: #14a40a;
+  border: 2px solid #14a40a;
+  border-radius: 30px;
+  -webkit-text-fill-color: #fff;
+}
+
+.branded-question-btn.incorrect {
+  background-color: #ce1e1e;
+  border: 2px solid #ce1e1e;
+  border-radius: 30px;
+  -webkit-text-fill-color: #fff;
+}
+
+.branded-question-btn.clicked {
+  background-color: #3a0ca3;
+  border: 2px solid #3a0ca3;
+  border-radius: 30px;
+  -webkit-text-fill-color: #fff;
+}

@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom';
 import { useLogout } from '../hook/useLogout'
 import { useAuthContext } from '../hook/useAuthContext'
 import './Navbar.css';
 
 const Navbar = () => {
+    const { pathname } = useLocation();
     // Importing the logout function from the custom hook
     const { logout } = useLogout()
     // Importing the user data from the custom hook
@@ -14,45 +15,72 @@ const Navbar = () => {
         logout()
     }
 
-    return (
-        <header>
+    const menuClick = () => {
+      const menu = document.getElementById("menu-toggle");
+      menu.click();
+    }
+
+    // We dont want to show the nav bar on the login, signup, or forgot password routes since it doesnt make sense
+    const hiddenRoutes = ['/login', '/signup', '/forgot-password'];
+    const hideAbout = ['/About'];
+    const shouldShowAbout = !hideAbout.includes(pathname);
+    const shouldShowNavbar = !hiddenRoutes.includes(pathname);
+
+    
+
+    return shouldShowNavbar ?  (
+        <div>
             <div className="container">
                 {user && (
                     <div>
-                        <button className="dropdown-btn">"Drop Down"</button>
+                      <div class="hamburger-menu">
+                        <input id="menu-toggle" type="checkbox" />
+                        <label class="menu-btn" for="menu-toggle">
+                          <span></span>
+                        </label>
+
+                        <ul class="menu-box">
+                          <li><Link to="/"><div className="menu-item" onClick={menuClick}>Home</div></Link></li>
+                          <li><Link to="/dashboard"><div className="menu-item" onClick={menuClick}>Modules</div></Link></li>
+                          <li><Link to="/settings"><div className="menu-item" onClick={menuClick}>Settings</div></Link></li>
+                          <li><Link to="/about"><div className="menu-item" onClick={menuClick}>About</div></Link></li>
+                        </ul>
+                      </div>
                     </div>
                 )}
-                {!user && (
+                {!user && shouldShowAbout && (
                     <div>
                         <Link to="/About">
-                            <button className="about-btn">About</button>
+                            <button className="branded-button">About Us</button>
                         </Link>
                         
                     </div>
                 )}
-                <Link to="/">
-                    <h1>Code Kids</h1>
-                </Link>
+                {!user && !shouldShowAbout && (
+                    <div>
+                    </div>
+                )}
                 <nav>
                     {user && (
                         <div>
-                            <button onClick={handleClick}>Log out</button>
+                            <button className="branded-button" onClick={handleClick}>Log out</button>
                         </div>
                     )}
                     {!user && (
                         <div>
-                            <button className="login-btn">
-                                <Link to="/login">Login</Link>
-                            </button>
-                            <button className="signup-btn">
-                                <Link to="/signup">Signup</Link>
-                            </button>
+                                <Link to="/login">
+                                  <button className="branded-button">Login</button>
+                                </Link>
+                                <Link to="/signup">
+                                  <button className="branded-button">Signup</button>
+                                </Link>
+                            
                         </div>
                     )}
                 </nav>
             </div>
-        </header>
-    )
+        </div>
+    ) : null
 }
 
 export default Navbar
