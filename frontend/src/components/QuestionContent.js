@@ -50,15 +50,19 @@ const QuestionContent = ({ moduleID, position }) => {
   const handleButtonClick = (index) => {
     setClickedButtonIndex(index);
     setSelectedChoice(index); // Update the selected choice
-    console.log('handleChoiceClick - selectedChoice:', index);
   };
 
 
-  console.log('Render - selectedChoice:', selectedChoice); 
   function isCorrect(answerChoice) {
-    return (answerChoice === question.answer) ? true : false;
+    const isAnswerCorrect = answerChoice === question.answer;
+
+    // Log the result to the console
+    console.log("Is the selected answer correct?", isAnswerCorrect);
+
+    // Return the result
+    return isAnswerCorrect;
   }
-  
+
   return (
     <div>
       <div className="question-container">
