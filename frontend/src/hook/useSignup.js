@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from './useAuthContext'
 
 export const useSignup = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
+    const navigate = useNavigate();
     const { dispatch } = useAuthContext()
 
     const signup = async (firstName, lastName, email, password) => {
@@ -30,6 +32,8 @@ export const useSignup = () => {
 
             // update loading state
             setIsLoading(false)
+
+            navigate('/dashboard');
         }
     }
 
