@@ -36,8 +36,6 @@ const QuestionContent = ({ moduleID, position }) => {
   };
   */
 
-  console.log('Render - selectedChoice:', selectedChoice); 
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -51,10 +49,16 @@ const QuestionContent = ({ moduleID, position }) => {
   }
   const handleButtonClick = (index) => {
     setClickedButtonIndex(index);
+    setSelectedChoice(index); // Update the selected choice
+    console.log('handleChoiceClick - selectedChoice:', index);
   };
+
+
+  console.log('Render - selectedChoice:', selectedChoice); 
   function isCorrect(answerChoice) {
     return (answerChoice === question.answer) ? true : false;
   }
+  
   return (
     <div>
       <div className="question-container">
