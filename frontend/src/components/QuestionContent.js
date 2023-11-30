@@ -6,7 +6,6 @@ const QuestionContent = ({ moduleID, position }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
   const [shuffledChoices, setShuffledChoices] = useState([]);
   const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
-  const [selectedChoice, setSelectedChoice] = useState(null); 
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0); 
 
   useEffect(() => {
@@ -16,7 +15,6 @@ const QuestionContent = ({ moduleID, position }) => {
       const shuffled = shuffleArray(choices);
       setShuffledChoices(shuffled);
       setClickedButtonIndex(null); // Reset clicked button index when question changes
-      setSelectedChoice(null);
     }
     console.log('useEffect - selectedChoice:', selectedChoice);
   }, [question]);
@@ -29,13 +27,6 @@ const QuestionContent = ({ moduleID, position }) => {
       }
       return newArray;
   };
-
-  /*
-  const handleChoiceClick = (choice) => {
-    setSelectedChoice(choice); // Update the selected choice
-    console.log('handleChoiceClick - selectedChoice:', choice);
-  };
-  */
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -50,22 +41,21 @@ const QuestionContent = ({ moduleID, position }) => {
   }
   const handleButtonClick = (index) => {
     setClickedButtonIndex(index);
-    setSelectedChoice(index); // Update the selected choice
-
+  
     // Check if the selected choice is correct
-    if (isCorrect(shuffledChoices[index])) {
-      setCorrectAnswerCount(correctAnswerCount + 1);
-      console.log("True - The selected answer is correct.");
+    if (shuffledChoices[index] === question.answer) {
+      setCorrectAnswerCount(correctAnswerCount + 1); // Increment the correct answer count
+      console.log("Correct Answer!");
     } else {
-      console.log("False - The selected answer is incorrect.");
+      console.log("Incorrect Answer.");
     }
   };
 
   console.log("correct answer count: ", correctAnswerCount);
-
+  /*
   function isCorrect(answerChoice) {
     return (answerChoice === question.answer) ? true : false;
-  }
+  }*/
 
   return (
     <div>
