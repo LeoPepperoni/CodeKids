@@ -54,13 +54,7 @@ const QuestionContent = ({ moduleID, position }) => {
 
 
   function isCorrect(answerChoice) {
-    const isAnswerCorrect = answerChoice === question.answer;
-
-    // Log the result to the console
-    console.log("Is the selected answer correct?", isAnswerCorrect);
-
-    // Return the result
-    return isAnswerCorrect;
+    return (answerChoice === question.answer) ? true : false;
   }
 
   return (
