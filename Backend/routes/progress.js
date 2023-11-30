@@ -1,28 +1,23 @@
 const express = require('express');
 const {
-    createProgress,
-    deleteProgress,
-    getUserProgress,
-    getUserModuleProgress,
-    getUncompletedQuestionsByModule
-  } = require('../controllers/progressController');  
+  completeModule,
+  deleteProgress,
+  getUserProgress,
+  getUncompletedModules
+} = require('../controllers/progressController');
 
 const router = express.Router();
 
-// Add progress route
-router.post('/add', createProgress);
+// Mark a module as completed for a user
+router.post('/completeModule', completeModule);
 
-// Delete progress route (updated to use DELETE method and include the ID in the path)
+// Delete progress route (use DELETE method and include the ID in the path)
 router.delete('/delete/:id', deleteProgress);
 
-// Get progress for a specific user
+// Get all progress records for a specific user
 router.get('/user/:userId', getUserProgress);
 
-// Get progress for a specific user by module
-router.get('/user/:userId/module/:moduleId', getUserModuleProgress);
-
-// Get uncompleted questions per module
-router.get('/user/uncompleted/:userId/module/:moduleId', getUncompletedQuestionsByModule)
-
+// Get all uncompleted modules for a specific user
+router.get('/user/uncompletedModules/:userId', getUncompletedModules);
 
 module.exports = router;
