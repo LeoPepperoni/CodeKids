@@ -2,11 +2,18 @@ const Question = require('../models/questionModel'); // Correctly require the Qu
 
 // Function to create a new question in the database
 const createQuestion = async (req, res) => {
-    // Destructuring question, answer, module, and answer choices from the request body
     const { question, answer, module, answerChoice1, answerChoice2, answerChoice3, position, hint } = req.body;
 
-    // Trying to add the new question to the database
     try {
+        // Check if a question with the same module and position already exists
+        const existingQuestion = await Question.findOne({ module, position });
+
+        // If a question exists, throw an error
+        if (existingQuestion) {
+            return res.status(400).json({ error: 'A question with the specified module and position already exists.' });
+        }
+
+        // If no existing question, create the new question
         const newQuestion = await Question.create({
             question,
             answer,
@@ -17,34 +24,32 @@ const createQuestion = async (req, res) => {
             position,
             hint
         });
-
-        // Sending the created question as a response with status code 200 (OK)
         res.status(200).json(newQuestion);
     } catch (error) {
-        // In case of an error, sending an error response with status code 400 (Bad Request)
         res.status(400).json({ error: error.message });
     }
 };
 
+
 // Function to delete a question from the database
 const deleteQuestion = async (req, res) => {
-    // The '_id' is typically provided as a URL parameter, accessed via 'req.params.id'
-    const { id } = req.params;
+    const { position, module } = req.body; // or req.query
 
     try {
-        const deletedQuestion = await Question.findByIdAndRemove(id);
+        const deletedQuestion = await Question.findOneAndRemove({ position: position, module: module });
 
         if (!deletedQuestion) {
             return res.status(404).json({ message: 'Question not found' });
         }
 
-        // Sending a response back confirming the deletion
-        res.status(200).json({ message: 'Question deleted successfully' });
+        // Sending the deleted question back in the response
+        res.status(200).json({ deletedQuestion: deletedQuestion });
     } catch (error) {
-        // Sending an error response if there's an issue with the deletion
         res.status(400).json({ error: error.message });
     }
 };
+
+
 
 // Function to get a question from the database
 const getQuestion = async (req, res) => {
