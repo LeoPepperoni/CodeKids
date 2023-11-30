@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/add', createQuestion);
 
 // Delete question route (updated to use DELETE method and include the ID in the path)
-router.delete('/delete/:id', deleteQuestion);
+router.delete('/delete', deleteQuestion);
 
 // Get question route
 router.get('/get/:id', getQuestion);
