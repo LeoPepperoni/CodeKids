@@ -50,12 +50,21 @@ const QuestionContent = ({ moduleID, position }) => {
   const handleButtonClick = (index) => {
     setClickedButtonIndex(index);
     setSelectedChoice(index); // Update the selected choice
+
+    // Check if the selected choice is correct
+    if (isCorrect(shuffledChoices[index])) {
+      console.log("True - The selected answer is correct.");
+    } else {
+      console.log("False - The selected answer is incorrect.");
+    }
   };
 
 
   function isCorrect(answerChoice) {
     return (answerChoice === question.answer) ? true : false;
   }
+
+  
 
   return (
     <div>
