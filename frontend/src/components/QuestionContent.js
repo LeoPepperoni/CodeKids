@@ -7,6 +7,7 @@ const QuestionContent = ({ moduleID, position }) => {
   const [shuffledChoices, setShuffledChoices] = useState([]);
   const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null); 
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0); 
 
   useEffect(() => {
     if (question) {
@@ -53,18 +54,18 @@ const QuestionContent = ({ moduleID, position }) => {
 
     // Check if the selected choice is correct
     if (isCorrect(shuffledChoices[index])) {
+      setCorrectAnswerCount(correctAnswerCount + 1);
       console.log("True - The selected answer is correct.");
     } else {
       console.log("False - The selected answer is incorrect.");
     }
   };
 
+  console.log("correct answer count: ", correctAnswerCount);
 
   function isCorrect(answerChoice) {
     return (answerChoice === question.answer) ? true : false;
   }
-
-  
 
   return (
     <div>
