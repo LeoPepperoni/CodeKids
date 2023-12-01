@@ -18,6 +18,8 @@ const TestAll = () => {
       setKeyProp((prevKeyProp) => prevKeyProp + 1);
       setCount((prevCount) => prevCount + 1);
       console.log('set count = ', count);
+    } else {
+      openModal(); // Open the modal when the count reaches 20
     }
   };
 
@@ -41,11 +43,17 @@ const TestAll = () => {
                         </div>
 
                         <div className="button-container-back-next">
+                          {/* Display Submit button only when count reaches 20 */}
+                          {count === 20 && (
                             <button className="submit-test-all-btn" onClick={openModal}>Submit</button>
-                            <SubmitTestAllModal show={showModal} close={closeModal}>
-                              <p>This is modal content!</p>
-                            </SubmitTestAllModal>
+                          )}
+                          <SubmitTestAllModal show={showModal} close={closeModal}>
+                            <p>This is modal content!</p>
+                          </SubmitTestAllModal>
+                          {/* Display Next button until count reaches 20 */}
+                          {count < 20 && (
                             <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
+                          )}
                         </div>
                     </div>
                 </div>
