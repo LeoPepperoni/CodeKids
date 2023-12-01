@@ -5,14 +5,11 @@ exports.completeModule = async (req, res) => {
     const { userID, module } = req.body;
 
     try {
-        // Check if progress for the same user and module already exists
         let progress = await Progress.findOne({ userID, module });
 
-        // If it doesn't exist, create a new progress record with completed set to true
         if (!progress) {
             progress = await Progress.create({ userID, module, completed: true });
         } else {
-            // If it exists and is not completed, update it
             if (!progress.completed) {
                 progress.completed = true;
                 await progress.save();
@@ -29,14 +26,9 @@ exports.completeModule = async (req, res) => {
 exports.getUncompletedModules = async (req, res) => {
     try {
         const userID = req.params.userId;
-
-        // Define all modules
         const allModules = [1, 2, 3, 4, 5];
-
-        // Find modules that the user has made progress on (either completed or not)
         const userProgress = await Progress.find({ userID }).select('module completed -_id');
 
-        // Determine which modules are uncompleted or have no progress record
         const uncompletedOrNoProgressModules = allModules.filter(moduleNumber => {
             const progressRecord = userProgress.find(progress => progress.module === moduleNumber);
             return !progressRecord || !progressRecord.completed;
@@ -48,8 +40,7 @@ exports.getUncompletedModules = async (req, res) => {
     }
 };
 
-
-// Delete a progress record (if needed)
+// Delete a progress record
 exports.deleteProgress = async (req, res) => {
     try {
         const progress = await Progress.findById(req.params.id);
@@ -62,7 +53,7 @@ exports.deleteProgress = async (req, res) => {
     }
 };
 
-// Get progress records for a specific user (if needed)
+// Get progress records for a specific user
 exports.getUserProgress = async (req, res) => {
     try {
         const userProgress = await Progress.find({ userID: req.params.userId });
@@ -71,3 +62,16 @@ exports.getUserProgress = async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 };
+
+exports.getUserModuleProgress = async (req, res) => {
+    try {
+        const progress = await Progress.findOne({ userID: req.params.userId, module: req.params.module });
+
+        // Check if progress exists and return true, otherwise return false
+        const progressExists = !!progress;
+        res.status(200).json({ progressExists });
+    } catch (err) {
+        res.status(500).json({ message: 'Error fetching user module progress', error: err.message });
+    }
+};
+
