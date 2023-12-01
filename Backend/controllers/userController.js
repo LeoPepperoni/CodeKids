@@ -19,10 +19,6 @@ const loginUser = async (req, res) => {
         // Use the 'login' method defined in User model to authenticate the user
         const user = await User.login(email, password);
 
-        // Check if the user is confirmed
-        if (!user.confirmation) {
-            throw Error('User is not confirmed. Please confirm your account.');
-        }
 
         // If successful and confirmed, create a token for the user
         const token = createToken(user._id);

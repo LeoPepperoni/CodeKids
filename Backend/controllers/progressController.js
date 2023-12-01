@@ -74,4 +74,3 @@ exports.getUserModuleProgress = async (req, res) => {
         res.status(500).json({ message: 'Error fetching user module progress', error: err.message });
     }
 };
-

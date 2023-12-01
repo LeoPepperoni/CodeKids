@@ -31,7 +31,6 @@ app.use((req, res, next) => {
 app.use('/api/user', userRoutes);
 app.use('/api/question', questionRoutes);
 app.use('/api/progress', progressRoutes);
-app.use('/api/email', emailRoutes);
 
 
 
