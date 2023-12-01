@@ -7,7 +7,7 @@ const QuestionContent = ({ moduleID, position }) => {
   const [shuffledChoices, setShuffledChoices] = useState([]);
   const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0); 
-  const [correctAnswerClickedIndex, setCorrectAnswerClickedIndex] = useState(null);
+  const [hasSelectedCorrectAnswer, setHasSelectedCorrectAnswer] = useState(false); 
 
   useEffect(() => {
     if (question) {
@@ -16,7 +16,7 @@ const QuestionContent = ({ moduleID, position }) => {
       const shuffled = shuffleArray(choices);
       setShuffledChoices(shuffled);
       setClickedButtonIndex(null); // Reset clicked button index when question changes
-      setCorrectAnswerClickedIndex(null); 
+      setHasSelectedCorrectAnswer(false);
     }
   }, [question]);
 
@@ -44,12 +44,16 @@ const QuestionContent = ({ moduleID, position }) => {
     setClickedButtonIndex(index);
   
     if (shuffledChoices[index] === question.answer) {
-      if (correctAnswerClickedIndex !== index) { // Check if this correct answer hasn't been clicked before
+      if (!hasSelectedCorrectAnswer) {
         setCorrectAnswerCount(correctAnswerCount + 1);
-        setCorrectAnswerClickedIndex(index); // Update the index of the correct answer clicked
+        setHasSelectedCorrectAnswer(true);
       }
       console.log("Correct Answer!");
     } else {
+      if (hasSelectedCorrectAnswer) {
+        setCorrectAnswerCount(correctAnswerCount - 1);
+        setHasSelectedCorrectAnswer(false);
+      }
       console.log("Incorrect Answer.");
     }
   };
