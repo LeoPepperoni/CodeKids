@@ -22,6 +22,10 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    confirmation: {
+        type: Boolean,
+        default: false
+    },
 });
 
 // static signup method
