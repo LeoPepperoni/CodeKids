@@ -16,7 +16,6 @@ const QuestionContent = ({ moduleID, position }) => {
       setShuffledChoices(shuffled);
       setClickedButtonIndex(null); // Reset clicked button index when question changes
     }
-    console.log('useEffect - selectedChoice:', selectedChoice);
   }, [question]);
 
   const shuffleArray = (array) => {
