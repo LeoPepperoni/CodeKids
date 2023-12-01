@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'; 
 import './Test.css';
 import QuestionContent from '../components/QuestionContent'; // Import the QuestionContent component
+import SubmitTestModal from '../components/SubmitTestModal';
 
 
 const Test = () => {
@@ -12,6 +13,7 @@ const Test = () => {
 
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
+    const [showModal, setShowModal] = useState(false);
 
     // Total number of questions
     const questionsCount = 10; 
@@ -28,6 +30,8 @@ const Test = () => {
             const newQuestionNumber = currentQuestion + 1;
             setCurrentQuestion(newQuestionNumber);
             updateURL(newQuestionNumber);
+        } else {
+            setShowModal(true); // Show the modal on the last question
         }
     };
 
@@ -58,6 +62,9 @@ const Test = () => {
                     </div>
 
             </div>
+
+            {/* Render the SubmitTestModal component */}
+            {showModal && <SubmitTestModal />}
 
         </div>
     );
