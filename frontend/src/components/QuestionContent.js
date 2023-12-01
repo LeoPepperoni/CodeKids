@@ -6,7 +6,8 @@ const QuestionContent = ({ moduleID, position }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
   const [shuffledChoices, setShuffledChoices] = useState([]);
   const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
-  const [selectedChoice, setSelectedChoice] = useState(null); 
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0); 
+  const [hasSelectedCorrectAnswer, setHasSelectedCorrectAnswer] = useState(false); 
 
   useEffect(() => {
     if (question) {
@@ -15,9 +16,8 @@ const QuestionContent = ({ moduleID, position }) => {
       const shuffled = shuffleArray(choices);
       setShuffledChoices(shuffled);
       setClickedButtonIndex(null); // Reset clicked button index when question changes
-      setSelectedChoice(null);
+      setHasSelectedCorrectAnswer(false);
     }
-    console.log('useEffect - selectedChoice:', selectedChoice);
   }, [question]);
 
   const shuffleArray = (array) => {
@@ -28,15 +28,6 @@ const QuestionContent = ({ moduleID, position }) => {
       }
       return newArray;
   };
-
-  /*
-  const handleChoiceClick = (choice) => {
-    setSelectedChoice(choice); // Update the selected choice
-    console.log('handleChoiceClick - selectedChoice:', choice);
-  };
-  */
-
-  console.log('Render - selectedChoice:', selectedChoice); 
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -51,10 +42,24 @@ const QuestionContent = ({ moduleID, position }) => {
   }
   const handleButtonClick = (index) => {
     setClickedButtonIndex(index);
+  
+    if (shuffledChoices[index] === question.answer) {
+      if (!hasSelectedCorrectAnswer) {
+        setCorrectAnswerCount(correctAnswerCount + 1);
+        setHasSelectedCorrectAnswer(true);
+      }
+      console.log("Correct Answer!");
+    } else {
+      if (hasSelectedCorrectAnswer) {
+        setCorrectAnswerCount(correctAnswerCount - 1);
+        setHasSelectedCorrectAnswer(false);
+      }
+      console.log("Incorrect Answer.");
+    }
   };
-  function isCorrect(answerChoice) {
-    return (answerChoice === question.answer) ? true : false;
-  }
+
+  console.log("correct answer count: ", correctAnswerCount);
+
   return (
     <div>
       <div className="question-container">
