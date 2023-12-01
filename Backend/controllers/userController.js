@@ -18,13 +18,15 @@ const loginUser = async (req, res) => {
     try {
         // Use the 'login' method defined in User model to authenticate the user
         const user = await User.login(email, password);
-        // If successful, create a token for the user
+
+
+        // If successful and confirmed, create a token for the user
         const token = createToken(user._id);
 
         // Respond with the user's email and token
         res.status(200).json({ email, token });
     } catch (error) {
-        // If there's an error (like user not found or wrong password), respond with error message
+        // If there's an error (like user not found, wrong password, or not confirmed), respond with error message
         res.status(400).json({ error: error.message });
     }
 };

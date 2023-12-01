@@ -10,6 +10,7 @@
     "start": "node Server.js",
     "test": "jasmine",
     "dev": "nodemon Server.js",
+    "testAll": "mocha 'Test/**/*.js'",
     "heroku-postbuild": " NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
