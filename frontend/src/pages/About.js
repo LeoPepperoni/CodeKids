@@ -1,3 +1,4 @@
+import { Link, useLocation } from 'react-router-dom';
 import React from 'react';
 import './About.css';
 
@@ -5,14 +6,16 @@ const About = () => {
     return (
         <div>
             <div className='logo-container'>
-                <div className='branded-logo branded-shadow'>CodeKids</div>
+              <Link className='branded-logo-link' to="/">
+                <div className='branded-logo branded-shadow' title='Return home'>CodeKnights</div>
+              </Link>
             </div>
             <div className='about-container'>
                 <div className='about-header'>Learn, Practice, & Test Your&nbsp;</div>
                 <div className='about-header branded-underline'>Knowledge</div>
             </div>
             <div className='about-main-text-container'>
-              <div className='about-main-text'>Our mission is to empower the next generation of software engineers through our distinctive approach to acquiring essential software skills.</div>
+              <div className='about-main-text'>Our mission is to prepare the next generation of UCF computer science students by learning fundamental C programming language principles ASAP.</div>
             </div>
             <div className='card-container'>
               <div className='about-card branded-shadow'>

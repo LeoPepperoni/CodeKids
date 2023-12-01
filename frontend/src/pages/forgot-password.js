@@ -21,7 +21,7 @@ const ForgotPassword = () => {
         <div className="branded-shadow forgot-password">
             <h3 className="branded-header">Oops... Let's Reset Your Password!</h3>
             <div className='reset-text'>
-              <p className='branded-text'>Please provide the email used to create your <em>CodeKids</em> account.
+              <p className='branded-text'>Please provide the email used to create your <em>CodeKnights</em> account.
                 We will send an email to the address with account retrieval instructions! 🤠
               </p>
             </div>

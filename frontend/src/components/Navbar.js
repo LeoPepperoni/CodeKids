@@ -28,7 +28,7 @@ const Navbar = () => {
 
     
 
-    return shouldShowNavbar ?  (
+    return (
         <div>
             <div className="container">
                 {user && (
@@ -42,7 +42,6 @@ const Navbar = () => {
                         <ul class="menu-box">
                           <li><Link to="/"><div className="menu-item" onClick={menuClick}>Home</div></Link></li>
                           <li><Link to="/dashboard"><div className="menu-item" onClick={menuClick}>Modules</div></Link></li>
-                          <li><Link to="/settings"><div className="menu-item" onClick={menuClick}>Settings</div></Link></li>
                           <li><Link to="/about"><div className="menu-item" onClick={menuClick}>About</div></Link></li>
                         </ul>
                       </div>
@@ -80,7 +79,7 @@ const Navbar = () => {
                 </nav>
             </div>
         </div>
-    ) : null
+    );
 }
 
 export default Navbar

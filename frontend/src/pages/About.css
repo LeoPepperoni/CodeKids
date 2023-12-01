@@ -50,6 +50,11 @@
   letter-spacing: -.035em;
   border-radius: 30px;
   padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.branded-logo-link {
+  text-decoration: none;
 }
 
 .card-container {
@@ -70,7 +75,7 @@
   font-size: 1.5rem;
 }
 .about-card:hover {
-  height: 450px;
+  height: 420px;
   width: 400px;
   border-radius: 40px;
 }

@@ -26,7 +26,8 @@ const PracticeContent = ({ moduleID, position }) => {
         return newArray;
     };
 
-    const handleButtonClick = (index) => {
+    const handleButtonClick = (index, choice) => {
+        displayText(choice);
         setClickedButtonIndex(index);
     };
 
@@ -46,6 +47,10 @@ const PracticeContent = ({ moduleID, position }) => {
       return (answerChoice === question.answer) ? true : false;
     }
 
+    function displayText(choice) {
+      return isCorrect(choice) ? 'Correct!': 'Oops, thats not correct!';
+    }
+
     return (
         <div>
             <div className="practice-container">
@@ -58,7 +63,7 @@ const PracticeContent = ({ moduleID, position }) => {
                             className={`branded-question-btn answer-choice-btn ${
                                 (clickedButtonIndex === index && isCorrect(choice)) ? 'correct' : (clickedButtonIndex === index ? 'incorrect' : '')
                             }`}
-                            onClick={() => handleButtonClick(index)}
+                            onClick={() => handleButtonClick(index, choice)}
                         >
                             {choice}
                         </button>

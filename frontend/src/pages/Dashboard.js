@@ -21,8 +21,10 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className='logo-container'>
-                <div className='branded-logo branded-shadow'>CodeKids</div>
+            <div className='logo-container'>
+              <Link className='branded-logo-link' to="/">
+                <div className='branded-logo branded-shadow' title='Return home'>CodeKnights</div>
+              </Link>
             </div>
       <div className="module-list">
         <ul>
