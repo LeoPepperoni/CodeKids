@@ -7,6 +7,7 @@ const QuestionContent = ({ moduleID, position }) => {
   const [shuffledChoices, setShuffledChoices] = useState([]);
   const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0); 
+  const [correctAnswerClickedIndex, setCorrectAnswerClickedIndex] = useState(null);
 
   useEffect(() => {
     if (question) {
@@ -15,6 +16,7 @@ const QuestionContent = ({ moduleID, position }) => {
       const shuffled = shuffleArray(choices);
       setShuffledChoices(shuffled);
       setClickedButtonIndex(null); // Reset clicked button index when question changes
+      setCorrectAnswerClickedIndex(null); 
     }
   }, [question]);
 
@@ -41,9 +43,11 @@ const QuestionContent = ({ moduleID, position }) => {
   const handleButtonClick = (index) => {
     setClickedButtonIndex(index);
   
-    // Check if the selected choice is correct
     if (shuffledChoices[index] === question.answer) {
-      setCorrectAnswerCount(correctAnswerCount + 1); // Increment the correct answer count
+      if (correctAnswerClickedIndex !== index) { // Check if this correct answer hasn't been clicked before
+        setCorrectAnswerCount(correctAnswerCount + 1);
+        setCorrectAnswerClickedIndex(index); // Update the index of the correct answer clicked
+      }
       console.log("Correct Answer!");
     } else {
       console.log("Incorrect Answer.");
@@ -51,10 +55,6 @@ const QuestionContent = ({ moduleID, position }) => {
   };
 
   console.log("correct answer count: ", correctAnswerCount);
-  /*
-  function isCorrect(answerChoice) {
-    return (answerChoice === question.answer) ? true : false;
-  }*/
 
   return (
     <div>
