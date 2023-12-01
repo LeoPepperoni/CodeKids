@@ -64,7 +64,11 @@ const Test = () => {
             </div>
 
             {/* Render the SubmitTestModal component */}
-            {showModal && <SubmitTestModal />}
+            <SubmitTestModal 
+                show={showModal} 
+                close={() => setShowModal(false)} 
+                children={<p>Your test is completed!</p>}
+            />
 
         </div>
     );
