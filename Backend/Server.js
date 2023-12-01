@@ -10,6 +10,7 @@ const path = require('path');
 const userRoutes = require('./routes/user');
 const questionRoutes = require('./routes/question');
 const progressRoutes = require('./routes/progress');
+const emailRoutes = require('./routes/email');
 
 
 // Initialize express app
@@ -30,6 +31,8 @@ app.use((req, res, next) => {
 app.use('/api/user', userRoutes);
 app.use('/api/question', questionRoutes);
 app.use('/api/progress', progressRoutes);
+app.use('/api/email', emailRoutes);
+
 
 
 // Serve static files in production
