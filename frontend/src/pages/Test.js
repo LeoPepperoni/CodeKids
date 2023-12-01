@@ -51,7 +51,9 @@ const Test = () => {
                         </div>
 
                         <div className="test-button-container">
-                            <button className="branded-long-button branded-shadow test-next-btn" onClick={handleNextClick}>Next</button>
+                            <button className="branded-long-button branded-shadow test-next-btn" onClick={handleNextClick}>
+                                {currentQuestion === questionsCount ? "Submit" : "Next"}
+                            </button>
                         </div>
                     </div>
 
