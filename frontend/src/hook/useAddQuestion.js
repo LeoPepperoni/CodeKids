@@ -12,7 +12,7 @@ export const useAddQuestion = () => {
       setError(null)
 
       //TODO: Update with correct URL
-      const response = await fetch('/api/question/delete', {
+      const response = await fetch('/api/question/add', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: 
