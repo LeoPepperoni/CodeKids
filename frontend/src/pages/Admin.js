@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import { useState } from "react"
 import React from 'react';
 import { useAddQuestion } from "../hook/useAddQuestion"
+import { useDeleteQuestion} from "../hook/useDeleteQuestion"
 import './Admin.css';
 
 const Admin = () => {
+  // Add question input
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [moduleM, setModule] = useState('');
@@ -13,13 +15,22 @@ const Admin = () => {
   const [answerChoice3, setAnswerChoice3] = useState('');
   const [position, setPosition] = useState('');
   const [hint, setHint] = useState('');
-  const { addQuestion, error, isLoading } = useAddQuestion()
+  const { addQuestion, error, isLoading } = useAddQuestion();
+  const { deleteQuestion, deleteError, deleteLoading } = useDeleteQuestion();
+
+  // Delete question input
+  const [moduleDelete, setDeleteModule] = useState('');
+  const [positionDelete, seDeletePosition] = useState('');
 
 
   const handleAddQuestion = async (e) => {
     e.preventDefault()
     await addQuestion(question, answer, moduleM, answerChoice1, answerChoice2, answerChoice3, position, hint);
-  
+  }
+
+  const handleDeleteQuestion = async (e) => {
+    e.preventDefault()
+    await deleteQuestion(positionDelete, moduleDelete);
   } 
   return (
       <div>
@@ -117,25 +128,24 @@ const Admin = () => {
               <div className='admin-delete-question branded-shadow'>
                 <h3 className="branded-header">Delete a Question ❌</h3>
 
-                <label className="input-label branded-text">Question Position:</label>
-                <input
-                    className="branded-shadow branded-input"
-                    type=""
-                    onChange={(e) => setAnswer(e.target.value)}
-                    value={answer}
-                    placeholder="Question 5..."
-                />
-
                 <label className="input-label branded-text">Question's Module:</label>
                 <input
                     className="branded-shadow branded-input"
                     type=""
-                    onChange={(e) => setAnswer(e.target.value)}
-                    value={answer}
+                    onChange={(e) => setDeleteModule(e.target.value)}
+                    value={moduleDelete}
                     placeholder="Module 2..."
                 />
 
-                <button className="branded-long-button submit-admin-question">Delete Question</button>
+                <label className="input-label branded-text">Question Position:</label>
+                <input
+                    className="branded-shadow branded-input"
+                    type=""
+                    onChange={(e) => seDeletePosition(e.target.value)}
+                    value={positionDelete}
+                    placeholder="Question 5..."
+                />
+                <button className="branded-long-button submit-admin-question" onClick={handleDeleteQuestion}>Delete Question</button>
               </div>
           </div>
       </div>

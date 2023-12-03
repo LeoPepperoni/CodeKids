@@ -1,30 +1,22 @@
 import { useState } from 'react'
 import { useAuthContext } from './useAuthContext'
-import { useNavigate } from 'react-router-dom';
 
-export const useAddQuestion = () => {
+export const useDeleteQuestion = () => {
   const [error, setError] = useState(null)
   const [isLoading, setIsLoading] = useState(null)
   const { dispatch } = useAuthContext()
 
-  const addQuestion = async (question, answer, module, answerChoice1, answerChoice2, answerChoice3, position, hint) => {
+  const deleteQuestion = async (position, module) => {
       setIsLoading(true)
       setError(null)
-
-      //TODO: Update with correct URL
+ 
       const response = await fetch('/api/question/delete', {
-          method: 'POST',
+          method: 'DELETE',
           headers: { 'Content-Type': 'application/json' },
           body: 
             JSON.stringify({ 
-              question, 
-              answer, 
-              module, 
-              answerChoice1, 
-              answerChoice2, 
-              answerChoice3,
-              position, 
-              hint 
+              position,
+              module
             })
           })
       const json = await response.json()
@@ -34,12 +26,9 @@ export const useAddQuestion = () => {
           setError(json.error)
       }
       if (response.ok) {
-          // Trigger success modal
-
-          // update loading state
           setIsLoading(false)
       }
   }
 
-  return { addQuestion, isLoading, error }
+  return { deleteQuestion, isLoading, error }
 }
