@@ -28,7 +28,7 @@ export const useAddQuestion = () => {
             })
           })
       const json = await response.json()
-
+      const form = document.getElementById('add-form')
       if (!response.ok) {
           setIsLoading(false)
           setError(json.error)
@@ -38,6 +38,7 @@ export const useAddQuestion = () => {
 
           // update loading state
           setIsLoading(false)
+          form.clear()
       }
   }
 

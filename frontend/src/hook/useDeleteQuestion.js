@@ -20,6 +20,7 @@ export const useDeleteQuestion = () => {
             })
           })
       const json = await response.json()
+      const form = document.getElementById('delete-form')
 
       if (!response.ok) {
           setIsLoading(false)
@@ -27,6 +28,7 @@ export const useDeleteQuestion = () => {
       }
       if (response.ok) {
           setIsLoading(false)
+          form.clear()
       }
   }
 
