@@ -16,22 +16,22 @@ const Admin = () => {
   const [position, setPosition] = useState('');
   const [hint, setHint] = useState('');
   const { addQuestion, error, isLoading } = useAddQuestion();
-  const { deleteQuestion, deleteError, deleteLoading } = useDeleteQuestion();
+  const { deleteQuestion, deleteError, deleteLoading} = useDeleteQuestion();
 
   // Delete question input
   const [moduleDelete, setDeleteModule] = useState('');
   const [positionDelete, seDeletePosition] = useState('');
 
-
   const handleAddQuestion = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     await addQuestion(question, answer, moduleM, answerChoice1, answerChoice2, answerChoice3, position, hint);
-  }
+  };
 
   const handleDeleteQuestion = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     await deleteQuestion(positionDelete, moduleDelete);
-  } 
+  };
+
   return (
       <div>
           <div className='logo-container'>
@@ -45,7 +45,7 @@ const Admin = () => {
           </div>
             
           <div className='admin-container'>
-              <div className='admin-add-question branded-shadow'>
+              <form className='admin-add-question branded-shadow' onSubmit={handleAddQuestion}>
                 <h3 className="branded-header">Add a Question ✅</h3>
 
                 <label className="input-label branded-text">Question Prompt:</label>
@@ -121,11 +121,11 @@ const Admin = () => {
                     placeholder="think of..."
                 /> 
 
-                <button className="branded-long-button submit-admin-question" onClick={handleAddQuestion}>Add Question</button>
-              </div>
+                <button className="branded-long-button submit-admin-question" disabled={isLoading}>Add Question</button>
+              </form>
           </div>
           <div className='admin-container'>
-              <div className='admin-delete-question branded-shadow'>
+              <form className='admin-delete-question branded-shadow' onSubmit={handleDeleteQuestion}>
                 <h3 className="branded-header">Delete a Question ❌</h3>
 
                 <label className="input-label branded-text">Question's Module:</label>
@@ -145,8 +145,8 @@ const Admin = () => {
                     value={positionDelete}
                     placeholder="Question 5..."
                 />
-                <button className="branded-long-button submit-admin-question" onClick={handleDeleteQuestion}>Delete Question</button>
-              </div>
+                <button className="branded-long-button submit-admin-question" disabled={deleteLoading}>Delete Question</button>
+              </form>
           </div>
       </div>
   );
