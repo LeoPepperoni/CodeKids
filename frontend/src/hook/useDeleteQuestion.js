@@ -28,7 +28,7 @@ export const useDeleteQuestion = () => {
       }
       if (response.ok) {
           setIsLoading(false)
-          form.clear()
+          form.reset()
       }
   }
 

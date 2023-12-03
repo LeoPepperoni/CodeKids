@@ -51,7 +51,7 @@ const Admin = () => {
                 <label className="input-label branded-text">Question Prompt:</label>
                 <input
                     className="branded-shadow branded-input"
-                    type="email"
+                    type=""
                     onChange={(e) => setQuestion(e.target.value)}
                     value={question}
                     placeholder="How do I declare a float in C..."

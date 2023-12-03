@@ -38,7 +38,7 @@ export const useAddQuestion = () => {
 
           // update loading state
           setIsLoading(false)
-          form.clear()
+          form.reset()
       }
   }
 
