@@ -44,7 +44,7 @@ const signupUser = async (req, res) => {
         const token = createToken(user._id);
 
         // Respond with the new user's email and token
-        res.status(200).json({ email, token });
+        res.status(200).json({ id: user._id, email, token });
     } catch (error) {
         // If there's an error during sign up (like email already in use), respond with error message
         res.status(400).json({ error: error.message });
