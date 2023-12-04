@@ -19,9 +19,6 @@ const Learn1 = () => {
             <div class="learn-container">
                 <div className="video-container">
                     <iframe
-                        frameBorder="0"
-                        width="50vw"
-                        height="40vh"
                         src={`https://www.youtube.com/embed/${videoId}`}
                         title="YouTube Video"
                         allowFullScreen
