@@ -18,11 +18,13 @@ const Learn5 = () => {
 
             <div class="learn-container">
                 <div className="video-container">
-                    <iframe
-                        src={`https://www.youtube.com/embed/${videoId}`}
-                        title="YouTube Video"
-                        allowFullScreen
-                    ></iframe>
+                    <div className="video-frame">
+                        <iframe
+                            src={`https://www.youtube.com/embed/${videoId}`}
+                            title="YouTube Video"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
                 </div>
 
                 <div className="link-container">
