@@ -20,7 +20,7 @@ const Learn4 = () => {
 
             <div class="learn-container">
                 <div className="video-container">
-                    <div className="video=frame">
+                    <div className="video-frame">
                         <iframe
                             src={`https://www.youtube.com/embed/${videoIdFunctions}`}
                             title="YouTube Video"
