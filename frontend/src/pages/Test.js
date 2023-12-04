@@ -60,20 +60,22 @@ const Test = () => {
             
             <div class="test-div">
         
-                    <div className="question-div branded-shadow">
-                        <div className="question-num">{currentQuestion}.</div>
-
-                        <div className="question-content">
-                            {/* Render the QuestionContent component for the current question */}
-                            <QuestionContent moduleID={moduleID} position={currentQuestion} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
-                        </div>
-
-                        <div className="test-button-container">
-                            <button className="branded-long-button branded-shadow test-next-btn" onClick={handleNextClick}>
-                                {currentQuestion === questionsCount ? "Submit" : "Next"}
-                            </button>
-                        </div>
+                <div className="question-div branded-shadow">
+                    <div className="question-num">
+                        {currentQuestion}.
                     </div>
+
+                    <div className="question-content">
+                        {/* Render the QuestionContent component for the current question */}
+                        <QuestionContent moduleID={moduleID} position={currentQuestion} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
+                    </div>
+
+                    <div className="test-button-container">
+                        <button className="branded-long-button branded-shadow test-next-btn" onClick={handleNextClick}>
+                            {currentQuestion === questionsCount ? "Submit" : "Next"}
+                        </button>
+                    </div>
+                </div>
 
             </div>
 
