@@ -33,8 +33,10 @@ const Test = () => {
             const newQuestionNumber = currentQuestion + 1;
             setCurrentQuestion(newQuestionNumber);
             updateURL(newQuestionNumber);
+        } else {
+            // If it's the last question, show the modal instead of going to the next question
             setShowModal(true);
-        } 
+        }
     };
 
     const handleCloseModal = () => {
