@@ -11,18 +11,18 @@
     align-items: center;
 }
 
-/*
+
 .practice-div {
+    margin-top: 10px;
     background-color: white;
     border-radius: 30px;
     padding: 20px; 
+    width: 50%; 
     display: flex;
+    margin-right: 30px;
     flex-direction: column;
-    width: 80vh;
     height: 50vh;
-    max-width: 800px;
-    max-height: 600px;
-} */
+} 
 
 .practice-box {
     display: flex;
@@ -64,7 +64,7 @@
 .hint-btn-container {
     display: flex;
     position: relative;
-    margin-bottom: 5px;
+    padding-bottom: 25px;
 }
 
 .back-btn {
