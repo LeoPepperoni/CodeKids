@@ -1,17 +1,13 @@
 import React from 'react';
 
-const SubmitTestAllModal = ({ show, close, children }) => {
-  if (!show) {
-    return null;
-  }
-
+const SubmitTestAllModal = ({ correctAnswerCount, onClose }) => {
   return (
-    <div className="modal-backdrop">
-      <div className="modal-content">
-        {children}
-        <div className="result-msg">You got 20/20</div>
-        <button onClick={close}>Close</button>
-      </div>
+    <div className="modal">
+        <div className="modal-content">
+            <h3>Test Results</h3>
+            <p>You answered {correctAnswerCount} questions correctly.</p>
+            <button onClick={onClose}>Close</button>
+        </div>
     </div>
   );
 };
