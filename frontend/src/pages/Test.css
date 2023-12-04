@@ -18,38 +18,7 @@
     font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     height: 70vh;
   }
-
-  .question-list {
-    flex: 1; /* Adjust the width as needed */
-    margin-top: 10px;
-    text-align: left;
-    padding-left: 10px;
-    background-color: white;
-    border-radius: 30px;
-    max-width: 200px;
-    max-height: 400px;
-  }
-
-  li {
-    padding: 5px;
-    color: black;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  .question-link:hover {
-    color: green; /* Change the color as needed */
-  }
-
-
-  .question-link {
-    color: black; /* Change the color as needed */
-    text-decoration: none; /* Remove underline */
-  }
   
-
   .question-div {
     margin-top: 10px;
     background-color: white;
