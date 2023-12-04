@@ -5,10 +5,12 @@ import SubmitTestAllModal from '../components/SubmitTestAllModal';
 
 const TestAll = () => {
   const [count, setCount] = useState(0); 
-  const [moduleID, setModuleID] = useState(null);
-  const [position, setPosition] = useState(null);
-
   const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  // Initialize moduleID and position with random values
+  const [moduleID, setModuleID] = useState(getRandomNumber(1, 5));
+  const [position, setPosition] = useState(getRandomNumber(1, 10));
+
+  const questionsCount = 20;
 
 
   // Function to handle the "Next" button click
@@ -38,14 +40,12 @@ const TestAll = () => {
 
                         <div className="button-container-back-next">
                           {/* Display Submit button only when count reaches 20 */}
-                          {count === 20 && (
-                            <button className="submit-test-all-btn" >Submit</button>
-                          )}
-                          
-                          {/* Display Next button until count reaches 20 */}
-                          {count < 20 && (
-                            <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
-                          )}
+                          <button 
+                            className="branded-long-button branded-shadow test-next-btn" 
+                            onClick={handleNextClick}
+                          >
+                            {count === questionsCount ? "Submit" : "Next"}
+                          </button>
                         </div>
                     </div>
                 </div>
