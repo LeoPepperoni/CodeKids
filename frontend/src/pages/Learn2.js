@@ -20,6 +20,7 @@ const Learn2 = () => {
             <div class="learn-container">
                 <div className="video-container">
                     <iframe
+                        frameBorder="0"
                         width="640"
                         height="360"
                         src={`https://www.youtube.com/embed/${videoIdForLoops}`}
@@ -28,6 +29,7 @@ const Learn2 = () => {
                     ></iframe>
 
                     <iframe
+                        frameBorder="0"
                         width="640"
                         height="360"
                         src={`https://www.youtube.com/embed/${videoIdWhileLoops}`}
