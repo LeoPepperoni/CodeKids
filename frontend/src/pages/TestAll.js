@@ -18,12 +18,12 @@ const TestAll = () => {
 
   // Function to handle the "Next" button click
   const handleNextClick = () => {
-    if (count < 20) {
+    if (count < questionsCount) {
       setCount((prevCount) => prevCount + 1);
       // Generate new random values for the next question
       setModuleID(getRandomNumber(1, 5));
       setPosition(getRandomNumber(1, 10));
-      console.log('set count = ', count);
+      console.log('ModuleID, Position: ', moduleID, position);
     }
   };
 
