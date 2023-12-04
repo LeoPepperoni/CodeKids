@@ -14,6 +14,7 @@ const Test = () => {
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
    
+    const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
 
     // Total number of questions
     const questionsCount = 10; 
@@ -38,6 +39,11 @@ const Test = () => {
         window.history.pushState({}, '', `/test/${moduleID}/${encodeURIComponent(moduleName)}/${newQuestionNumber}`);
     };
 
+    const updateCorrectAnswerCount = (newCount) => {
+        setCorrectAnswerCount(newCount);
+        console.log('Test: ', newCount);
+    };
+
     return (
         <div>
             <h4 className="question-header">Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
@@ -49,7 +55,7 @@ const Test = () => {
 
                         <div className="question-content">
                             {/* Render the QuestionContent component for the current question */}
-                            <QuestionContent moduleID={moduleID} position={currentQuestion} />
+                            <QuestionContent moduleID={moduleID} position={currentQuestion} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
                         </div>
 
                         <div className="test-button-container">
