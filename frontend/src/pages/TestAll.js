@@ -4,22 +4,22 @@ import RandomQuestion from '../components/RandomQuestion';
 import SubmitTestAllModal from '../components/SubmitTestAllModal';
 
 const TestAll = () => {
-
-  const [keyProp, setKeyProp] = useState(0);
   const [count, setCount] = useState(0); 
+  const [moduleID, setModuleID] = useState(null);
+  const [position, setPosition] = useState(null);
+
+  const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 
   // Function to handle the "Next" button click
   const handleNextClick = () => {
     if (count < 20) {
-      setKeyProp((prevKeyProp) => prevKeyProp + 1);
       setCount((prevCount) => prevCount + 1);
+      // Generate new random values for the next question
+      setModuleID(getRandomNumber(1, 5));
+      setPosition(getRandomNumber(1, 10));
       console.log('set count = ', count);
-    } 
-  };
-
-  const handleRandomValuesChange = (newModuleID, newPosition) => {
-    console.log('Received random values in parent:', newModuleID, newPosition);
-    // You can do further processing or state updates in the parent component if needed
+    }
   };
 
   return (
@@ -33,7 +33,7 @@ const TestAll = () => {
                     <div className="practice-div branded-shadow">
 
                         <div className="random-question-content">
-                          <RandomQuestion keyProp={keyProp} onRandomValuesChange={handleRandomValuesChange}/>
+                          <RandomQuestion moduleID={moduleID} position={position} />
                         </div>
 
                         <div className="button-container-back-next">
