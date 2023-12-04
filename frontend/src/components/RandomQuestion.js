@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useGetQuestion } from '../hook/useGetQuestion'; 
 
 // RandomQuestion component receives a keyProp as a prop
-const RandomQuestion = ({ moduleID, position }) => {
+const RandomQuestion = ({ moduleID, position, updateCorrectAnswerCount }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
   const [shuffledChoices, setShuffledChoices] = useState([]);
   const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
@@ -29,6 +29,31 @@ const RandomQuestion = ({ moduleID, position }) => {
       return newArray;
   };
 
+  const handleButtonClick = (index) => {
+    setClickedButtonIndex(index);
+  
+    if (shuffledChoices[index] === question.answer) {
+      if (!hasSelectedCorrectAnswer) {
+        const newCount = correctAnswerCount + 1;
+        setCorrectAnswerCount(newCount);
+        updateCorrectAnswerCount(newCount);
+        setHasSelectedCorrectAnswer(true);
+      }
+      console.log("Correct Answer!");
+    } else {
+      if (hasSelectedCorrectAnswer) {
+        const newCount = correctAnswerCount - 1;
+        setCorrectAnswerCount(newCount);
+        updateCorrectAnswerCount(newCount);
+        setHasSelectedCorrectAnswer(false);
+      }
+      console.log("Incorrect Answer.");
+    }
+  };
+
+  console.log("correct answer count: ", correctAnswerCount);
+
+
   return (
     <div>
       <h2>Random Question</h2>
@@ -42,10 +67,14 @@ const RandomQuestion = ({ moduleID, position }) => {
                 <div className="answer-choices">
                   {shuffledChoices.map((choice, index) => (
                           <button
-                              className="branded-question-btn answer-choice-btn"
+                          key={index}
+                          className={`branded-question-btn answer-choice-btn ${
+                            (clickedButtonIndex === index ) ? 'clicked' : ''
+                          }`}
+                          onClick={() => handleButtonClick(index)}
                           >
-                              {choice}
-                          </button>
+                          {choice}
+                      </button>
                       ))}
                 </div>
             </div>

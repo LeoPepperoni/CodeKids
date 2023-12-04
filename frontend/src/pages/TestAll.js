@@ -11,6 +11,9 @@ const TestAll = () => {
   const [position, setPosition] = useState(getRandomNumber(1, 10));
 
   const questionsCount = 20;
+   
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
+
 
 
   // Function to handle the "Next" button click
@@ -24,6 +27,11 @@ const TestAll = () => {
     }
   };
 
+  const updateCorrectAnswerCount = (newCount) => {
+    setCorrectAnswerCount(newCount);
+    console.log('TestAll: ', newCount);
+};
+
   return (
     <div>
        <div className="container-div">
@@ -35,7 +43,7 @@ const TestAll = () => {
                     <div className="practice-div branded-shadow">
 
                         <div className="random-question-content">
-                          <RandomQuestion moduleID={moduleID} position={position} />
+                          <RandomQuestion moduleID={moduleID} position={position} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
                         </div>
 
                         <div className="button-container-back-next">
