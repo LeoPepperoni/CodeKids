@@ -6,8 +6,6 @@ import './Test.css';
 import SubmitTestModal from '../components/SubmitTestModal';
 import QuestionContent from '../components/QuestionContent'; // Import the QuestionContent component
 
-
-
 const Test = () => {
     // Use the useParams hook to access the moduleId parameter
     const { moduleID, moduleName, questionNumber ="1" } = useParams();
