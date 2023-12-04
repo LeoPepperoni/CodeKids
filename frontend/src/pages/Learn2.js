@@ -19,23 +19,21 @@ const Learn2 = () => {
 
             <div class="learn-container">
                 <div className="video-container">
-                    <iframe
-                        frameBorder="0"
-                        width="640"
-                        height="360"
-                        src={`https://www.youtube.com/embed/${videoIdForLoops}`}
-                        title="YouTube Video"
-                        allowFullScreen
-                    ></iframe>
+                    <div className="video-frame">
+                        <iframe
+                            src={`https://www.youtube.com/embed/${videoIdForLoops}`}
+                            title="YouTube Video"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
 
-                    <iframe
-                        frameBorder="0"
-                        width="640"
-                        height="360"
-                        src={`https://www.youtube.com/embed/${videoIdWhileLoops}`}
-                        title="YouTube Video"
-                        allowFullScreen
-                    ></iframe>
+                    <div className="video-frame">
+                        <iframe
+                            src={`https://www.youtube.com/embed/${videoIdWhileLoops}`}
+                            title="YouTube Video"
+                            allowFullScreen
+                        ></iframe>
+                    </div>
                 </div>
 
 
