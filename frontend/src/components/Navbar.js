@@ -43,6 +43,7 @@ const Navbar = () => {
                           <li><Link to="/"><div className="menu-item" onClick={menuClick}>Home</div></Link></li>
                           <li><Link to="/dashboard"><div className="menu-item" onClick={menuClick}>Modules</div></Link></li>
                           <li><Link to="/about"><div className="menu-item" onClick={menuClick}>About</div></Link></li>
+                          <li><Link to="/admin"><div className="menu-item" onClick={menuClick}>Admin</div></Link></li>
                         </ul>
                       </div>
                     </div>
