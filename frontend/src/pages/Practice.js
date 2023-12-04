@@ -75,11 +75,12 @@ const Practice = () => {
     return (
         <div>
             <div className="container-div">
-                <div className="practice-box">
-                    <div className="path">
-                        <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Practice</h4>
-                    </div>
+                <div className="path">
+                    <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Practice</h4>
+                </div>
 
+                <div className="practice-box">
+                    
                     <div className="practice-div branded-shadow">
                         <div className="hint-btn-container">
                             <div className="question-num">Question {currentQuestion}.</div>

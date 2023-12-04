@@ -54,7 +54,9 @@ const Test = () => {
 
     return (
         <div>
-            <h4 className="question-header">Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
+            <div className="path">
+                <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
+            </div>
             
             <div class="test-div">
         
