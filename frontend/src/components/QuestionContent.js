@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import useGetQuestion from '../hook/useGetQuestion';
 import './QuestionContent.css';
 
-const QuestionContent = ({ moduleID, position }) => {
+const QuestionContent = ({ moduleID, position, updateCorrectAnswerCount }) => {
   const { question, isLoading, error } = useGetQuestion(moduleID, position);
   const [shuffledChoices, setShuffledChoices] = useState([]);
   const [clickedButtonIndex, setClickedButtonIndex] = useState(null);
@@ -45,13 +45,17 @@ const QuestionContent = ({ moduleID, position }) => {
   
     if (shuffledChoices[index] === question.answer) {
       if (!hasSelectedCorrectAnswer) {
-        setCorrectAnswerCount(correctAnswerCount + 1);
+        const newCount = correctAnswerCount + 1;
+        setCorrectAnswerCount(newCount);
+        updateCorrectAnswerCount(newCount);
         setHasSelectedCorrectAnswer(true);
       }
       console.log("Correct Answer!");
     } else {
       if (hasSelectedCorrectAnswer) {
-        setCorrectAnswerCount(correctAnswerCount - 1);
+        const newCount = correctAnswerCount - 1;
+        setCorrectAnswerCount(newCount);
+        updateCorrectAnswerCount(newCount);
         setHasSelectedCorrectAnswer(false);
       }
       console.log("Incorrect Answer.");

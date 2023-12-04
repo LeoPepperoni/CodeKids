@@ -4,60 +4,76 @@ import RandomQuestion from '../components/RandomQuestion';
 import SubmitTestAllModal from '../components/SubmitTestAllModal';
 
 const TestAll = () => {
-
-  const [keyProp, setKeyProp] = useState(0);
   const [count, setCount] = useState(0); 
+  const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+  // Initialize moduleID and position with random values
+  const [moduleID, setModuleID] = useState(getRandomNumber(1, 5));
+  const [position, setPosition] = useState(getRandomNumber(1, 10));
   const [showModal, setShowModal] = useState(false);
+  const questionsCount = 20;
+   
+  const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
 
-  const openModal = () => setShowModal(true);
-  const closeModal = () => setShowModal(false);
+
 
   // Function to handle the "Next" button click
   const handleNextClick = () => {
-    if (count < 20) {
-      setKeyProp((prevKeyProp) => prevKeyProp + 1);
+    if (count < questionsCount) {
       setCount((prevCount) => prevCount + 1);
-      console.log('set count = ', count);
+      // Generate new random values for the next question
+      setModuleID(getRandomNumber(1, 5));
+      setPosition(getRandomNumber(1, 10));
+      console.log('ModuleID, Position: ', moduleID, position);
     } else {
-      openModal(); // Open the modal when the count reaches 20
+      // If it's the last question, show the modal instead of going to the next question
+      setShowModal(true);
     }
   };
 
-  const handleRandomValuesChange = (newModuleID, newPosition) => {
-    console.log('Received random values in parent:', newModuleID, newPosition);
-    // You can do further processing or state updates in the parent component if needed
+  const handleCloseModal = () => {
+    setShowModal(false);
+    // Additional logic for closing the modal if needed
   };
+
+  const updateCorrectAnswerCount = (newCount) => {
+    setCorrectAnswerCount(newCount);
+    console.log('TestAll: ', newCount);
+};
 
   return (
     <div>
        <div className="container-div">
-                <div className="practice-box">
-                    <div className="path">
-                        <h4>Test All</h4>
-                    </div>
+          <div className="practice-box">
 
-                    <div className="practice-div branded-shadow">
-
-                        <div className="random-question-content">
-                          <RandomQuestion keyProp={keyProp} onRandomValuesChange={handleRandomValuesChange}/>
-                        </div>
-
-                        <div className="button-container-back-next">
-                          {/* Display Submit button only when count reaches 20 */}
-                          {count === 20 && (
-                            <button className="submit-test-all-btn" onClick={openModal}>Submit</button>
-                          )}
-                          <SubmitTestAllModal show={showModal} close={closeModal}>
-                            <p>This is modal content!</p>
-                          </SubmitTestAllModal>
-                          {/* Display Next button until count reaches 20 */}
-                          {count < 20 && (
-                            <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
-                          )}
-                        </div>
-                    </div>
-                </div>
+            <div className="path">
+              <h4>Test All</h4>
             </div>
+
+            <div className="practice-div branded-shadow">
+              <div className="random-question-content">
+                <RandomQuestion moduleID={moduleID} position={position} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
+              </div>
+
+              <div className="button-container-back-next">
+                {/* Display Submit button only when count reaches 20 */}
+                <button 
+                  className="branded-long-button branded-shadow test-next-btn" 
+                  onClick={handleNextClick}
+                >
+                  {count === questionsCount ? "Submit" : "Next"}
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {showModal && (
+                <SubmitTestAllModal 
+                    correctAnswerCount={correctAnswerCount} 
+                    onClose={handleCloseModal} 
+                />
+            )}
     </div>
   );
 };

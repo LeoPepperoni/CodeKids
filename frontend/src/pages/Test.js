@@ -3,17 +3,18 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom'; 
 import './Test.css';
+import SubmitTestModal from '../components/SubmitTestModal';
 import QuestionContent from '../components/QuestionContent'; // Import the QuestionContent component
-
-
 
 const Test = () => {
     // Use the useParams hook to access the moduleId parameter
     const { moduleID, moduleName, questionNumber ="1" } = useParams();
 
+    const [showModal, setShowModal] = useState(false);
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
    
+    const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
 
     // Total number of questions
     const questionsCount = 10; 
@@ -30,12 +31,25 @@ const Test = () => {
             const newQuestionNumber = currentQuestion + 1;
             setCurrentQuestion(newQuestionNumber);
             updateURL(newQuestionNumber);
-        } 
+        } else {
+            // If it's the last question, show the modal instead of going to the next question
+            setShowModal(true);
+        }
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        // Additional logic for closing the modal if needed
     };
 
     const updateURL = (newQuestionNumber) => {
         // Update the URL based on the new question number
         window.history.pushState({}, '', `/test/${moduleID}/${encodeURIComponent(moduleName)}/${newQuestionNumber}`);
+    };
+
+    const updateCorrectAnswerCount = (newCount) => {
+        setCorrectAnswerCount(newCount);
+        console.log('Test: ', newCount);
     };
 
     return (
@@ -49,7 +63,7 @@ const Test = () => {
 
                         <div className="question-content">
                             {/* Render the QuestionContent component for the current question */}
-                            <QuestionContent moduleID={moduleID} position={currentQuestion} />
+                            <QuestionContent moduleID={moduleID} position={currentQuestion} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
                         </div>
 
                         <div className="test-button-container">
@@ -60,6 +74,13 @@ const Test = () => {
                     </div>
 
             </div>
+
+            {showModal && (
+                <SubmitTestModal 
+                    correctAnswerCount={correctAnswerCount} 
+                    onClose={handleCloseModal} 
+                />
+            )}
 
         </div>
     );
