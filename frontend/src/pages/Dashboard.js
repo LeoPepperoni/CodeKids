@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-
 import { Link, useHistory } from 'react-router-dom'; 
 
 const Dashboard = () => {
@@ -17,6 +16,15 @@ const Dashboard = () => {
   const constructPath = (moduleId, moduleName) => {
     return `/learn${moduleId}/${encodeURIComponent(moduleName)}`;
   };
+
+  async function moduleCheck(userId, moduleNum) {
+    const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    })
+    const json = await response.json()
+  }
 
   function moduleCompleted() {
 
