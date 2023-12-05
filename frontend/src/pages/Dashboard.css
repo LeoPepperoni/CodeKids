@@ -87,4 +87,8 @@
   -webkit-text-fill-color: #fff;
 }
 
+.learn-button.disabled {
+  cursor: not-allowed;
+  outline: 0;
+}
 

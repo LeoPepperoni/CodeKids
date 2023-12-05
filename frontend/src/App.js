@@ -21,6 +21,7 @@ import Learn4 from './pages/Learn4'
 import Learn5 from './pages/Learn5'
 import SubmitTestAllModal from './components/SubmitTestAllModal'
 import SubmitTestModal from './components/SubmitTestModal'
+import Admin from './pages/Admin'
 
 function App() {
   return (
@@ -113,6 +114,11 @@ function App() {
               path="/about"
               element={<About />}
             />
+
+            <Route
+              path="/admin"
+              element={<Admin />}
+            />  
 
           </Routes>
         </div>

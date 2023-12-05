@@ -74,31 +74,39 @@ const Practice = () => {
 
     return (
         <div>
-            <div className="container-div">
-                <div className="practice-box">
-                    <div className="path">
-                        <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Practice</h4>
+            <div className="path">
+                <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Practice</h4>
+            </div>
+
+            <div className="practice-box">
+                    
+                <div className="practice-div branded-shadow">
+                    <div className="hint-btn-container">
+                        <div className="question-num">
+                            Question {currentQuestion}.
+                        </div>
+
+                        <button className="branded-long-button branded-shadow hint-btn" onClick={toggleHint}>
+                            {hintButtonText()}
+                        </button>
                     </div>
 
-                    <div className="practice-div branded-shadow">
-                        <div className="hint-btn-container">
-                            <div className="question-num">Question {currentQuestion}.</div>
-                              <button className="branded-long-button branded-shadow hint-btn" onClick={toggleHint}>{hintButtonText()}</button>
-                        </div>
+                    <div className="practice-content">
+                        {/* Render the PracticeContent component for the current question */}
+                        <PracticeContent moduleID={moduleID} position={currentQuestion} />
+                    </div>
 
-                        <div className="practice-content">
-                            {/* Render the PracticeContent component for the current question */}
-                            <PracticeContent moduleID={moduleID} position={currentQuestion} />
-                        </div>
+                    <div className="button-container-back-next">
+                        <button className="branded-long-button branded-shadow back-btn" onClick={handleBackClick}>
+                            Back
+                        </button>
 
-                        <div className="button-container-back-next">
-                            <button className="branded-long-button branded-shadow back-btn" onClick={handleBackClick}>Back</button>
-                            {!isLastQuestion() && (
-                              <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
-                            )}
-                        </div>
+                        {!isLastQuestion() && (
+                            <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
+                        )}
                     </div>
                 </div>
+            
 
                 {showHint && (
                     <div className="hint-box branded-shadow">

@@ -51,6 +51,10 @@
   border-radius: 30px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  transition: box-shadow 0.3s;
+}
+.branded-logo:hover {
+  box-shadow: 0 0 25px 15px #b94ba7;
 }
 
 .branded-logo-link {
@@ -68,7 +72,7 @@
   height: 400px;
   width: 350px;
   border-radius: 30px;
-  transition: border-radius 0.4s, height 0.4s, width 0.4s;
+  transition: border-radius 0.4s, height 0.4s, width 0.4s, box-shadow 0.3s;
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -78,6 +82,7 @@
   height: 420px;
   width: 400px;
   border-radius: 40px;
+  box-shadow: 0 0 50px 15px #b94ba7;
 }
 
 .about-card-header {

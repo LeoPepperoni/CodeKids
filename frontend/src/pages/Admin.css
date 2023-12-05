@@ -1,0 +1,46 @@
+.admin-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.admin-add-question {
+  background-color: #fff;
+  height: 770px;
+  width: 650px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-delete-question {
+  background-color: #fff;
+  height: 300px;
+  width: 650px;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.special-container {
+  padding-bottom: 60px;
+}
+
+.input-label {
+  padding-left: 120px;
+  margin-bottom: 10px;
+}
+
+.submit-admin-question {
+  margin-top: 10px;
+}
+
+.admin-message {
+  color:#fff;
+  font-size: 2rem;
+}
+
+.left-header {
+  display: flex;
+  justify-content: first baseline;
+}

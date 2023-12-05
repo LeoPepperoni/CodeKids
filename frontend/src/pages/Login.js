@@ -31,7 +31,7 @@ const Login = () => {
                     value={email}
                     placeholder="Enter Email here"
                 />
-                <label>Password:</label>
+                <label className="branded-text">Password:</label>
                 <input
                     className="branded-shadow branded-input"
                     type="password"
