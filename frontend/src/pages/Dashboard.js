@@ -34,13 +34,13 @@ const Dashboard = () => {
         setError(json.error)
       }
       if (response.ok) {
-        this.sessionStorage.setItem(moduleNum, json.progressExists)
+        localStorage.setItem(moduleNum, json.progressExists)
       }
   }
 
 
   function moduleCompletedText(userId, moduleNum) {
-    console.log(sessionStorage.getItem(moduleNum));
+    console.log(localStorage.getItem(moduleNum));
     let complete = moduleCheck(userId, moduleNum)
     console.log(complete)
     return complete ? 'Done ✅' : 'Test';
