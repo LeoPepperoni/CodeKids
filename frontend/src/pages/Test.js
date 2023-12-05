@@ -32,10 +32,69 @@ const Test = () => {
             setCurrentQuestion(newQuestionNumber);
             updateURL(newQuestionNumber);
         } else {
-            // If it's the last question, show the modal instead of going to the next question
-            setShowModal(true);
+            // On the last question we want to prompt the modal as well as hit the progress endpoint
+            var modal = document.getElementById("test-modal");
+            var close = document.getElementById("close-test-modal");
+            var longClose = document.getElementById("long-modal-test-close");
+
+            modal.style.display = "block";
+            close.onclick = function() {
+              modal.style.display = "none";
+            }
+            longClose.onclick = function() {
+              modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+            if (event.target == modal) {
+              modal.style.display = "none";
+            }
+          }
         }
     };
+
+    const [error, setError] = useState(null)
+    const [isLoading, setIsLoading] = useState(null)
+
+    // Update User module status:
+    const updateProgress = async (userID, module) => {
+      setIsLoading(true)
+      setError(null)
+
+      const response = await fetch('/api/progress/completeModule', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ userID, module})
+      })
+      const json = await response.json()
+
+      if (!response.ok) {
+          setIsLoading(false)
+          setError(json.error)
+      }
+      if (response.ok) {
+          console.log(json);
+      }
+    }
+
+    function modalResultText (correctAnswerCount, moduleNum) {
+      let userId = sessionStorage.getItem('userID')
+      if (correctAnswerCount === 10) {
+        // Perfect Score
+        updateProgress(userId, moduleNum);
+        return 'Perfect Score!! You REALLY know your C 🎉. This Module will be marked as completed ✅'
+      } 
+      else if (correctAnswerCount > 7) {
+        updateProgress(userId, moduleNum);
+        return 'Great work! This Module will be marked as completed ✅.'
+      } 
+      else {
+        // if user gets less than a 80% redo the exam
+        return 'Nice Try! You most score at least an 80% to mark this module as complete. Try practicing more problems in the Practice Module 😀.'
+      }
+
+    }
 
     const handleCloseModal = () => {
         setShowModal(false);
@@ -78,13 +137,26 @@ const Test = () => {
                 </div>
 
             </div>
+          <div id="test-modal" class="modal">
+            <div class="modal-content branded-shadow">
+              <span class="close" id='close-test-modal'>&times;</span>
+              <div className='modal-centered-container'>
+                <div className='modal-header'>Test Result</div>
+              </div>
+              <div className='modal-centered-container'>
+                <div className='branded-header modal-correct-text'>You got {correctAnswerCount} / 10 Correct</div>
+              </div>
 
-            {showModal && (
-                <SubmitTestModal 
-                    correctAnswerCount={correctAnswerCount} 
-                    onClose={handleCloseModal} 
-                />
-            )}
+              <div className='modal-centered-container'>
+                <div className='branded-header result-text'>{modalResultText(correctAnswerCount, moduleID)}</div>
+              </div>
+
+              <div className='modal-centered-container close-modal-button'>
+                <button className='branded-long-button' id='long-modal-test-close'>Close</button>
+              </div>
+              
+            </div>
+          </div>
 
         </div>
     );
