@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 
 const Dashboard = () => {
   const sessionUserId = sessionStorage.getItem('userId')
+  const [error, setError] = useState(null)
 
   // Sample data for modules (you can replace it with data from your database)
   const modules = [
@@ -19,25 +20,39 @@ const Dashboard = () => {
   };
 
   async function moduleCheck(userId, moduleNum) {
-    const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    })
-    const json = await response.json()
-    console.log(json.progressExists)
-    console.log(json);
-    // return status
-    return json.progressExists
+      const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      }).then((result) => {
+        console.log(result)
+        return result
+      }).catch((error) => {
+        console.log(error);
+        return null
+      })
+
+      /*
+      const json = await response.json()
+      console.log(json.progressExists)
+      console.log(json);
+
+      // return status
+      if (!response.ok) {
+        setError(json.error)
+        return null
+      }
+      if (response.ok) {
+        return json.progressExists
+      }
+      */
+
   }
 
-  function moduleCompleted(isCompleted) {
-    console.log(isCompleted)
-    return isCompleted == 'true' ? true: null;
-  }
 
-  function moduleCompletedText(isCompleted) {
-    console.log(isCompleted)
-    return isCompleted == 'true' ? 'Done ✅' : 'Test';
+  function moduleCompletedText(userId, moduleNum) {
+    let complete = moduleCheck(userId, moduleNum)
+    console.log(complete)
+    return complete ? 'Done ✅' : 'Test';
   }
 
 
@@ -65,7 +80,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.isCompleted)}>{moduleCompletedText(module.isCompleted)}</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>{moduleCompletedText(sessionUserId, module.id)}</button>
                 </Link>
 
               </div>
