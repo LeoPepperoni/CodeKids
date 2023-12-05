@@ -10,14 +10,15 @@
 }
 
 .hint {
-    font-size: 14pt;
+    
 }
 
 .hint-container {
+    display: flex;
+    flex-direction: column;
 
 }
 
 .hint-title {
-    font-size: 20pt;
-    margin-bottom: 7px;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
