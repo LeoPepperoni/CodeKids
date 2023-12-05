@@ -28,10 +28,12 @@ const Dashboard = () => {
   }
 
   function moduleCompleted(isCompleted) {
+    console.log(isCompleted)
     return isCompleted ? true: null;
   }
 
   function moduleCompletedText(isCompleted) {
+    console.log(isCompleted)
     return isCompleted ? 'Done ✅' : 'Test';
   }
 
