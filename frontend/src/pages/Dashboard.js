@@ -54,7 +54,10 @@ const Dashboard = () => {
         return false;
       }
     }
-
+  const constructPath = (moduleId, moduleName) => {
+    return `/learn${moduleId}/${encodeURIComponent(moduleName)}`;
+  };
+  
 
   function moduleCompletedText(isCompleted) {
     return isCompleted ? 'Done ✅' : 'Test';
