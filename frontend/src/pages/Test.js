@@ -32,6 +32,8 @@ const Test = () => {
             setCurrentQuestion(newQuestionNumber);
             updateURL(newQuestionNumber);
         } else {
+            let userId = sessionStorage.getItem('userID')
+
             // On the last question we want to prompt the modal as well as hit the progress endpoint
             var modal = document.getElementById("test-modal");
             var close = document.getElementById("close-test-modal");
@@ -50,7 +52,10 @@ const Test = () => {
             if (event.target == modal) {
               modal.style.display = "none";
             }
-          }
+            }
+            if (correctAnswerCount > 7) {
+              updateProgress(userId, moduleID);
+            } 
         }
     };
 
@@ -79,14 +84,11 @@ const Test = () => {
     }
 
     function modalResultText (correctAnswerCount, moduleNum) {
-      let userId = sessionStorage.getItem('userID')
       if (correctAnswerCount === 10) {
-        // Perfect Score
-        updateProgress(userId, moduleNum);
+        // Perfect Score 
         return 'Perfect Score!! You REALLY know your C 🎉. This Module will be marked as completed ✅'
       } 
       else if (correctAnswerCount > 7) {
-        updateProgress(userId, moduleNum);
         return 'Great work! This Module will be marked as completed ✅.'
       } 
       else {
