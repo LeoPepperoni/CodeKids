@@ -3,7 +3,7 @@ import './Dashboard.css';
 import { Link, useHistory } from 'react-router-dom'; 
 
 const Dashboard = () => {
-  const sessionUserId = sessionStorage.get('userId')
+  const sessionUserId = sessionStorage.getItem('userId')
 
   // Sample data for modules (you can replace it with data from your database)
   const modules = [
