@@ -23,7 +23,7 @@ const loginUser = async (req, res) => {
         const token = createToken(user._id);
 
         // Respond with the user's ID, email, and token
-        res.status(200).json({ id: user._id, email, token });
+        res.status(200).json({ id: user._id, email, token, admin: user.admin });
     } catch (error) {
         // If there's an error (like user not found, wrong password, or not confirmed), respond with error message
         res.status(400).json({ error: error.message });
@@ -44,7 +44,7 @@ const signupUser = async (req, res) => {
         const token = createToken(user._id);
 
         // Respond with the new user's email and token
-        res.status(200).json({ id: user._id, email, token });
+        res.status(200).json({ id: user._id, email, token, admin: user.admin });
     } catch (error) {
         // If there's an error during sign up (like email already in use), respond with error message
         res.status(400).json({ error: error.message });
