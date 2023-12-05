@@ -104,7 +104,7 @@ const PracticeAll = () => {
         </div>
 
         {showHint && (
-          <div className="hint-box-all">
+          <div className="hint-box branded-shadow">
             <HintContent moduleID={newModuleID} position={newPosition} />
           </div>
         )}
