@@ -23,15 +23,8 @@ const Dashboard = () => {
       const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
-      }).then((result) => {
-        console.log(result.json())
-        return result
-      }).catch((error) => {
-        console.log(error);
-        return null
       })
-
-      /*
+      
       const json = await response.json()
       console.log(json.progressExists)
       console.log(json);
@@ -39,17 +32,15 @@ const Dashboard = () => {
       // return status
       if (!response.ok) {
         setError(json.error)
-        return null
       }
       if (response.ok) {
-        return json.progressExists
+        this.sessionStorage.setItem(moduleNum, json.progressExists)
       }
-      */
-
   }
 
 
   function moduleCompletedText(userId, moduleNum) {
+    console.log(sessionStorage.getItem(moduleNum));
     let complete = moduleCheck(userId, moduleNum)
     console.log(complete)
     return complete ? 'Done ✅' : 'Test';
