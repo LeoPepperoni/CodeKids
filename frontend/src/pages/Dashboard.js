@@ -7,11 +7,11 @@ const Dashboard = () => {
 
   // Sample data for modules (you can replace it with data from your database)
   const modules = [
-    { id: 1, name: "Variables & Data Types", isCompleted: moduleCheck(sessionUserId, 1) },
-    { id: 2, name: "Loops", isCompleted: moduleCheck(sessionUserId, 2) },
-    { id: 3, name: "Conditionals", isCompleted: moduleCheck(sessionUserId, 3) },
-    { id: 4, name: "Functions & Procedures", isCompleted: moduleCheck(sessionUserId, 4) },
-    { id: 5, name: "Input & Output", isCompleted: moduleCheck(sessionUserId, 5) },
+    { id: 1, name: "Variables & Data Types"},
+    { id: 2, name: "Loops"},
+    { id: 3, name: "Conditionals"},
+    { id: 4, name: "Functions & Procedures"},
+    { id: 5, name: "Input & Output"},
   ];
 
   const constructPath = (moduleId, moduleName) => {
@@ -32,14 +32,16 @@ const Dashboard = () => {
     return json.progressExists
   }
 
-  function moduleCompleted(isCompleted) {
-    console.log(isCompleted)
-    return isCompleted ? true: null;
+  async function moduleCompleted(moduleNum) {
+    let isModuleComplete = await moduleCheck(sessionUserId, moduleNum);
+    console.log(isModuleComplete);
+    return isModuleComplete ? true: null;
   }
 
-  function moduleCompletedText(isCompleted) {
-    console.log(isCompleted)
-    return isCompleted ? 'Done ✅' : 'Test';
+  async function moduleCompletedText(moduleNum) {
+    let isModuleComplete = await moduleCheck(sessionUserId, moduleNum);
+    console.log(isModuleComplete);
+    return isModuleComplete  ? 'Done ✅' : 'Test';
   }
 
 
@@ -67,7 +69,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.isCompleted)}>{moduleCompletedText(module.isCompleted)}</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.id)}>{moduleCompletedText(module.id)}</button>
                 </Link>
 
               </div>
