@@ -18,24 +18,25 @@ const Dashboard = () => {
     return `/learn${moduleId}/${encodeURIComponent(moduleName)}`;
   };
 
-  async function moduleCheck(userId, moduleNum) {
+  const moduleCheck = async (userId, moduleNum) => {
     const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
     const json = await response.json()
-    console.log(json.PromiseResult)
+    console.log(json.progressExists)
+    console.log(json);
     // return status
-    return json.PromiseResult
+    return json.progressExists
   }
 
   function moduleCompleted(isCompleted) {
-    console.log(isCompleted.PromiseResult)
+    console.log(isCompleted)
     return isCompleted == 'true' ? true: null;
   }
 
   function moduleCompletedText(isCompleted) {
-    console.log(isCompleted.PromiseResult)
+    console.log(isCompleted)
     return isCompleted == 'true' ? 'Done ✅' : 'Test';
   }
 
