@@ -1,19 +1,17 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom'; 
 import './Test.css';
-import SubmitTestModal from '../components/SubmitTestModal';
+import { useNavigate } from 'react-router-dom';
 import QuestionContent from '../components/QuestionContent'; // Import the QuestionContent component
 
 const Test = () => {
     // Use the useParams hook to access the moduleId parameter
     const { moduleID, moduleName, questionNumber ="1" } = useParams();
-
+    const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
-   
     const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
 
     // Total number of questions
@@ -45,6 +43,8 @@ const Test = () => {
             }
             longClose.onclick = function() {
               modal.style.display = "none";
+              // transistion back to dashboard
+              navigate('/dashboard');
             }
 
             // When the user clicks anywhere outside of the modal, close it
