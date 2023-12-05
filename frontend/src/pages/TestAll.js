@@ -26,30 +26,55 @@ const TestAll = () => {
       setPosition(getRandomNumber(1, 10));
       console.log('ModuleID, Position: ', moduleID, position);
     } else {
-      // If it's the last question, show the modal instead of going to the next question
-      setShowModal(true);
-    }
-  };
+        // On the last question we want to prompt the modal as well as hit the progress endpoint
+        var modal = document.getElementById("test-all-modal");
+        var close = document.getElementById("close-test-all-modal");
+        var longClose = document.getElementById("long-modal-test-all-close");
 
-  const handleCloseModal = () => {
-    setShowModal(false);
-    // Additional logic for closing the modal if needed
+        modal.style.display = "block";
+        close.onclick = function() {
+          modal.style.display = "none";
+        }
+        longClose.onclick = function() {
+          modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+        }
+    }
   };
 
   const updateCorrectAnswerCount = (newCount) => {
     setCorrectAnswerCount(newCount);
     console.log('TestAll: ', newCount);
-};
+  };
+
+  function modalResultTextAll (correctAnswerCount) {
+    if (correctAnswerCount === 25) {
+      // Perfect Score 
+      return 'Perfect Score!! You REALLY know your C 🎉.'
+    } 
+    else if (correctAnswerCount > 20) {
+      return 'Great work!'
+    } 
+    else {
+      // if user gets less than a 80% redo the exam
+      return 'Nice Try! Try practicing more problems in the Practice Module 😀.'
+    }
+  }
 
   return (
     <div>
-
       <div className="path">
         <h4>Test All</h4>
       </div>
 
-        <div className="test-all-div branded-shadow">
-          <div className="test-all-container">
+        <div className="test-all-div">
+          <div className="test-all-container branded-shadow">
             <div className="random-question-content-all">
               <RandomQuestion moduleID={moduleID} position={position} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
             </div>
@@ -66,12 +91,26 @@ const TestAll = () => {
           </div>
         </div>
 
-        {showModal && (
-          <SubmitTestAllModal 
-            correctAnswerCount={correctAnswerCount} 
-            onClose={handleCloseModal} 
-          />
-        )}
+        <div id="test-all-modal" class="modal">
+            <div class="modal-content branded-shadow">
+              <span class="close" id='close-test-all-modal'>&times;</span>
+              <div className='modal-centered-container'>
+                <div className='modal-header'>Test All Results</div>
+              </div>
+              <div className='modal-centered-container'>
+                <div className='branded-header modal-correct-text'>You got {correctAnswerCount} / 25 Correct</div>
+              </div>
+
+              <div className='modal-centered-container'>
+                <div className='branded-header result-text'>{modalResultTextAll(correctAnswerCount)}</div>
+              </div>
+
+              <div className='modal-centered-container close-modal-button'>
+                <button className='branded-long-button' id='long-modal-test-all-close'>Close</button>
+              </div>
+            </div>
+          </div>
+
     </div>
   );
 };

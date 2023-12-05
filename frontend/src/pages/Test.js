@@ -95,7 +95,6 @@ const Test = () => {
         // if user gets less than a 80% redo the exam
         return 'Nice Try! You most score at least an 80% to mark this module as complete. Try practicing more problems in the Practice Module 😀.'
       }
-
     }
 
     const handleCloseModal = () => {
@@ -143,7 +142,7 @@ const Test = () => {
             <div class="modal-content branded-shadow">
               <span class="close" id='close-test-modal'>&times;</span>
               <div className='modal-centered-container'>
-                <div className='modal-header'>Test Result</div>
+                <div className='modal-header'>Test Results</div>
               </div>
               <div className='modal-centered-container'>
                 <div className='branded-header modal-correct-text'>You got {correctAnswerCount} / 10 Correct</div>
