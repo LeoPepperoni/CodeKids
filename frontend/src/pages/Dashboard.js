@@ -64,6 +64,9 @@ const Dashboard = () => {
     return isCompleted ? 'Done ✅' : 'Test';
   }
 
+  function moduleCSS(isCompleted) {
+    return isCompleted ? 'disabled' : 'null';
+  }
 
   return (
     <div>
@@ -90,7 +93,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={module.isCompleted ? true : undefined}>{moduleCompletedText(module.isCompleted)}</button>
+                  <button className={`learn-button branded-shadow ${moduleCSS(module.isCompleted)}`} id={`mod${module.id}-practice-btn`} disabled={module.isCompleted ? true : undefined}>{moduleCompletedText(module.isCompleted)}</button>
                 </Link>
 
               </div>

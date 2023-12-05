@@ -55,7 +55,6 @@ const PracticeContent = ({ moduleID, position }) => {
         <div>
             <div className="practice-container">
                 <p className="question-txt">{question.question}</p>
-
                 <div className="answer-choices">
                     {shuffledChoices.map((choice, index) => (
                         <button
@@ -69,6 +68,7 @@ const PracticeContent = ({ moduleID, position }) => {
                         </button>
                     ))}
                 </div>
+                <div>{displayText(choice)}</div>
             </div>
         </div>
     );
