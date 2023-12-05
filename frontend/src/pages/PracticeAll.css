@@ -1,0 +1,39 @@
+.practice-all-box {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    height: 60vh;
+}
+
+.practice-all-div {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px; 
+    width: 50%; 
+    display: flex;
+    margin-right: 30px;
+    flex-direction: column;
+    height: 60vh;
+} 
+
+.hint-btn-container-all {
+    display: flex;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.practice-question-content-all {
+    background-color: white;
+    border-radius: 30px;
+    padding: 5px 10px; 
+    margin-bottom: 10px; 
+    width: 100%;
+}
+
+.button-container-back-next-all {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: auto;
+}

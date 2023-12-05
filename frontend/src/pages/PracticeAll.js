@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import HintContent from '../components/HintContent';
-import './Practice.css'
+import './PracticeAll.css'
 import '../components/PracticeContent.css'
 import PracticeContent from '../components/PracticeContent';
 
@@ -79,32 +79,36 @@ const PracticeAll = () => {
 
   return (
     <div>
-      <div className="container-div">
-        <div className="practice-box">
-          <div className="path">
-            <h4>Practice All</h4>
+      <div className="path">
+        <h4>Practice All</h4>
+      </div>
+
+      <div className="practice-all-box">
+        <div className="practice-all-div branded-shadow">
+
+          <div className="hint-btn-container-all">
+            <button className="branded-long-button branded-shadow hint-btn" onClick={toggleHint}>
+              {hintButtonText()}
+            </button>
           </div>
 
-          <div className="practice-div branded-shadow">
-            <div className="hint-btn-container">
-              <button className="branded-long-button branded-shadow hint-btn" onClick={toggleHint}>{hintButtonText()}</button>
-            </div>
-
-            <div className="random-question-content">
-              <PracticeContent moduleID={newModuleID} position={newPosition} />
-            </div>
-
-            <div className="button-container-back-next">
-              <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>Next</button>
-            </div>
+          <div className="practice-question-content-all">
+            <PracticeContent moduleID={newModuleID} position={newPosition} />
           </div>
 
-          {showHint && (
-            <div className="hint-box">
-              <HintContent moduleID={newModuleID} position={newPosition} />
-            </div>
-          )}
+          <div className="button-container-back-next-all">
+            <button className="branded-long-button branded-shadow next-btn" onClick={handleNextClick}>
+              Next
+            </button>
+          </div>
         </div>
+
+        {showHint && (
+          <div className="hint-box-all">
+            <HintContent moduleID={newModuleID} position={newPosition} />
+          </div>
+        )}
+
       </div>
     </div>
   );
