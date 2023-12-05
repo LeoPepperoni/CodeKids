@@ -23,7 +23,7 @@ export const useLogin = () => {
             setError(json.error)
         }
         if (response.ok) {
-            console.log(JSON.stringify(json));
+            console.log(json.id);
             // save the user to local storage
             localStorage.setItem('user', JSON.stringify(json))
 

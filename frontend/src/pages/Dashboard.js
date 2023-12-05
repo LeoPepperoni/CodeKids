@@ -19,7 +19,7 @@ const Dashboard = () => {
 
   async function moduleCheck(userId, moduleNum) {
     const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
-      method: 'POST',
+      method: 'GET',
       headers: { 'Content-Type': 'application/json' },
       //body: JSON.stringify({ email, password })
     })
