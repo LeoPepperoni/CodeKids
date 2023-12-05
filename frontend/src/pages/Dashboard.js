@@ -24,7 +24,7 @@ const Dashboard = () => {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       }).then((result) => {
-        console.log(result)
+        console.log(result.json())
         return result
       }).catch((error) => {
         console.log(error);
