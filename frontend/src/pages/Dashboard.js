@@ -33,15 +33,21 @@ const Dashboard = () => {
   }
 
   async function moduleCompleted(moduleNum) {
-    let isModuleComplete = await moduleCheck(sessionUserId, moduleNum);
-    console.log(isModuleComplete);
-    return isModuleComplete ? true: null;
+    try {
+      let isModuleComplete = await moduleCheck(sessionUserId, moduleNum);
+      return isModuleComplete ? true: null;
+    } catch (error) {
+      console.error('Error fetching module progress:', error);
+    }
   }
 
   async function moduleCompletedText(moduleNum) {
-    let isModuleComplete = await moduleCheck(sessionUserId, moduleNum);
-    console.log(isModuleComplete);
-    return isModuleComplete  ? 'Done ✅' : 'Test';
+    try {
+      let isModuleComplete = await moduleCheck(sessionUserId, moduleNum);
+      return isModuleComplete  ? 'Done ✅' : 'Test';
+    }catch (error) {
+      console.error('Error fetching module progress:', error);
+    }
   }
 
 
