@@ -66,11 +66,12 @@ const Dashboard = () => {
 
   return (
     <div>
-            <div className='logo-container'>
-              <Link className='branded-logo-link' to="/">
-                <div className='branded-logo branded-shadow' title='Return home'>CodeKnights</div>
-              </Link>
-            </div>
+      <div className='logo-container'>
+        <Link className='branded-logo-link' to="/">
+          <div className='branded-logo branded-shadow' title='Return home'>CodeKnights</div>
+        </Link>
+      </div>
+      
       <div className="module-list">
         <ul>
           {modules.map((module) => (
@@ -88,7 +89,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>{moduleCompletedText(module.isCompleted)}</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={module.isCompleted ? true : undefined}>{moduleCompletedText(module.isCompleted)}</button>
                 </Link>
 
               </div>

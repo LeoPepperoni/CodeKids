@@ -23,7 +23,7 @@ export const useLogin = () => {
             setError(json.error)
         }
         if (response.ok) {
-
+            console.log(json);
             // Store user id
             sessionStorage.setItem('userId', json.id);
 
