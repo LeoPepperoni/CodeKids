@@ -14,6 +14,8 @@ const Dashboard = () => {
     { id: 5, name: "Input & Output", isCompleted: moduleCheck(sessionUserId, 5) },
   ];
 
+  console.log(modules)
+
   const constructPath = (moduleId, moduleName) => {
     return `/learn${moduleId}/${encodeURIComponent(moduleName)}`;
   };
@@ -29,17 +31,17 @@ const Dashboard = () => {
     console.log(JSON.stringify(json.progressExists));
 
     // return status
-    return json.progressExists
+    return JSON.stringify(json.progressExists)
   }
 
   function moduleCompleted(isCompleted) {
     console.log(isCompleted)
-    return isCompleted ? true: null;
+    return isCompleted == 'true' ? true: null;
   }
 
   function moduleCompletedText(isCompleted) {
     console.log(isCompleted)
-    return isCompleted ? 'Done ✅' : 'Test';
+    return isCompleted == 'true' ? 'Done ✅' : 'Test';
   }
 
 
