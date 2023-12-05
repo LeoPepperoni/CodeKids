@@ -11,7 +11,7 @@ const TestAll = () => {
   const [moduleID, setModuleID] = useState(getRandomNumber(1, 5));
   const [position, setPosition] = useState(getRandomNumber(1, 10));
   const [showModal, setShowModal] = useState(false);
-  const questionsCount = 20;
+  const questionsCount = 25;
    
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
   document.title = `CodeKnights | Test All`

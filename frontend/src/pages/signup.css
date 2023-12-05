@@ -22,3 +22,9 @@
     margin-top: 10px;
 }
 
+.error {
+    color: red;
+    text-decoration: underline;
+    align-items: center;
+}
+

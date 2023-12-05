@@ -87,3 +87,9 @@
   border-radius: 30px;
   -webkit-text-fill-color: #fff;
 }
+
+.error {
+  color: red;
+  text-decoration: underline;
+  align-items: center;
+}
