@@ -106,13 +106,14 @@ const Practice = () => {
                         )}
                     </div>
                 </div>
-            </div>
+            
 
                 {showHint && (
                     <div className="hint-box branded-shadow">
                         <HintContent moduleID={moduleID} position={currentQuestion} />
                     </div>
                 )}
+            </div>
         </div>
        
        
