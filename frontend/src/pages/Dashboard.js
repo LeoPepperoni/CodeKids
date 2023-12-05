@@ -28,11 +28,11 @@ const Dashboard = () => {
   }
 
   function moduleCompleted(isCompleted) {
-    return isCompleted ? 'true' : 'false';
+    return isCompleted ? true: null;
   }
 
   function moduleCompletedText(isCompleted) {
-    return isCompleted ? 'Completed ✅' : 'Test';
+    return isCompleted ? 'Done ✅' : 'Test';
   }
 
 
@@ -60,7 +60,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.isCompleted)}>{moduleCompletedText}</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.isCompleted)}>{moduleCompletedText(module.isCompleted)}</button>
                 </Link>
 
               </div>
