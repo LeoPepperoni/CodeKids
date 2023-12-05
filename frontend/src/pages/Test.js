@@ -54,24 +54,28 @@ const Test = () => {
 
     return (
         <div>
-            <h4 className="question-header">Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
+            <div className="path">
+                <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
+            </div>
             
             <div class="test-div">
         
-                    <div className="question-div branded-shadow">
-                        <div className="question-num">{currentQuestion}.</div>
-
-                        <div className="question-content">
-                            {/* Render the QuestionContent component for the current question */}
-                            <QuestionContent moduleID={moduleID} position={currentQuestion} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
-                        </div>
-
-                        <div className="test-button-container">
-                            <button className="branded-long-button branded-shadow test-next-btn" onClick={handleNextClick}>
-                                {currentQuestion === questionsCount ? "Submit" : "Next"}
-                            </button>
-                        </div>
+                <div className="question-div branded-shadow">
+                    <div className="question-num">
+                        {currentQuestion}.
                     </div>
+
+                    <div className="question-content">
+                        {/* Render the QuestionContent component for the current question */}
+                        <QuestionContent moduleID={moduleID} position={currentQuestion} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
+                    </div>
+
+                    <div className="test-button-container">
+                        <button className="branded-long-button branded-shadow test-next-btn" onClick={handleNextClick}>
+                            {currentQuestion === questionsCount ? "Submit" : "Next"}
+                        </button>
+                    </div>
+                </div>
 
             </div>
 
