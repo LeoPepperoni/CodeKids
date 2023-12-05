@@ -6,7 +6,7 @@ import '../components/PracticeContent.css'
 import PracticeContent from '../components/PracticeContent';
 
 const PracticeAll = () => {
-
+  document.title = `CodeKnights | Practice All`
   const [keyProp, setKeyProp] = useState(0);
   const [showHint, setShowHint] = useState(false);
   const [newModuleID, setNewModuleID] = useState(null);
@@ -79,7 +79,7 @@ const PracticeAll = () => {
 
   return (
     <div>
-      <div className="path">
+      <div className="path centered-learn-header">
         <h4>Practice All</h4>
       </div>
 

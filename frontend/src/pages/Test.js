@@ -14,6 +14,8 @@ const Test = () => {
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
     const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
 
+    document.title = `CodeKnights | Test - Module ${moduleID}`
+
     // Total number of questions
     const questionsCount = 10; 
 
@@ -114,7 +116,7 @@ const Test = () => {
 
     return (
         <div>
-            <div className="path">
+            <div className="path centered-learn-header">
                 <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
             </div>
             

@@ -14,6 +14,7 @@ const TestAll = () => {
   const questionsCount = 20;
    
   const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
+  document.title = `CodeKnights | Test All`
 
 
 
@@ -69,7 +70,7 @@ const TestAll = () => {
 
   return (
     <div>
-      <div className="path">
+      <div className="path centered-learn-header">
         <h4>Test All</h4>
       </div>
 

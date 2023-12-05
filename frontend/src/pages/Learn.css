@@ -50,3 +50,8 @@
 .article-link:hover {
     color: blue;
 }
+
+.centered-learn-header {
+  display: flex;
+  justify-content: center;
+}

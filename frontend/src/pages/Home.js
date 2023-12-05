@@ -1,6 +1,7 @@
 import './Home.css';
 
 const Home = () => {
+  document.title = 'CodeKnights'
     return (
         <div>
             <div className='box'>

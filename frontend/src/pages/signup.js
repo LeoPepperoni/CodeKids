@@ -4,6 +4,7 @@ import './signup.css'
 import { Link } from 'react-router-dom'; 
 
 const Signup = () => {
+    document.title = `Sign Up`
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')

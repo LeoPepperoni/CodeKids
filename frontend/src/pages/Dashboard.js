@@ -7,6 +7,8 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
   const [modules, setModules] = useState([]);
 
+  document.title = 'CodeKnights | Dashboard'
+
   useEffect(() => {
       async function fetchModules() {
         const moduleData = [
