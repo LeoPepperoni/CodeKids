@@ -3,14 +3,15 @@ import './Dashboard.css';
 import { Link, useHistory } from 'react-router-dom'; 
 
 const Dashboard = () => {
+  const sessionUserId = sessionStorage.getItem('userId')
 
   // Sample data for modules (you can replace it with data from your database)
   const modules = [
-    { id: 1, name: "Variables & Data Types", isCompleted: false },
-    { id: 2, name: "Loops", isCompleted: false },
-    { id: 3, name: "Conditionals", isCompleted: false },
-    { id: 4, name: "Functions & Procedures", isCompleted: false },
-    { id: 5, name: "Input & Output", isCompleted: false },
+    { id: 1, name: "Variables & Data Types", isCompleted: moduleCheck(sessionUserId, 1) },
+    { id: 2, name: "Loops", isCompleted: moduleCheck(sessionUserId, 2) },
+    { id: 3, name: "Conditionals", isCompleted: moduleCheck(sessionUserId, 3) },
+    { id: 4, name: "Functions & Procedures", isCompleted: moduleCheck(sessionUserId, 4) },
+    { id: 5, name: "Input & Output", isCompleted: moduleCheck(sessionUserId, 5) },
   ];
 
   const constructPath = (moduleId, moduleName) => {
@@ -21,14 +22,19 @@ const Dashboard = () => {
     const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
-      //body: JSON.stringify({ email, password })
     })
     const json = await response.json()
+    console.log(json);
   }
 
-  function moduleCompleted() {
-
+  function moduleCompleted(isCompleted) {
+    return isCompleted ? 'true' : 'false';
   }
+
+  function moduleCompletedText(isCompleted) {
+    return isCompleted ? 'Completed ✅' : 'Test';
+  }
+
 
   return (
     <div>
@@ -54,7 +60,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>Test</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.isCompleted)}>{moduleCompletedText}</button>
                 </Link>
 
               </div>
