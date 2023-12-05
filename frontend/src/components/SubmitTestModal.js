@@ -1,19 +1,16 @@
 import React from 'react';
+import './modal.css';
 
-const SubmitTestModal = ({ show, close, children }) => {
-  if (!show) {
-    return null;
-  }
-
-  return (
-    <div className="modal-backdrop">
-      <div className="modal-content">
-        {children}
-        <div className="result-msg">You got 20/20</div>
-        <button onClick={close}>Close</button>
-      </div>
-    </div>
-  );
+const SubmitTestModal = ({ correctAnswerCount, onClose }) => {
+    return (
+        <div className="modal">
+            <div className="modal-content">
+                <h3>Test Results</h3>
+                <p>You answered {correctAnswerCount} questions correctly.</p>
+                <button onClick={onClose}>Close</button>
+            </div>
+        </div>
+    );
 };
 
 export default SubmitTestModal;

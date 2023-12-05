@@ -1,34 +1,77 @@
 import React, { useState, useEffect } from 'react';
 import './Dashboard.css';
-
 import { Link, useHistory } from 'react-router-dom'; 
 
 const Dashboard = () => {
+  const sessionUserId = sessionStorage.getItem('userId');
+  const [error, setError] = useState(null);
+  const [modules, setModules] = useState([]);
 
-  // Sample data for modules (you can replace it with data from your database)
-  const modules = [
-    { id: 1, name: "Variables & Data Types", isCompleted: false },
-    { id: 2, name: "Loops", isCompleted: false },
-    { id: 3, name: "Conditionals", isCompleted: false },
-    { id: 4, name: "Functions & Procedures", isCompleted: false },
-    { id: 5, name: "Input & Output", isCompleted: false },
-  ];
+  useEffect(() => {
+      async function fetchModules() {
+        const moduleData = [
+          { id: 1, name: "Variables & Data Types" },
+          { id: 2, name: "Loops" },
+          { id: 3, name: "Conditionals" },
+          { id: 4, name: "Functions & Procedures" },
+          { id: 5, name: "Input & Output" },
+        ];
 
+        const modulePromises = moduleData.map(async (module) => {
+          const isCompleted = await moduleCheck(sessionUserId, module.id);
+          return { ...module, isCompleted };
+        });
+
+        try {
+          const modulesWithCompletionStatus = await Promise.all(modulePromises);
+          setModules(modulesWithCompletionStatus);
+        } catch (error) {
+          setError(error);
+        }
+      }
+
+      fetchModules();
+    }, [sessionUserId]);
+
+    async function moduleCheck(userId, moduleNum) {
+      try {
+        const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (!response.ok) {
+          const json = await response.json();
+          setError(json.error);
+          return false;
+        }
+
+        const json = await response.json();
+        console.log(json.progressExists);
+        return json.progressExists;
+      } catch (error) {
+        setError(error);
+        return false;
+      }
+    }
   const constructPath = (moduleId, moduleName) => {
     return `/learn${moduleId}/${encodeURIComponent(moduleName)}`;
   };
+  
 
-  function moduleCompleted() {
-
+  function moduleCompletedText(isCompleted) {
+    return isCompleted ? 'Done ✅' : 'Test';
   }
+
 
   return (
     <div>
-            <div className='logo-container'>
-              <Link className='branded-logo-link' to="/">
-                <div className='branded-logo branded-shadow' title='Return home'>CodeKnights</div>
-              </Link>
-            </div>
+      <div className='logo-container'>
+        <Link className='branded-logo-link' to="/">
+          <div className='branded-logo branded-shadow' title='Return home'>CodeKnights</div>
+        </Link>
+      </div>
+      
       <div className="module-list">
         <ul>
           {modules.map((module) => (
@@ -46,7 +89,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>Test</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={module.isCompleted ? true : undefined}>{moduleCompletedText(module.isCompleted)}</button>
                 </Link>
 
               </div>

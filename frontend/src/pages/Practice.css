@@ -1,6 +1,7 @@
 @import url("https://dev-cats.github.io/code-snippets/JetBrainsMono.css");
 
 .path {
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
     padding: 10px;
 }
 
@@ -10,19 +11,24 @@
     align-items: center;
 }
 
+
 .practice-div {
+    margin-top: 10px;
     background-color: white;
     border-radius: 30px;
     padding: 20px; 
+    width: 50%; 
     display: flex;
+    margin-right: 30px;
     flex-direction: column;
-    width: 80vh;
-    height: 50vh;
-    max-width: 800px;
-    max-height: 600px;
-}
+    height: 60vh;
+} 
 
 .practice-box {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    height: 60vh;
 }
 
 .practice-content {
@@ -30,6 +36,7 @@
     border-radius: 30px;
     padding: 5px 10px; 
     margin-bottom: 10px; 
+    width: 100%;
 }
 
 .hint-boxxx {
@@ -58,7 +65,7 @@
 .hint-btn-container {
     display: flex;
     position: relative;
-    margin-bottom: 5px;
+    padding-bottom: 25px;
 }
 
 .back-btn {

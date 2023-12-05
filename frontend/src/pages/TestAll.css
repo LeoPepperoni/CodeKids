@@ -1,0 +1,32 @@
+.test-all-div {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif,BlinkMacSystemFont,Helvetica Neue,Arial,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    height: 60vh;
+}
+
+.random-question-content-all {
+    background-color: white;
+    border-radius: 30px;
+    padding: 5px 10px; 
+    margin-bottom: 10px; 
+}
+
+.button-container-next-submit-all {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: auto;
+}
+
+.test-all-container {
+    margin-top: 10px;
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px; 
+    width: 50%; 
+    display: flex;
+    margin-right: 30px;
+    flex-direction: column;
+    height: 60vh;
+}

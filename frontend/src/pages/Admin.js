@@ -43,8 +43,33 @@ const Admin = () => {
           <div className='admin-container'>
             <div className='branded-header admin-message'>Admin Panel</div>
           </div>
-            
+
           <div className='admin-container'>
+              <form className='admin-delete-question branded-shadow' id='delete-form' onSubmit={handleDeleteQuestion}>
+                <h3 className="branded-header">Delete a Question ❌</h3>
+
+                <label className="input-label branded-text">Question's Module:</label>
+                <input
+                    className="branded-shadow branded-input"
+                    type=""
+                    onChange={(e) => setDeleteModule(e.target.value)}
+                    value={moduleDelete}
+                    placeholder="Module 2..."
+                />
+
+                <label className="input-label branded-text">Question Position:</label>
+                <input
+                    className="branded-shadow branded-input"
+                    type=""
+                    onChange={(e) => seDeletePosition(e.target.value)}
+                    value={positionDelete}
+                    placeholder="Question 5..."
+                />
+                <button className="branded-long-button submit-admin-question" disabled={deleteLoading}>Delete Question</button>
+              </form>
+          </div>
+            
+          <div className='admin-container special-container'>
               <form className='admin-add-question branded-shadow' id='add-form' onSubmit={handleAddQuestion}>
                 <h3 className="branded-header">Add a Question ✅</h3>
 
@@ -122,30 +147,6 @@ const Admin = () => {
                 /> 
 
                 <button className="branded-long-button submit-admin-question" disabled={isLoading}>Add Question</button>
-              </form>
-          </div>
-          <div className='admin-container special-container'>
-              <form className='admin-delete-question branded-shadow' id='delete-form' onSubmit={handleDeleteQuestion}>
-                <h3 className="branded-header">Delete a Question ❌</h3>
-
-                <label className="input-label branded-text">Question's Module:</label>
-                <input
-                    className="branded-shadow branded-input"
-                    type=""
-                    onChange={(e) => setDeleteModule(e.target.value)}
-                    value={moduleDelete}
-                    placeholder="Module 2..."
-                />
-
-                <label className="input-label branded-text">Question Position:</label>
-                <input
-                    className="branded-shadow branded-input"
-                    type=""
-                    onChange={(e) => seDeletePosition(e.target.value)}
-                    value={positionDelete}
-                    placeholder="Question 5..."
-                />
-                <button className="branded-long-button submit-admin-question" disabled={deleteLoading}>Delete Question</button>
               </form>
           </div>
       </div>
