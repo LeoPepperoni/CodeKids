@@ -12,6 +12,7 @@ const Navbar = () => {
 
     // Function to handle the logout button click
     const handleClick = () => {
+        localStorage.clear()
         logout()
     }
 
