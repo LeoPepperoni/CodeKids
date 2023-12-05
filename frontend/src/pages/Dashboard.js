@@ -7,11 +7,11 @@ const Dashboard = () => {
 
   // Sample data for modules (you can replace it with data from your database)
   const modules = [
-    { id: 1, name: "Variables & Data Types"},
-    { id: 2, name: "Loops"},
-    { id: 3, name: "Conditionals"},
-    { id: 4, name: "Functions & Procedures"},
-    { id: 5, name: "Input & Output"},
+    { id: 1, name: "Variables & Data Types", isCompleted: moduleCheck(sessionUserId, 1) },
+    { id: 2, name: "Loops", isCompleted: moduleCheck(sessionUserId, 2) },
+    { id: 3, name: "Conditionals", isCompleted: moduleCheck(sessionUserId, 3) },
+    { id: 4, name: "Functions & Procedures", isCompleted: moduleCheck(sessionUserId, 4) },
+    { id: 5, name: "Input & Output", isCompleted: moduleCheck(sessionUserId, 5) },
   ];
 
   const constructPath = (moduleId, moduleName) => {
@@ -24,36 +24,22 @@ const Dashboard = () => {
       headers: { 'Content-Type': 'application/json' },
     })
     const json = await response.json()
-    if (!response.ok) {
-      setIsLoading(false)
-      setError(json.error)
-    }
     
-    if (response.ok) {
-      // sanity check.. I know
-      console.log(json.progressExists);
+    // sanity check.. I know
+    console.log(JSON.stringify(json.progressExists));
 
-      // return status
-      return json.progressExists
-    }
+    // return status
+    return json.progressExists
   }
 
-  async function moduleCompleted(moduleNum) {
-    try {
-      let isModuleComplete = await moduleCheck(sessionUserId, moduleNum);
-      return isModuleComplete ? true: null;
-    } catch (error) {
-      console.error('Error fetching module progress:', error);
-    }
+  function moduleCompleted(isCompleted) {
+    console.log(isCompleted)
+    return isCompleted ? true: null;
   }
 
-  async function moduleCompletedText(moduleNum) {
-    try {
-      let isModuleComplete = await moduleCheck(sessionUserId, moduleNum);
-      return isModuleComplete  ? 'Done ✅' : 'Test';
-    }catch (error) {
-      console.error('Error fetching module progress:', error);
-    }
+  function moduleCompletedText(isCompleted) {
+    console.log(isCompleted)
+    return isCompleted ? 'Done ✅' : 'Test';
   }
 
 
@@ -81,7 +67,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.id)}>{moduleCompletedText(module.id)}</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.isCompleted)}>{moduleCompletedText(module.isCompleted)}</button>
                 </Link>
 
               </div>
