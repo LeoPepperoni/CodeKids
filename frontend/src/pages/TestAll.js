@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import RandomQuestion from '../components/RandomQuestion';
 import SubmitTestAllModal from '../components/SubmitTestAllModal';
+import './TestAll.css';
 
 const TestAll = () => {
   const [count, setCount] = useState(0); 
@@ -42,38 +43,35 @@ const TestAll = () => {
 
   return (
     <div>
-       <div className="container-div">
-          <div className="practice-box">
 
-            <div className="path">
-              <h4>Test All</h4>
+      <div className="path">
+        <h4>Test All</h4>
+      </div>
+
+        <div className="test-all-div branded-shadow">
+          <div className="test-all-container">
+            <div className="random-question-content-all">
+              <RandomQuestion moduleID={moduleID} position={position} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
             </div>
 
-            <div className="practice-div branded-shadow">
-              <div className="random-question-content">
-                <RandomQuestion moduleID={moduleID} position={position} updateCorrectAnswerCount={updateCorrectAnswerCount}/>
-              </div>
-
-              <div className="button-container-back-next">
-                {/* Display Submit button only when count reaches 20 */}
-                <button 
-                  className="branded-long-button branded-shadow test-next-btn" 
-                  onClick={handleNextClick}
+            <div className="button-container-next-submit-all">
+              {/* Display Submit button only when count reaches 20 */}
+              <button 
+                className="branded-long-button branded-shadow test-next-btn" 
+                onClick={handleNextClick}
                 >
-                  {count === questionsCount ? "Submit" : "Next"}
-                </button>
-              </div>
+                {count === questionsCount ? "Submit" : "Next"}
+              </button>
             </div>
-
           </div>
         </div>
 
         {showModal && (
-                <SubmitTestAllModal 
-                    correctAnswerCount={correctAnswerCount} 
-                    onClose={handleCloseModal} 
-                />
-            )}
+          <SubmitTestAllModal 
+            correctAnswerCount={correctAnswerCount} 
+            onClose={handleCloseModal} 
+          />
+        )}
     </div>
   );
 };
