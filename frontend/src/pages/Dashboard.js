@@ -7,6 +7,8 @@ const Dashboard = () => {
   const [error, setError] = useState(null);
   const [modules, setModules] = useState([]);
 
+  document.title = 'CodeKnights | Dashboard'
+
   useEffect(() => {
       async function fetchModules() {
         const moduleData = [
@@ -47,7 +49,6 @@ const Dashboard = () => {
         }
 
         const json = await response.json();
-        console.log(json.progressExists);
         return json.progressExists;
       } catch (error) {
         setError(error);

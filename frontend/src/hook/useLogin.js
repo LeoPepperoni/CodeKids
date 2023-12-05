@@ -27,6 +27,9 @@ export const useLogin = () => {
             // Store user id
             sessionStorage.setItem('userId', json.id);
 
+            // Store admin status
+            localStorage.setItem('isAdmin', json.admin);
+
             // save the user to local storage
             localStorage.setItem('user', JSON.stringify(json))
 

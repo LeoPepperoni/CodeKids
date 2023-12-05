@@ -8,10 +8,10 @@ import HintContent from '../components/HintContent';
 
 
 const Practice = () => {
-
     const { moduleID, moduleName, questionNumber = "1" } = useParams();
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
     const [showHint, setShowHint] = useState(false);
+    document.title = `CodeKnights | Practice - Module ${moduleID}`
     var isHintActive = false;
 
     // Total number of questions
@@ -74,7 +74,7 @@ const Practice = () => {
 
     return (
         <div>
-            <div className="path">
+            <div className="path centered-learn-header">
                 <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Practice</h4>
             </div>
 

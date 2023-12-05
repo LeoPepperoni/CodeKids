@@ -10,18 +10,19 @@ const Learn4 = () => {
     const videoIdFunctions = 'ou_G7_zodR4'; 
     const videoIdArguments = '7VM571tSKC0';
     const videoIdFunctPrototypes = 'vc9A6HdrTz4';
-
+    document.title = `Learn - Module 4`
 
     return (
         <div>
-            <div class="path">
+            <div class="path centered-learn-header">
                 <h4>Module 4: {decodeURIComponent(moduleName)} - Learn</h4>
             </div>
 
-            <div class="learn-container">
+            <div class="learn-container branded-shadow">
                 <div className="video-container">
                     <div className="video-frame">
                         <iframe
+                            frameBorder="0"
                             src={`https://www.youtube.com/embed/${videoIdFunctions}`}
                             title="YouTube Video"
                             allowFullScreen
@@ -30,6 +31,7 @@ const Learn4 = () => {
 
                     <div className="video-frame">
                         <iframe
+                            frameBorder="0"
                             src={`https://www.youtube.com/embed/${videoIdArguments}`}
                             title="YouTube Video"
                             allowFullScreen
@@ -38,6 +40,7 @@ const Learn4 = () => {
 
                     <div className="video-frame">
                         <iframe
+                            frameBorder="0"
                             src={`https://www.youtube.com/embed/${videoIdFunctPrototypes}`}
                             title="YouTube Video"
                             allowFullScreen

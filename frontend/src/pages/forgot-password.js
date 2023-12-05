@@ -3,6 +3,7 @@ import './forgot-password.css';
 import { Link } from 'react-router-dom'; 
 
 const ForgotPassword = () => {
+    document.title = `Forgot Password`
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 

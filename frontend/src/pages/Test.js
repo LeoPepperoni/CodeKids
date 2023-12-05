@@ -1,20 +1,20 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom'; 
 import './Test.css';
-import SubmitTestModal from '../components/SubmitTestModal';
+import { useNavigate } from 'react-router-dom';
 import QuestionContent from '../components/QuestionContent'; // Import the QuestionContent component
 
 const Test = () => {
     // Use the useParams hook to access the moduleId parameter
     const { moduleID, moduleName, questionNumber ="1" } = useParams();
-
+    const navigate = useNavigate();
     const [showModal, setShowModal] = useState(false);
     // Initialize state to keep track of the current question number
     const [currentQuestion, setCurrentQuestion] = useState(parseInt(questionNumber) || 1);
-   
     const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
+
+    document.title = `CodeKnights | Test - Module ${moduleID}`
 
     // Total number of questions
     const questionsCount = 10; 
@@ -45,6 +45,8 @@ const Test = () => {
             }
             longClose.onclick = function() {
               modal.style.display = "none";
+              // transistion back to dashboard
+              navigate('/dashboard');
             }
 
             // When the user clicks anywhere outside of the modal, close it
@@ -95,7 +97,6 @@ const Test = () => {
         // if user gets less than a 80% redo the exam
         return 'Nice Try! You most score at least an 80% to mark this module as complete. Try practicing more problems in the Practice Module 😀.'
       }
-
     }
 
     const handleCloseModal = () => {
@@ -110,12 +111,11 @@ const Test = () => {
 
     const updateCorrectAnswerCount = (newCount) => {
         setCorrectAnswerCount(newCount);
-        console.log('Test: ', newCount);
     };
 
     return (
         <div>
-            <div className="path">
+            <div className="path centered-learn-header">
                 <h4>Module {moduleID}: {decodeURIComponent(moduleName)} - Test</h4>
             </div>
             
@@ -143,7 +143,7 @@ const Test = () => {
             <div class="modal-content branded-shadow">
               <span class="close" id='close-test-modal'>&times;</span>
               <div className='modal-centered-container'>
-                <div className='modal-header'>Test Result</div>
+                <div className='modal-header'>Test Results</div>
               </div>
               <div className='modal-centered-container'>
                 <div className='branded-header modal-correct-text'>You got {correctAnswerCount} / 10 Correct</div>

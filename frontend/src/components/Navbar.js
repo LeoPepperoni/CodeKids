@@ -12,6 +12,8 @@ const Navbar = () => {
 
     // Function to handle the logout button click
     const handleClick = () => {
+        localStorage.clear()
+        sessionStorage.clear()
         logout()
     }
 
@@ -25,8 +27,8 @@ const Navbar = () => {
     const hideAbout = ['/About'];
     const shouldShowAbout = !hideAbout.includes(pathname);
     const shouldShowNavbar = !hiddenRoutes.includes(pathname);
-
-    
+    const isAdmin = localStorage.getItem('isAdmin')
+    console.log(isAdmin);
 
     return (
         <div>
@@ -43,7 +45,9 @@ const Navbar = () => {
                           <li><Link to="/"><div className="menu-item" onClick={menuClick}>Home</div></Link></li>
                           <li><Link to="/dashboard"><div className="menu-item" onClick={menuClick}>Modules</div></Link></li>
                           <li><Link to="/about"><div className="menu-item" onClick={menuClick}>About</div></Link></li>
-                          <li><Link to="/admin"><div className="menu-item" onClick={menuClick}>Admin</div></Link></li>
+                          {isAdmin && (
+                            <li><Link to="/admin"><div className="menu-item" onClick={menuClick}>Admin</div></Link></li>
+                          )}
                         </ul>
                       </div>
                     </div>

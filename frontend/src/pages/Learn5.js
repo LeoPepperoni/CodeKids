@@ -8,18 +8,19 @@ const Learn5 = () => {
    
     const { moduleID, moduleName } = useParams();
     const videoId = 'xOIVXR35aI4'; 
-
+    document.title = `Learn - Module 5`
 
     return (
         <div>
-            <div class="path">
+            <div class="path centered-learn-header">
                 <h4>Module 5: {decodeURIComponent(moduleName)} - Learn</h4>
             </div>
 
-            <div class="learn-container">
+            <div class="learn-container branded-shadow">
                 <div className="video-container">
                     <div className="video-frame">
                         <iframe
+                            frameBorder="0"
                             src={`https://www.youtube.com/embed/${videoId}`}
                             title="YouTube Video"
                             allowFullScreen

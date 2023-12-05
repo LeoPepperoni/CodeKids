@@ -3,6 +3,7 @@ import React from 'react';
 import './About.css';
 
 const About = () => {
+    document.title = `About Us`
     return (
         <div>
             <div className='logo-container'>

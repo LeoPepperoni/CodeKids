@@ -9,18 +9,20 @@ const Learn2 = () => {
     const { moduleID, moduleName } = useParams();
     const videoIdForLoops = 'b4DPj0XAfSg'; 
     const videoIdWhileLoops = 'ufFAFx5Qn3w';
+    document.title = `Learn - Module 2`
 
 
     return (
         <div>
-            <div class="path">
+            <div class="path centered-learn-header">
                 <h4>Module 2: {decodeURIComponent(moduleName)} - Learn</h4>
             </div>
 
-            <div class="learn-container">
+            <div class="learn-container branded-shadow">
                 <div className="video-container">
                     <div className="video-frame">
                         <iframe
+                            frameBorder="0"
                             src={`https://www.youtube.com/embed/${videoIdForLoops}`}
                             title="YouTube Video"
                             allowFullScreen
@@ -29,6 +31,7 @@ const Learn2 = () => {
 
                     <div className="video-frame">
                         <iframe
+                            frameBorder="0"
                             src={`https://www.youtube.com/embed/${videoIdWhileLoops}`}
                             title="YouTube Video"
                             allowFullScreen

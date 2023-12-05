@@ -5,6 +5,7 @@ import './Login.css';
 import { Link } from 'react-router-dom'; 
 
 const Login = () => {
+    document.title = `Login`
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
      // Custom hook for handling login functionality

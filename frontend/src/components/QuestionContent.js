@@ -50,7 +50,6 @@ const QuestionContent = ({ moduleID, position, updateCorrectAnswerCount }) => {
         updateCorrectAnswerCount(newCount);
         setHasSelectedCorrectAnswer(true);
       }
-      console.log("Correct Answer!");
     } else {
       if (hasSelectedCorrectAnswer) {
         const newCount = correctAnswerCount - 1;
@@ -58,7 +57,6 @@ const QuestionContent = ({ moduleID, position, updateCorrectAnswerCount }) => {
         updateCorrectAnswerCount(newCount);
         setHasSelectedCorrectAnswer(false);
       }
-      console.log("Incorrect Answer.");
     }
   };
 

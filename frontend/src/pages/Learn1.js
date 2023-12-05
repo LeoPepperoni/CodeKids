@@ -5,21 +5,21 @@ import { useParams } from 'react-router-dom';
 
 
 const Learn1 = () => {
-   
     const { moduleID, moduleName } = useParams();
     const videoId = 'OSyjOvFbAGI'; 
-
+    document.title = `Learn - Module 1`
 
     return (
         <div>
-            <div class="path">
+            <div class="path centered-learn-header">
                 <h4>Module 1: {decodeURIComponent(moduleName)} - Learn</h4>
             </div>
 
-            <div class="learn-container">
+            <div class="learn-container branded-shadow">
                 <div className="video-container">
                     <div className="video-frame">
                         <iframe
+                            frameBorder="0"
                             src={`https://www.youtube.com/embed/${videoId}`}
                             title="YouTube Video"
                             allowFullScreen
