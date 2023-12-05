@@ -8,6 +8,10 @@ const createQuestion = async (req, res) => {
         // Check if a question with the same module and position already exists
         const existingQuestion = await Question.findOne({ module, position });
 
+        if (isNaN(module) || isNaN(position)) {
+            return res.status(400).json({ error: 'Module and position must be valid numbers.' });
+        }
+
         // If a question exists, throw an error
         if (existingQuestion) {
             return res.status(400).json({ error: 'A question with the specified module and position already exists.' });
@@ -34,6 +38,10 @@ const createQuestion = async (req, res) => {
 // Function to delete a question from the database
 const deleteQuestion = async (req, res) => {
     const { position, module } = req.body; // or req.query
+
+    if (isNaN(module) || isNaN(position)) {
+        return res.status(400).json({ error: 'Module and position must be valid numbers.' });
+    }
 
     try {
         const deletedQuestion = await Question.findOneAndRemove({ position: position, module: module });
