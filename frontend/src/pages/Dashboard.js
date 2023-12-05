@@ -22,15 +22,19 @@ const Dashboard = () => {
     const response = await fetch(`/api/progress/user/getUserModuleProgress/${userId}/${moduleNum}`, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
-      //body: JSON.stringify({ email, password })
     })
     const json = await response.json()
     console.log(json);
   }
 
-  function moduleCompleted() {
-
+  function moduleCompleted(isCompleted) {
+    return isCompleted ? 'true' : 'false';
   }
+
+  function moduleCompletedText(isCompleted) {
+    return isCompleted ? 'Completed ✅' : 'Test';
+  }
+
 
   return (
     <div>
@@ -56,7 +60,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>Test</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`} disabled={moduleCompleted(module.isCompleted)}>{moduleCompletedText}</button>
                 </Link>
 
               </div>
