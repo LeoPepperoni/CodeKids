@@ -28,6 +28,7 @@ const PracticeContent = ({ moduleID, position }) => {
     let testText = '';
 
     const handleButtonClick = (index, choice) => {
+        console.log(choice);
         testText = displayText(choice);
         setClickedButtonIndex(index);
     };

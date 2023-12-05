@@ -28,8 +28,25 @@ const Admin = () => {
   };
 
   const handleDeleteQuestion = async (e) => {
-    e.preventDefault();
-    await deleteQuestion(positionDelete, moduleDelete);
+      e.preventDefault();
+      await deleteQuestion(positionDelete, moduleDelete);
+      // On the last question we want to prompt the modal as well as hit the progress endpoint
+      var modal = document.getElementById("delete-modal");
+      var close = document.getElementById("close-delete-modal");
+      var longClose = document.getElementById("long-modal-delete-close");
+
+      modal.style.display = "block";
+      close.onclick = function() {
+        modal.style.display = "none";
+      }
+      longClose.onclick = function() {
+        modal.style.display = "none";
+      }
+      window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
   };
 
   return (
@@ -148,6 +165,23 @@ const Admin = () => {
 
                 <button className="branded-long-button submit-admin-question" disabled={isLoading}>Add Question</button>
               </form>
+          </div>
+
+          <div id="delete-modal" class="modal">
+            <div class="modal-content branded-shadow">
+              <span class="close" id='close-delete-modal'>&times;</span>
+              <div className='modal-centered-container'>
+                <div className='modal-header'>Question Deleted</div>
+              </div>
+              <div className='modal-centered-container'>
+                <div className='branded-header modal-correct-text'>Success!</div>
+              </div>
+
+              <div className='modal-centered-container close-modal-button'>
+                <button className='branded-long-button' id='long-modal-delete-close'>Close</button>
+              </div>
+              
+            </div>
           </div>
       </div>
   );
