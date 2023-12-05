@@ -48,7 +48,7 @@ const PracticeContent = ({ moduleID, position }) => {
     }
 
     function displayText(choice) {
-      return isCorrect(choice) ? 'Correct!': 'Oops, thats not correct!';
+      return isCorrect(choice) ? '✅': '❌';
     }
 
     return (
@@ -68,7 +68,6 @@ const PracticeContent = ({ moduleID, position }) => {
                         </button>
                     ))}
                 </div>
-                <div>{displayText(choice)}</div>
             </div>
         </div>
     );
