@@ -39,11 +39,8 @@ const Dashboard = () => {
   }
 
 
-  function moduleCompletedText(userId, moduleNum) {
-    console.log(localStorage.getItem(moduleNum));
-    let complete = moduleCheck(userId, moduleNum)
-    console.log(complete)
-    return complete ? 'Done ✅' : 'Test';
+  function moduleCompletedText(moduleNum) {
+    return localStorage.getItem(moduleNum) ? 'Done ✅' : 'Test';
   }
 
 
@@ -71,7 +68,7 @@ const Dashboard = () => {
                 </Link>
 
                 <Link to={`/test/${module.id}/${encodeURIComponent(module.name)}`}>
-                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>{moduleCompletedText(sessionUserId, module.id)}</button>
+                  <button className="learn-button branded-shadow" id={`mod${module.id}-practice-btn`}>{moduleCompletedText(module.id)}</button>
                 </Link>
 
               </div>
