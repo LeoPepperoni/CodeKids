@@ -28,9 +28,7 @@ const Navbar = () => {
     const shouldShowAbout = !hideAbout.includes(pathname);
     const shouldShowNavbar = !hiddenRoutes.includes(pathname);
     const isAdmin = localStorage.getItem('isAdmin')
-    console.log(isAdin);
-
-    
+    console.log(isAdmin);
 
     return (
         <div>
