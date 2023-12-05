@@ -29,6 +29,7 @@
   float: right;
   font-size: 28px;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 .close:hover,
