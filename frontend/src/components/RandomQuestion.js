@@ -39,7 +39,6 @@ const RandomQuestion = ({ moduleID, position, updateCorrectAnswerCount }) => {
         updateCorrectAnswerCount(newCount);
         setHasSelectedCorrectAnswer(true);
       }
-      console.log("Correct Answer!");
     } else {
       if (hasSelectedCorrectAnswer) {
         const newCount = correctAnswerCount - 1;
@@ -47,12 +46,8 @@ const RandomQuestion = ({ moduleID, position, updateCorrectAnswerCount }) => {
         updateCorrectAnswerCount(newCount);
         setHasSelectedCorrectAnswer(false);
       }
-      console.log("Incorrect Answer.");
     }
   };
-
-  console.log("correct answer count: ", correctAnswerCount);
-
 
   return (
     <div>

@@ -49,7 +49,6 @@ const Dashboard = () => {
         }
 
         const json = await response.json();
-        console.log(json.progressExists);
         return json.progressExists;
       } catch (error) {
         setError(error);

@@ -25,7 +25,6 @@ const TestAll = () => {
       // Generate new random values for the next question
       setModuleID(getRandomNumber(1, 5));
       setPosition(getRandomNumber(1, 10));
-      console.log('ModuleID, Position: ', moduleID, position);
     } else {
         // On the last question we want to prompt the modal as well as hit the progress endpoint
         var modal = document.getElementById("test-all-modal");
@@ -51,7 +50,6 @@ const TestAll = () => {
 
   const updateCorrectAnswerCount = (newCount) => {
     setCorrectAnswerCount(newCount);
-    console.log('TestAll: ', newCount);
   };
 
   function modalResultTextAll (correctAnswerCount) {

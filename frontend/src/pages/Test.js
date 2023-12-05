@@ -111,7 +111,6 @@ const Test = () => {
 
     const updateCorrectAnswerCount = (newCount) => {
         setCorrectAnswerCount(newCount);
-        console.log('Test: ', newCount);
     };
 
     return (
