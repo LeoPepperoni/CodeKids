@@ -32,7 +32,7 @@ const Test = () => {
             setCurrentQuestion(newQuestionNumber);
             updateURL(newQuestionNumber);
         } else {
-            let userId = sessionStorage.getItem('userID')
+            let userId = sessionStorage.getItem('userId')
 
             // On the last question we want to prompt the modal as well as hit the progress endpoint
             var modal = document.getElementById("test-modal");
