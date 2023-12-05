@@ -25,9 +25,10 @@ const PracticeContent = ({ moduleID, position }) => {
         }
         return newArray;
     };
+    let testText = '';
 
     const handleButtonClick = (index, choice) => {
-        displayText(choice);
+        testText = displayText(choice);
         setClickedButtonIndex(index);
     };
 
@@ -48,7 +49,7 @@ const PracticeContent = ({ moduleID, position }) => {
     }
 
     function displayText(choice) {
-      return isCorrect(choice) ? '✅': '❌';
+      return isCorrect(choice) ? 'Correct!': 'Oops, thats not correct!';
     }
 
     return (
@@ -67,6 +68,7 @@ const PracticeContent = ({ moduleID, position }) => {
                             {choice}
                         </button>
                     ))}
+                    <div>{testText}</div>
                 </div>
             </div>
         </div>
