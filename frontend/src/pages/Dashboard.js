@@ -24,7 +24,12 @@ const Dashboard = () => {
       headers: { 'Content-Type': 'application/json' },
     })
     const json = await response.json()
-    console.log(json);
+    
+    // sanity check.. I know
+    console.log(json.progressExists);
+
+    // return status
+    return json.progressExists
   }
 
   function moduleCompleted(isCompleted) {
