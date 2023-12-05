@@ -14,8 +14,6 @@ const Dashboard = () => {
     { id: 5, name: "Input & Output", isCompleted: moduleCheck(sessionUserId, 5) },
   ];
 
-  console.log(modules)
-
   const constructPath = (moduleId, moduleName) => {
     return `/learn${moduleId}/${encodeURIComponent(moduleName)}`;
   };
@@ -26,21 +24,18 @@ const Dashboard = () => {
       headers: { 'Content-Type': 'application/json' },
     })
     const json = await response.json()
-    
-    // sanity check.. I know
-    console.log(JSON.stringify(json.progressExists));
-
+    console.log(json.PromiseResult)
     // return status
-    return JSON.stringify(json.progressExists)
+    return json.PromiseResult
   }
 
   function moduleCompleted(isCompleted) {
-    console.log(isCompleted)
+    console.log(isCompleted.PromiseResult)
     return isCompleted == 'true' ? true: null;
   }
 
   function moduleCompletedText(isCompleted) {
-    console.log(isCompleted)
+    console.log(isCompleted.PromiseResult)
     return isCompleted == 'true' ? 'Done ✅' : 'Test';
   }
 
