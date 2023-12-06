@@ -30,7 +30,7 @@ const About = () => {
               </div>
               <div className='about-card branded-shadow'>
                 <div className='about-card-header'>Test 👩🏽‍💻</div>
-                <div className='about-card-text'>Our testing feature invites you to tackle comprehensive multiple-choice tests, offering immediate scores upon submission. These tests are thoughtfully designed to allow you to evaluate your grasp of the 
+                <div className='about-card-text'>Our testing feature invites you to tackle comprehensive multiple-choice tests, offering immediate scores upon submission. These tests are designed to allow you to evaluate your grasp of the 
                 material in a practical format.</div>
               </div>
             </div>
