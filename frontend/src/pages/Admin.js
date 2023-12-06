@@ -20,11 +20,24 @@ const Admin = () => {
 
   // Delete question input
   const [moduleDelete, setDeleteModule] = useState('');
-  const [positionDelete, seDeletePosition] = useState('');
+  const [positionDelete, setDeletePosition] = useState('');
 
   const handleAddQuestion = async (e) => {
     e.preventDefault();
     await addQuestion(question, answer, moduleM, answerChoice1, answerChoice2, answerChoice3, position, hint);
+
+    // clear form
+    setQuestion("")
+    setModule("")
+    setAnswer("")
+    setAnswerChoice1("")
+    setAnswerChoice2("")
+    setAnswerChoice3("")
+    setPosition("")
+    setHint("")
+    addQuestion("")
+    deleteQuestion("")
+
      // On the last question we want to prompt the modal as well as hit the progress endpoint
      var modal = document.getElementById("add-modal");
      var close = document.getElementById("close-add-modal");
@@ -47,6 +60,10 @@ const Admin = () => {
   const handleDeleteQuestion = async (e) => {
       e.preventDefault();
       await deleteQuestion(positionDelete, moduleDelete);
+
+      // clear form
+      setDeleteModule("");
+      setDeletePosition("");
       // On the last question we want to prompt the modal as well as hit the progress endpoint
       var modal = document.getElementById("delete-modal");
       var close = document.getElementById("close-delete-modal");
@@ -79,7 +96,7 @@ const Admin = () => {
           </div>
 
           <div className='admin-container'>
-              <form className='admin-delete-question branded-shadow' id='delete-form' onSubmit={handleDeleteQuestion}>
+              <form className='admin-delete-question branded-shadow' name='form1' id='delete-form' onSubmit={handleDeleteQuestion}>
                 <h3 className="branded-header">Delete a Question ❌</h3>
 
                 <label className="input-label branded-text">Question's Module:</label>
@@ -95,7 +112,7 @@ const Admin = () => {
                 <input
                     className="branded-shadow branded-input"
                     type=""
-                    onChange={(e) => seDeletePosition(e.target.value)}
+                    onChange={(e) => setDeletePosition(e.target.value)}
                     value={positionDelete}
                     placeholder="Question 5..."
                 />
