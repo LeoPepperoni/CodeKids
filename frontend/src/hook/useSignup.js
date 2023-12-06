@@ -24,6 +24,9 @@ export const useSignup = () => {
             setError(json.error)
         }
         if (response.ok) {
+            sessionStorage.setItem('userId', json.id);
+            // Store admin status
+            localStorage.setItem('isAdmin', json.admin);
             // save the user to local storage
             localStorage.setItem('user', JSON.stringify(json))
 
